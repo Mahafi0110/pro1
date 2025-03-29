@@ -1,0 +1,7 @@
+th{
+    background-color: green;
+}
+ table td:nth-child(1){
+    font:red;
+    color:red;
+}

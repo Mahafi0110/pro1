@@ -1,0 +1,31 @@
+*{
+    margin:0%;
+    padding:0%;
+    text-align:center;
+    color:brown;
+    background:linear-gradient(to right,rgb(139, 114, 114),lightpink);
+}
+
+h1{
+    font-size: 5vmin;
+    padding:2%;
+}
+p{
+    font-size:1vmax;
+    padding:2%;
+}
+button{
+    margin:2rem;
+    padding: 2px;
+    width:4cm;
+    border-radius:5px;
+
+}
+header{
+    height:75vh;
+   
+}
+button:hover{
+    color: rgb(123, 0, 255);
+    }
+

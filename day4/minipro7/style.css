@@ -1,0 +1,10 @@
+ header nav {
+    text-decoration: none;
+    letter-spacing: 7px;
+    padding: 2px;
+    font-family: "Roboto", sans-serif;
+   
+}
+body{
+    background-color: aquamarine;
+}

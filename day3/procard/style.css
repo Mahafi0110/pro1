@@ -1,0 +1,57 @@
+*{
+   margin:0%;
+   padding:0%;
+   text-align: center;
+  
+}
+header{
+    text-align: center;
+    padding: 2%;
+    margin: 2px;
+    word-spacing: 30px;
+    font-size: 2em;
+    background-color: rgba(142, 227, 171, 0.867);
+}
+body{
+    background-color: rgba(142, 227, 171, 0.867);
+}
+button{
+    border-radius:15px;
+    background-color:rgb(63, 58, 58);
+    color:white;
+    width:150px;
+    height:30px;
+}
+button:hover{
+    background-color:blue;
+}
+tr{
+     background-color: rgb(205, 221, 216);
+     cursor: pointer;
+     align-content: center;
+     }
+p{
+    font-size: large;
+    font-weight: 400;
+}
+.card{
+    border:2px solid black;
+    width:50%;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+   
+}
+#table{
+    border:1px solid black;
+    justify-content: center;
+    background:linear-gradient(to right,rgb(150, 21, 40),lightgrey);
+    height:15cm;
+}
+.card td{
+    border:1px solid black;
+}
+footer{
+    background-color: rgb(16, 60, 60);
+    color:beige
+}

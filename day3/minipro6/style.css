@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+}
+header{
+    background-color: darkblue;
+    text-align: center;
+    color:beige;
+}
+#aboutme{
+    background-color:grey;
+}
+#skills{
+    background: radial-gradient(circle,skyblue,white);
+}
+footer{
+    background-color: darkblue;
+    color:beige;
+}
+h2{
+    background-color: lightcyan;
+    
+}
+
+
+

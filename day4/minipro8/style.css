@@ -1,0 +1,22 @@
+
+body{
+    background:linear-gradient(to right,rgb(195, 13, 195),rgb(20, 20, 199));
+    color:white;
+    font-size: large;
+}
+h1{
+    text-align:center;
+}
+section{
+   background-color:rgba(248, 236, 236, 0.3);
+   color:white;
+   text-align:center;
+   width:50%
+}
+#contact{
+    text-align:left;
+}
+
+footer{
+    background-color: blue;
+}
