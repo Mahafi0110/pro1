@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            border: 2px solid red;
+            height:80vh;
+        }
+
+        .row {
+            display: flex;
+           
+            justify-content: space-around;
+        }
+        .col1,
+        .col3 {
+            width: 40%;
+             border:2px solid black;
+             height:80vh;
+        }
+        
+        .col2{
+            width:38%;
+            border:2px solid green;
+            height:80vh; 
+        }
+        img{
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col1">
+                <div class="col1-child1">
+                    <img src="./assests/image/1.jpg">
+                </div>
+                <div class="col1-child2">
+                    <img src="./assests/image/3.jpg" height="350px;">
+                </div>
+            </div>
+            <div class="col2">
+            <div class="col2-child1">
+                <img src="./assests/image/t8.jpg" height="690px">
+            </div>
+            </div>
+            <div class="col3">
+                <div class="col3-child1">
+                    <img src="./assests/image/5.jpg">
+                </div>
+                <div class="col3-child2">
+                    <img src="./assests/image/4.jpg" height="350px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
