@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex container</title>
+    <style>
+        *{
+            margin:0%;
+            padding:0%;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 50%;
+            margin:auto;
+            display:flex;
+            border:2px solid red;
+            padding:50px;
+        }
+        .child1,.child2,.child3{
+            border: 1px solid black;
+        }
+        .child1{
+            flex-basis:100px;
+            
+        }
+        .child2{
+            flex-basis:200px;
+           
+        }
+        .child3{
+            flex-basis:400px;
+           ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child1">Child1</div>
+        <div class="child2">Child2</div>
+        <div class="child3">Child3</div>
+    </div>
+</body>
+</html>

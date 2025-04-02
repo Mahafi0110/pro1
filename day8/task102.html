@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex container</title>
+    <style>
+        *{
+            margin:0%;
+            padding:0%;
+            box-sizing: border-box;
+        }
+        .container{
+            width:80%;
+            margin:auto;
+            display:flex;
+            justify-content: center;
+            border:2px solid red;
+            padding:30px;
+            background-color: beige;
+        }
+        .child1,.child2,.child3{
+            border: 1px solid black;
+        }
+        .child1{
+            flex-grow:3;
+            flex-shrink: 2;
+            flex-basis:200px ;
+        }
+        .child2{
+            flex-grow:2;
+            flex-shrink:1 ;
+            flex-basis:50px;
+        }
+        .child3{
+            flex-grow:1;
+            flex-shrink:0;
+            flex-basis:10px ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child1">Child1</div>
+        <div class="child2">Child2</div>
+        <div class="child3">Child3</div>
+    </div>
+</body>
+</html>

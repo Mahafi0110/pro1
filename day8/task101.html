@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex container</title>
+    <style>
+        *{
+            margin:0%;
+            padding:0%;
+            box-sizing: border-box;
+        }
+        .container{
+            width:80%;
+            margin:auto;
+            display:flex;
+            flex-direction: column;
+            gap:30px;
+            border:2px solid red;
+        }
+        .item1,.item2,.item3{
+            border:2px solid black;
+            width:30%;
+            text-align: center;
+            padding:30px;
+            
+        }
+        .item1{
+            align-self:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">Item1</div>
+        <div class="item2">Item2</div>
+        <div class="item3">Item3</div>
+    </div>
+</body>
+</html>

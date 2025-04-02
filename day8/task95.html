@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            border: 2px solid black;
+            display: flex;
+            gap: 100px;
+            padding: 100px;
+            background-color: rgb(192, 118, 22);
+
+        }
+
+        .child1,
+        .child2,.child3 {
+            border: 2px solid rgb(224, 15, 15);
+            display: flex;
+            flex-wrap: wrap;
+            color:white;
+            font-weight: bolder;
+            padding:30px;
+            background-color: rgb(24, 210, 210);
+
+        }
+
+        .child1 {
+            order: 3;
+        }
+
+        .child2 {
+            order:2 ;
+        }
+        .child2 {
+            order:1 ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="child1">
+            <p>This is container1</p>
+        </div>
+       <div class="child2">
+            <p>This is container2</p>
+        </div>
+        <div class="child3">
+            <p>This is container3</p>
+        </div>
+    </div>
+</body>
+
+</html>

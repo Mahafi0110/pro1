@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            border: 2px solid black;
+            display: flex;
+            gap: 100px;
+            padding: 100px;
+            background-color: antiquewhite;
+
+        }
+
+        .child1,
+        .child2 {
+            border: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .child1 {
+            flex-basis:300px;
+        }
+
+        .child2 {
+            flex-basis: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="child1">
+            <p>This is container1</p>
+        </div>
+        <div class="child2">
+            <p>This is container2</p>
+        </div>
+    </div>
+</body>
+
+</html>

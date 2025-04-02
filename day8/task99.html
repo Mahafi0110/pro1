@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .layouts {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 30px;
+            width: 50%;
+            border: 3px solid red;
+        }
+
+        .layout1,
+        .layout2,
+        .layout3 {
+            display: flex;
+            flex-direction:column;
+            padding: 50px;
+            border: 2px solid black;
+        }
+
+        .layout1 {
+            flex-grow: 3;
+        }
+        .layout2 {
+            flex-grow: 0;
+        }
+        .layout3 {
+            flex-grow: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layouts">
+        <div class="layout1">
+            <div class="column1">column1</div>
+        </div>
+        <div class="layout2">
+            <div class="column2">column2</div>
+        </div>
+        <div class="layout3">
+            <div class="column3">column3</div>
+        </div>
+    </div>
+</body>
+
+</html>
