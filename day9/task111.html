@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container {
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(6, 1fr);
+            border: 2px solid black;
+            width:80%;
+            height:90vh;
+            background-color: rgb(12, 64, 109);
+
+        }
+
+        .grid-item {
+           border: 2px solid black;
+            width: 200px;
+            height: 100px;
+            border-radius: 8px;
+            gap: 20px;
+            background-color: #a51818;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <p>This is card1</p>
+        </div>
+        <div class="grid-item">
+            <p>This is card2</p>
+        </div>
+        <div class="grid-item">
+            <p>This is card3</p>
+        </div>
+        <div class="grid-item">
+            <p>This is card4</p>
+        </div>
+        <div class="grid-item">
+            <p>This is card5</p>
+        </div>
+        <div class="grid-item">
+            <p>This is card6</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

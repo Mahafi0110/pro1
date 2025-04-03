@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #d60909;
+    padding: 20px;
+}
+
+.gallery {
+    display:grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+figcaption{
+    color:white;
+    font-size: larger;
+    width: 350px;
+    background-color: grey;
+    text-align: center;
+}
