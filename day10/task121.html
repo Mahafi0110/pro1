@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 80px 200px 60px;
+            gap: 20px;
+            padding: 10px;
+            grid-template-areas:
+                "header header header";
+        }
+
+        .header {
+            grid-area: header;
+            background-color: rgba(10, 188, 99, 0.4);
+            color:white;
+            line-height: 80px;
+            font-size:24px;
+        }
+       </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">Header</div>
+     </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 80px 200px 60px;
+            gap: 20px;
+            padding: 10px;
+            grid-template-areas:
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #2196;
+            color:white;
+            line-height: 80px;
+            font-size:24px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(11, 115, 206);
+            width:80vh;
+        }
+        .maincontent{
+            grid-area: main;
+            background-color: rgb(51, 207, 155);
+            width:auto;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">sidebar</div>
+        <div class="maincontent">maincontent</div>
+        <div class="footer">footer</div>
+    </div>
+
+</body>
+
+</html>
