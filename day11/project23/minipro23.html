@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial￾scale=1.0">
+    <title>Sticky Position Example</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0%;
+        }
+
+        header {
+            background:lightskyblue;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            text-align: center;
+            word-spacing: 30px;
+            font-size: larger;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+            height: 800px;
+        }
+
+        section:nth-child(even) {
+            background: #ae1414;
+        }
+
+        section:nth-child(odd) {
+            background: #41b951;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sticky Navigation Example</h1>
+    </header>
+    <nav>
+        <a href="#section1">Menu</a>
+        <a href="#section2">Home</a>
+        <a href="#section3">Contact</a>
+        <a href="#section4">AboutUs</a>
+    </nav>
+    <section id="section1">
+        <h2>Section 1</h2>
+        <p>This is the Section1.</p>
+        <p>Here you can see the menu of our Website </p>
+    </section>
+    <section id="section2">
+        <h2>Section 2</h2>
+        <p>This is the Section2.</p>
+        <p>Here you can see the Home page of our Website </p>
+    </section>
+    <section id="section3">
+        <h2>Section 3</h2>
+        <p>This is the Section3.</p>
+        <p>Here you can see Conatact section   of our Website </p>
+    </section>
+    <section id="section4">
+        <h2>Section 4</h2>
+        <p>This is the Section4.</p>
+        <p>Here you can read our  about  of our Website </p>
+        
+    </section>
+</body>
+
+</html>
