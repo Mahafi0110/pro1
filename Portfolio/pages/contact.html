@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        header {
+            width: 100%;
+            height: 60vh;
+            background-image: url(../assests/customer.webp);
+            text-align: center;
+            color: blue;
+            font-size: 40px;
+            padding: 40px;
+            object-fit: cover;
+
+        }
+
+        a {
+            text-decoration: none;
+            line-height: 80px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        main {
+
+            background-color: rgb(240, 240, 203);
+            padding: 80px;
+            width: 100%;
+            height: 100%;
+            font-size: xx-large;
+        }
+
+        .container1 {
+            display: flex;
+            gap: 90px;
+
+        }
+
+        .custom-form {
+            padding: 20px;
+
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 40%;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(2.2);
+            margin-right: 19px;
+        }
+
+        #message {
+            width: 50%;
+            height: 150px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background: linear-gradient(to right, red, orange);
+            width: 150px;
+            color: white;
+            font-size: medium;
+            border-radius: 8px;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer button {
+            padding: 10px;
+            background: linear-gradient(to right, red, orange);
+            width: 150px;
+            color: white;
+            font-size: medium;
+        }
+
+        footer {
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            color: white;
+            padding: 100px;
+            line-height: 40px;
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Contact</h1>
+    </header>
+    <main>
+        <div class="container1">
+            <div class="con1">
+                <h1>Let's Talk</h1>
+                <a href="#">JessicaHornes</a><br>
+                <a href="#">(012)345-6789</a><br>
+                <a href="#">Jessh.slack.com</a><br>
+            </div>
+            <div class="con2">
+                <p>Ready to start a journey together?
+                    Fill the form below and let´s connect!</p>
+                <form class="custom-form">
+                    <input type="text" id="text" placeholder="First Name">
+                    <input type="text" id="text" placeholder="Last Name"><br><br>
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="text" id="text" placeholder="Company"><br><br>
+                    <input type="text" id="text" placeholder="Attatchment" (optional)><br><br>
+                    <textarea id="message">Message*</textarea>
+                    <p style="font-weight: bold;">Why are you interested in speaking with me?</p><br><br>
+                    <input type="checkbox" name="I need help with my company billings">I need help with my company
+                    billings<br><br>
+                    <input type="checkbox" name="I need some advice">I need some advice<br><br>
+                    <input type="checkbox" name="I am looking for someone to hire">I am looking for someone to hire
+                    <br><br>
+                    <input type="checkbox" name="something else">Something else<br><br>
+                    <button>Contact Me</button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+
+            <h1 style="font-size:50px; margin-bottom: 70px;">Listening to your wishes & ideas!</h1>
+            <button>Schedule a Discussion</button>
+            <p>Contact:
+                4222 Ryder Avenue Seattle,
+                WA 98109</p>
+            <hr>
+            <p>Terms & Conditions | Privacy Policy | Help & Support</p>
+            <p>&copy; 2025</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

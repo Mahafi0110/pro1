@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            text-align: left;
+            font-style: initial;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 40px;
+            word-spacing: 40px;
+            text-align: right;
+            Z-index: 1;
+        }
+
+        header button {
+            padding: 10px;
+            background: linear-gradient(to right, red, orange);
+            width: 150px;
+            color: white;
+            font-size: medium;
+
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .Home {
+            display: flex;
+            align-items: center;
+            background-color: rgb(26, 13, 13);
+            padding: 50px;
+            line-height: 50px;
+            color: white;
+            padding-left: 70px;
+            gap: 30px;
+        }
+
+
+        .content {
+            background-color: rgb(232, 201, 201);
+            line-height: 30px;
+            padding: 40px;
+            margin: auto;
+
+        }
+
+        .about h1 {
+            font-size: 60px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px;
+            width: 150px;
+            border: 2px solid red;
+            border-radius: 15px;
+            cursor: pointer;
+            color: brown;
+            font-size: larger;
+        }
+
+        button:hover {
+            background-color: lightseagreen
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .certificate {
+            background-color: rgb(153, 203, 246);
+            padding: 40px;
+        }
+
+        .certifi {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 200px auto;
+            background-color: rgb(153, 203, 246);
+            padding: 10px;
+            gap: 30px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .My {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 200px auto;
+            background-color: rgb(205, 219, 214);
+            box-shadow: 2px 2px 15px grey;
+            border-radius: 30px;
+            gap: 20px;
+        }
+
+        .skills {
+            background-color: rgb(205, 219, 214);
+            padding: 50px;
+            line-height: 30px;
+
+        }
+
+        .skill {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .Book {
+            padding: 40px;
+            align-items: center;
+            line-height: 80px;
+        }
+
+        .MyService {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .myservi {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 200px;
+            gap: 20px;
+            padding: 60px;
+        }
+
+        .item {
+            border: 2px solid black;
+            width: 200px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: antiquewhite;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        footer button{
+            padding: 10px;
+            background: linear-gradient(to right, red, orange);
+            width: 150px;
+            color: white;
+            font-size: medium;
+        }
+
+        footer {
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            color: white;
+            padding: 100px;
+            line-height: 40px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="../assests/logo.png"></h1>
+        <nav>
+            <a href="#Home">Home</a>
+            <a href="#blog">Blog</a>
+            <a href="#page">Page</a>
+            <a href="../pages/contact.html">Contact</a>
+            <button>Contact</button>
+        </nav>
+
+    </header>
+    <main>
+        <section id="Home">
+            <div Class="Home">
+                <img src="../assests/content-image-1.png">
+                <h1 style="font-size: 60px;">Time for you<br> to relax!</h1>
+                <p>Jessica Will take care <br> of things for you</p>
+                <div class="btn1">
+                    <button>Our Services</button>
+                    <button>Portfolio</button>
+                </div>
+            </div>
+        </section>
+        <div class="about">
+            <div class="container">
+                <img src="../assests/about.png">
+            </div>
+            <div class="content">
+                <h1>About Me</h1>
+                <p>I am Jessica and I am a professional accountat. I am a CPA with over 10 years of experience in a
+                    variety
+                    of topics,<br> including but not limited to the technical with accounting, audit, finance (both
+                    personal
+                    and
+                    for the business).<br>
+                    About Me</p>
+                <button>About Me</button>
+            </div>
+        </div>
+        <section id="blog">
+            <section class="certificate">
+                <h1 style="font-size:50px;">My Certifications</h1>
+                <div class="certifi">
+                    <div class="My">
+                        <h1>ACA</h1>
+                        <p>Associate Chartered Accountant</p>
+                    </div>
+                    <div class="My">
+                        <h1>ICAEW</h1>
+                        <p>Certificate in Finance,Accounting and Business</p>
+                    </div>
+                    <div class="My">
+                        <h1>CIA</h1>
+                        <p>Certified Internal Auditor</p>
+                    </div>
+                    <div class="My">
+                        <h1>AACSB</h1>
+                        <p>Association to Advance Collegiate Schools of Busineess</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="page">
+            <h1 style="font-size: 50px;">My Services</h1>
+            <section class="MyService">
+                <img src="../assests/service.png">
+                <div class="myservi">
+                    <div class="item">
+                        <h2>Book Keeping</h2><br>
+                        <p>Being good with numbers is the most important part.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Business Analysis</h2><br>
+                        <p>Gain Expertise in Analytics & Master Implement.</p>
+                    </div>
+                    <div class="item">
+                        <h2>Tax Prepration</h2><br>
+                        <p>Process of preparing the tax returns, often returns</p>
+                    </div>
+                    <div class="item">
+                        <h2>Quickbooks Setup</h2><br>
+                        <p>Time-saving tools you need to grow your business</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="skills">
+            <h1 style="font-size: 50px;">Software Skills</h1>
+            <p>I am a professional in several areas and I am proud of my
+                skills in the following:</p>
+            <div class="skill">
+                <img src="../assests/software-1.jpg" class="software1">
+                <img src="../assests/software-2.jpg" class="software2">
+                <img src="../assests/software-3.jpg" class="software3">
+            </div>
+
+        </section>
+        <section class="Book">
+            <h1 style="font-size: 50px;">Time to Book Me!</h1>
+            <p>Book a call with me and forget all the hassle that
+                comes with paper work. I will do it for you!</p>
+            <button>Contact Me</button>
+
+        </section>
+
+    </main>
+    <footer>
+        <div class="container">
+
+            <h1 style="font-size:50px; margin-bottom: 70px;">Listening to your wishes & ideas!</h1>
+            <button>Schedule a Discussion</button>
+            <p>Contact:
+                4222 Ryder Avenue Seattle,
+                WA 98109</p>
+            <hr>
+            <p>Terms & Conditions | Privacy Policy | Help & Support</p>
+            <p>&copy; 2025</p>
+        </div>
+    </footer>
+   
+
+</body>
+
+</html>
