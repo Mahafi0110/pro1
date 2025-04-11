@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            border: 1px solid blue;
+            width: 50%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            
+
+        }
+
+        .btn {
+            border: 1px solid rgb(0, 255, 30);
+            width: 90px;
+            border-radius: 20px;
+            padding: 30px;
+            font-size: 22px;
+            cursor: pointer;
+            background-color: azure;
+        }
+        @media (max-width:600px){
+            .btn{
+                padding:20px;
+                font-size: 12px;
+            }
+           
+        }
+        @media (min-width:768px) and (max-width:1024px){
+            .btn{
+                padding:29px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <div class="btn">Click me</div>
+        <div class="btn">Click me</div>
+        <div class="btn">Click me</div>
+        <div class="btn">Click me</div>
+
+    </div>
+
+</body>
+
+</html>

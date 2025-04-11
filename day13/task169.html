@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    @media (min-width:768px) and(orientation:landscape){
+        .container{
+            background-color: blueviolet;
+            flex-direction: row;
+        }
+        .box{
+            flex:1;
+            margin:0.5rem;
+            background-color: aquamarine;
+        }
+    }
+    @media (min-width:1920px){
+        .container{
+           max-width: 1800px;
+           margin:auto;
+           background-color: aliceblue;
+           padding:20px;
+        }
+        .box{
+            font-size: 1.5rem;
+            padding:20px;
+            background-color: aquamarine;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+    
+</body>
+</html>

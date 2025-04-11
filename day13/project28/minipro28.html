@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            background-color: palevioletred;
+           
+        }
+        .landing-page{
+            padding:1rem;
+            text-align: center;
+
+        }
+        .hero{
+            padding:20px;
+            background-color: #f5f5f5;
+        }
+        button{
+            padding:10px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color:white;
+            border:none;
+        }
+        .feature{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap:10px;
+            align-items: center;
+            margin-top:10px;
+           
+           
+        }
+        .items{
+            background-color:#e9ecef;
+            padding:30px;
+        }
+        @media (min-width:680px){
+            .feature{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width:1024px){
+            .feature{
+                grid-template-columns: 1fr 1fr 1fr ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-page">
+        <section class="hero">
+            <h1>Welcome to Our WebPage.</h1>
+            <button>Get Started</button>
+        </section>
+        <section class="feature">
+            <div class="items">Fast n Secure</div>
+            <div class="items">User Friendly</div>
+            <div class="items">24/7 Support</div>
+        </section>
+    </div>
+    
+
+</body>
+
+</html>
