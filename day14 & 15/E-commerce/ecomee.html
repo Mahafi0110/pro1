@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce ProductPage</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, pink, lightcoral);
+            background-image: url('../image/Wallpaper.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+
+        header {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 40px; 
+            justify-content: end;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .sec1 {
+            display: flex;
+            border: 2px solid black;
+            padding: 40px;
+
+
+        }
+
+        .styled {
+            writing-mode: horizontal-tb;
+            color: blueviolet;
+            font-weight: bolder;
+            text-shadow: 1px 1px 3px #aaa;
+            font-size: 80px;
+            margin-right: 80px;
+            word-spacing: 15px;
+            opacity:0;
+            transform: translatex(-100%);
+            animation:slidein 0.6s forwards ease-out;
+            
+        }
+        @keyframes slidein{
+            to{
+                opacity:1;
+                transform: translateX(0);
+            }
+        }
+        
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 2px solid red;
+            width: 30%;
+            border-radius: 8px;
+            text-align: left;
+
+        }
+
+        .container2 {
+            border: 2px solid red;
+            width: 20%;
+            border-radius: 5px;
+            height: 500px;
+
+
+        }
+
+        .item {
+
+            text-align: center;
+            padding: 10px;
+        }
+
+
+        button {
+            padding: 10px;
+            background-color: yellow;
+            color: black;
+            border-radius: 8px;
+            border: none;
+            width: 200px;
+            font-weight: bolder;
+            cursor: pointer;
+
+        }
+        button:hover{
+            transform: scale(1.1);
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            filter:grayscale(100%);
+        }
+
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="sec1">
+
+            <h1 class="styled">NEW ERA<br> OF SOUNDS</h1>
+            <div class="container">
+                <div class="item"><img src="../image/headphone2.webp"></div>
+                <div class="item">
+                    <p>VOYEZ HeadPhone</p>
+                </div>
+                <div class="item">
+                    <p><del>₹ 3999/-</del></p><br>
+                    <em>Offer Price</em>
+                    <p>₹ 1999/-</p>
+                </div>
+                <div class="item">
+                    <button>4.3 ★★★★☆</button><br>
+                </div>
+                <div class="item">
+                    <button>ADD TO CART</button>
+                </div>
+            </div>
+
+            </div>
+            <div class="container2">
+                <p>Sony WH-CH720N Noise Cancellation Wireless Bluetooth Over Ear Headphones with Mic, Up to 35Hrs
+                    Battery- Black</p>
+                <div class="item">
+                    <img src="../image/head1.webp">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 VOYEZ All Rights Reserved. </p>
+    </footer>
+
+</body>
+
+</html>

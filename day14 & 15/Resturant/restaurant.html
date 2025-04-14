@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll Navigation</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+        }
+
+        nav {
+            top: 0;
+            left: 0;
+            word-spacing: 40px;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #50e3c2;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        .section1{
+            position:relative;
+            overflow:hidden;
+            color:white;
+        }
+
+        .section1::before{
+            content:"";
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background-image:url('../image/hotel.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+            z-index:-1;
+            opacity:0.8;
+    
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 300px 300px 300px 300px;
+            gap: 20px;
+        }
+
+        .item {
+            height: 320px;
+            font-style: italic;
+            font-size: 30px;
+            border: 2px solid black;
+
+        }
+
+        .item img {
+            width: 100%;
+        }
+
+        .section2 {
+            height: 80vh;
+            color: rgb(138, 44, 44);
+            background-color: black;
+        }
+
+        .section3 {
+            margin-top: 10px;
+            background-color: black;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 12px;
+            border: 2px solid red;
+            background: black;
+            color: white;
+            font-weight: bolder;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align: center; color:white">Tasty</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Offer</a>
+            <a href="#">Menu</a>
+            <a href="#">Category</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section1">
+            <h1>Welcome to Taste Restaurant</h1>
+            <p>The Best Coffee Restaurant in Brooklyn</p>
+        </section>
+        <section class="section2">
+            <h2 style="margin-bottom: 9%;">Todays Menu</h2>
+            <div class="container">
+                <div class="item">
+                    <img src="../image/food1.jpeg">
+                    <p>Bake Potato Pizza</p>
+                    <p>₹ 400</p>
+                </div>
+                <div class="item">
+                    <img src="../image/food2.jpeg">
+                    <p>Salted Fried Chicken</p>
+                    <p>₹ 600</p>
+                </div>
+                <div class="item">
+                    <img src="../image/food3.jpeg">
+                    <p>Italian Sauce Mushroom</p>
+                    <p>₹ 500</p>
+                </div>
+                <div class="item">
+                    <img src="../image/food4.jpeg">
+                    <p>Fried Potato w/ Garlic</p>
+                    <p>₹ 800</p>
+                </div>
+            </div>
+        </section>
+        <section class="section3">
+            <h1 style="font-style:italic;">Book a Table</h1>
+            <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aperiam
+                repellendus molestiae sunt tempore quidem nobis soluta, voluptatem amet nesciunt!</p>
+            <button>Book Now</button>
+        </section>
+    </main>
+</body>
+
+</html>

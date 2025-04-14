@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:pink;
+        }
+        .container{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:30px;
+            margin:35px 35px;
+            padding:30px;
+         
+        }
+        .card1 {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid green;
+            text-align: center;
+            padding:20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .card2 {
+            display: flex;
+            flex-direction: column;
+            border: 4px solid red;
+            text-align: center;
+            padding:20px;
+            background:linear-gradient(to bottom,pink,red) ;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .card3 {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid blue;
+            text-align: center;
+            padding:20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-head{
+            background-color: green;
+            padding:20px;
+            color:white;
+            font-size: 2em;
+        }
+        .card-foot{
+            padding:20px;
+        }
+        .card2 .card-head{
+            background-color:red;
+        }
+        .card3 .card-head{
+            background-color:blue;
+        }
+        button{
+            padding:10px;
+            width:100px;
+            border-radius: 8px;
+            background-color: grey;
+            border:none;
+            color:white;
+            font-weight: bolder;
+            cursor: pointer;
+
+        }
+        button:hover{
+            background-color: violet;
+            transform: scale(1.1);
+        }
+        .card2{
+            animation:pulse 1.2s infinite;
+        }
+        @keyframes pulse{
+            0%{
+               transform: scale(1);
+            }
+            50%{
+               transform: scale(1.05);
+            }
+            100%{
+               transform: scale(1);
+            }
+           
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1 style="text-align: center;">OUR PRICING TABLE</h1>
+        <div class="container">
+            <div class="card1">
+                <div class="card-head">Basic</div>
+                <div class="card-content">
+                    <p>Always,forever</p>
+                    <h1 style="font-size: 3rem;">Free</h1>
+                    <p>Good For Startups</p>
+                    <p>individuals and small teams</p>
+                    <p>1 Webiste</p>
+                    <hr>
+                    <p>1 GB Storage</p>
+                    <hr>
+                    <p>10GB bandwidth/mo</p>
+                    <hr>
+                    <p>Ticket Support</p>
+                </div>
+                <div class="card-foot">
+                    <button>Try it</button>
+                </div>
+            </div>
+        <div class="card2">
+            <div class="card-head">Professional</div>
+            <div class="card-content">
+                <p>Per Year</p>
+                <h1 style="font-size: 3rem;">₹2,999</h1>
+                <p>Growing Business</p>
+                <p> small to medium teams</p>
+                <p>Upto 2  Webiste</p>
+                <hr>
+                <p>5 GB Storage</p>
+                <hr>
+                <p>50GB bandwidth/mo</p>
+                <hr>
+                <p>Ticket Support &  Email Support</p>
+               
+            </div>
+            <div class="card-foot">
+                <button>Check OUT</button>
+            </div>
+        </div>
+        <div class="card3">
+            <div class="card-head">Business</div>
+            <div class="card-content">
+                <p>Per Year</p>
+                <h1 style="font-size: 3rem;">₹4999</h1>
+                <p>Our best deal</p>
+                <p>Medium to large teams</p>
+                <p>Upto 5Webiste</p>
+                <hr>
+                <p>10 GB Storage</p>
+                <hr>
+                <p>1000GB bandwidth/mo</p>
+                <hr>
+                <p>Ticket Support & Email Support</p>
+               
+            </div>
+            <div class="card-foot">
+                <button>Check OUT</button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            background-color: grey;
+        }
+
+        .container {
+            height: 90vh;
+            width: 100%;
+            background-image: url('../image/travel.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+        .item {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 10px 40px;
+        }
+
+        .btn1 {
+            padding: 15px;
+            color: black;
+            font-weight: bold;
+            border: 3px solid blue;
+            text-transform: uppercase;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 300px 300px;
+            gap: 80px;
+            margin-left: 30px;
+            padding: 20px;
+            align-items: center;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #Packages {
+            background-color: #333;
+            color: white;
+
+        }
+
+        details {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            background: #f4f4f4;
+            color:black;
+        }
+
+        summary {
+            list-style: none;
+            cursor: pointer;
+
+        }
+
+        summary img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+
+        }
+
+        details[open]summary img {
+            transform: scale(1.02);
+        }
+
+        .details-content {
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            animation: slidedown 0.5s ease-in-out;
+
+        }
+
+        .details-content p {
+            margin-bottom: 10px;
+        }
+
+        .details-content button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2a5298;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @keyframes slidedown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: grey;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Travel Agency Home</h1>
+        <nav>
+            <ul>
+                <li><a href="#Landing">Landing</a></li>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Packages">Packages</a></li>
+                <li><a href="#Team">Team</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="Home">
+        <div class="container">
+            <div class="item">
+                <h1 style="font-size: 70px;">Explore the World</h1>
+                <p>Lets Join and See the World</p>
+            </div>
+            <button class="btn1">Explore MORE</button>
+        </div>
+    </section>
+    <section id="Packages">
+        <h1 style="font-size: xx-large;">Our Package</h1>
+        <div class="container2">
+            <details>
+                <summary> <img src="../image/travel2.jpg" height="300px"></img></summary>
+                <div class="details-content">
+                    <p>1 Week</p>
+                    <p>₹50,000/-</p>
+                    <button>Get Package</button>
+                </div>
+            </details>
+            <details>
+                <summary><img src="../image/travel3.jpg" height="300px"></img></summary>
+                <div class="details-content">
+                    <p>3 Week</p>
+                    <p>₹70,000/-</p>
+                    <button>Get Package</button>
+                </div>
+            </details>
+            <details>
+                <summary> <img src="../image/travel4.jpg" height="300px"></img></summary>
+                <div class="details-content">
+                    <p>4 Week</p>
+                    <p>₹60,000/-</p>
+                    <button>Get Package</button>
+                </div>
+            </details>
+            <details>
+                <summary>  <img src="../image/travel5.jpg"></img></summary>
+                <div class="details-content">
+                    <p>3 Week</p>
+                    <p>₹90,000/-</p>
+                    <button>Get Package</button>
+                </div>
+            </details>
+            <details>
+                <summary>  <img src="../image/travel6.jpg"></img></summary>
+                <div class="details-content">
+                    <p>5 Week</p>
+                    <p>₹80,000/-</p>
+                    <button>Get Package</button>
+                </div>
+            </details>
+            <details>
+                <summary>  <img src="../image/travel.jpg"></img></summary>
+                <div class="details-content">
+                    <p>2 Week</p>
+                    <p>₹40,000/-</p>
+                    <button>Get Package</button>
+                </div>
+            </details>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Travel Agency Home. All Rights Reserved.</p>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Image Gallery</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: white;
+            padding: 10px;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+
+        }
+        
+            
+        
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            justify-content: end;
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bolder;
+            color:black;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            padding: 20px;
+        }
+
+        .sec1 {
+            background-image: url('../image/photo7.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 50vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        button {
+            background-color: seagreen;
+            width: 260px;
+            padding: 10px;
+            color: white;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .sec2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 250px;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .gallery img {
+
+
+            width: 300px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 style="margin-left: 20px;">PIXELS</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Examples</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="sec1">
+            <div class="container">
+                <div class="item">
+                    <h1 style="font-size: 35px;">Beautiful Client Photo galleries</h1>
+                </div>
+                <div class="item">
+                    <p>The better way for modern photographers to share, deliver, proof and sell online</p>
+                </div>
+                <div class="item"><button>Get Started</button></div>
+            </div>
+        </section>
+        <h2 style="text-align: center; margin-bottom: 20px;">Image Gallery</h1>
+        <section class="sec2">
+           
+                <div class="gallery">
+                    <img src="../image/photo2.jpg" alt="Image 1">
+                    <img src="../image/photo3.jpg" alt="Image 2">
+                    <img src="../image/photo5.jpg" alt="Image 3">
+                    <img src="../image/photo6.jpg" alt="Image 4">
+                    <img src="../image/tphoto4.jpg" alt="Image 5">
+                    <img src="../image/photo8.jpg" alt="Image 6">
+                    <img src="../image/photo9.jpg" alt="Image 7">
+                    <img src="../image/tphoto.jpg" alt="Image 8">
+                    <img src="../image/photo10.webp" alt="Image 9">
+                </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 20px;
+            padding: 10px;
+            background-color: pink;
+
+        }
+
+        #Home {
+            background: url("https://tse4.mm.bing.net/th?id=OIP.-umqiEUqbRwUWVJgmO4T3AHaE7&pid=Api&P=0&h=180");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #Receipe {
+            background: url("https://in.images.search.yahoo.com/images/view;_ylt=AwrKEb46mfpnyt40SQC9HAx.;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzkyODdhZDIxYzk4YjJiYzg5NjFiYTZjZTQ3MGVkMmYzBGdwb3MDNgRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dplain%2Bimage%2Bbackground%2Bwhite%26ei%3DUTF-8%26type%3DE211IN714G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D6&w=1000&h=1000&imgurl=wallpapers.com%2Fimages%2Fhd%2Fwhite-plain-background-e13fuhd0i4j2yxww.jpg&rurl=https%3A%2F%2Fwallpapers.com%2Fwhite-plain-background&size=85KB&p=plain+image+background+white&oid=9287ad21c98b2bc8961ba6ce470ed2f3&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=%5B100%2B%5D+White+Plain+Backgrounds+%7C+Wallpapers.com&b=0&ni=80&no=6&ts=&tab=organic&sigr=D34ZfuShwrQ8&sigb=Iys68a5FLT6X&sigi=fHGZu1lb9cyQ&sigt=LO9BJa4oYNrB&.crumb=T9P48a.Inyd&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211IN714G0");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: white;
+            color: rgb(21, 219, 110);
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            justify-content: end;
+        }
+
+        a {
+            text-decoration: none;
+            color: green;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .container {
+
+            position: relative;
+            display: inline-block;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        .container3 {
+            border: 2px solid grey;
+            width: 600px;
+            height: 400px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: blanchedalmond;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            opacity: 0;
+            font-size: xx-large;
+            animation: fadein 2s forwards;
+        }
+
+        @keyframes fadein {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+        }
+
+        .condainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .box {
+            width: 45%;
+            padding: 20px;
+            background-color: #fefefe;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .box.left {
+            animation-delay: 0.2s;
+            transform: translateX(-100px);
+        }
+
+        .box.right {
+            animation-delay: 0.4s;
+            transform: translateX(100px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2a5298;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>COOKBOOK</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Receipe</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="Home">
+        <h1 style="text-align:start;">Receipes</h1>
+        <div class="container">
+            <div class="item">
+                <img src="../image/paneer-fry-recipe-1-280x280.jpg">
+                <div class="overlay">Kadai Paneer</div>
+            </div>
+
+        </div>
+
+    </section>
+    <div class="condainer">
+        <div class="box left">
+            <h2>Ingredients</h2>
+            <ol class="list1">
+                <li>paeer</li>
+                <li>Onion</li>
+                <li>Tomato Paste</li>
+                <li>Capsicum</li>
+                <li>Green Chilli</li>
+                <li>Ginger Garlic Paste</li>
+                <li>kasuri Methi</li>
+                <li>All Masalas</li>
+                <li>oil n Salt</li>
+            </ol>
+        </div>
+        <div class="box right">
+            <h2>How to Cook</h2>
+            <ol class="list2">
+                <li>Heat a pan with half a tablespoon oil on a high flame.</li>
+                <li>Saute 1 heaped cup of cubed onions along with 6 to 7 split cashews until they turn transparent
+                    or lightly golden.</li>
+                <li>Add 1 cup chopped tomatoes and continue to saute on medium heat until tomatoes turn mushy and
+                    soft. </li>
+                <li>Let it cool down for a few minutes</li>
+                <li>Then add onion mixture to a blender jar</li>
+                <li>Blend it to smooth paste without adding water.</li>
+                <li>Add onion tomato puree.</li>
+                <li>To the gravy, add 3/4 cup water and mix well. Bring this to a boil. If needed pour another 1/4
+                    cup water.</li>
+                <li>Mix well. Add chopped coriander leaves. Cover and set aside. Do not leave the stove on since it
+                    will continue to cook further. Transfer to a serving bowl.</li>
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <a href="#" class="back-to-top">↑ Top</a>
+    </footer>
+</body>
+
+</html>

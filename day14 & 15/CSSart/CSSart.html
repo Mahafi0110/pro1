@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hero{
+            display:flex;
+            justify-content: center;
+            gap:30px;
+        }
+        .container{
+            width:20%;
+            border:2px solid black;
+            height:200px;
+        }
+        .container2{
+            width:20%;
+            border:2px solid black;
+            height:200px;
+        }
+        .ball {
+            width: 70px;
+            height: 70px;
+            background: orange;
+            border-radius: 50%;
+            position: relative;
+            left:60px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                top: 0;
+            }
+
+            50% {
+                top: 100px;
+            }
+        }
+
+        .cube {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            position:relative;
+            top:100px;
+            left:80px;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .scene {
+            position: relative;
+            height: 300px;
+            background: skyblue;
+        }
+
+        .sun {
+            width: 80px;
+            height: 80px;
+            background: yellow;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: sunPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes sunPulse {
+
+            0%,
+            100% {
+                transform: scale(1) translateX(-50%);
+            }
+
+            50% {
+                transform: scale(1.1) translateX(-50%);
+            }
+        }
+
+        .tree {
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+        }
+
+        .trunk {
+            width: 20px;
+            height: 60px;
+            background: #8B4513;
+            margin: 0 auto;
+        }
+
+        .leaves {
+            width: 60px;
+            height: 60px;
+            background: green;
+            border-radius: 50%;
+            margin: -30px auto 0;
+        }
+
+        .parallax-bg {
+            background: url('../image/theme.jpg');
+            background-size: cover;
+            height: 100vh;
+            position: fixed;
+            width: 100%;
+            z-index: -1;
+            transform: translateZ(0);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 100px 20px;
+            background: rgba(255, 255, 255, );
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="ball"></div>
+        </div>
+       <div class="container2">
+        <div class="cube"></div>
+       </div>
+    </section>
+    
+   
+   
+    <div class="scene">
+        <div class="sun"></div>
+        <div class="tree">
+            <div class="trunk"></div>
+            <div class="leaves"></div>
+        </div>
+    </div>
+    <div class="parallax-bg"></div>
+    <section class="content">
+        <h1>CSS Art & Animations</h1>
+    </section>
+
+
+</body>
+
+</html>
