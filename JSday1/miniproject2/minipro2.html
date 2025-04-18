@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+</head>
+
+<body>
+    <script>
+        let Quiz = {
+            Question: "What is the capital of India?",
+            options: ["mumbai", "delhi", "Chennai", "Kolkata"],
+            correctAnswer: "delhi",
+            userAnswer: null,
+            multipleChoiceOptions: null
+
+        };
+        let Quiz2 = {
+            Question: "What is the color of apple?",
+            options: ["red", "green", "yellow", "white"],
+            correctAnswer: "red",
+            userAnswer: null,
+            multipleChoiceOptions: null
+        }
+
+        console.log(Quiz.Question);
+        console.log(Quiz.options);
+        console.log(Quiz.userAnswer);
+        console.log(Quiz.correctAnswer);
+
+        console.log(Quiz == Quiz2);
+        console.log(Quiz == Quiz);
+
+    </script>
+
+</body>
+
+</html>
