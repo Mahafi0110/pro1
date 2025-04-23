@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Nutrition Plan Application</title>
+    <style>
+        body {
+            font-family: poppins;
+            background: rgba(0, 0, 0, 0.1);
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: grey;
+            padding: 50px;
+            border-radius: 10px;
+            width: 600px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .gender {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .gender label {
+            margin-right: 10px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #ccc;
+            margin-top: 15px;
+        }
+
+        button {
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid white;
+            background-color: #EF5C0B;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width:600px) {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: poppins;
+                background: rgba(0, 0, 0, 0.1);
+                color: white;
+                display: flex;
+                justify-content: center;
+                padding:0;
+                
+            }
+            .form-container {
+            background: grey;
+            padding:0;
+            border-radius: 10px;
+            width: 600px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>NUTRITION PLAN APPLICATION</h2>
+        <p>Get a Job-Oasis Nutrition Plan for just 500 rupees</p>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="E-mail Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <div class="row">
+                <input type="text" placeholder="Height" required>
+                <input type="text" placeholder="Weight" required>
+            </div>
+            <div class="row">
+                <div class="gender">
+                    <label>Gender</label><br>
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">Female</label>
+                </div>
+                <input type="number" placeholder="Age" required>
+            </div>
+            <div class="row">
+                <select required>
+                    <option value="">Please Select a Goal</option>
+                    <option value="weight-loss">Lose Weight </option>
+                    <option value="muscle-gain">Build Muscle</option>
+                    <option value="Athletic Performance">Athletic Performance</option>
+                    <option value="Body Recomposition">Body Recomposition</option>
+                    <option value="Improve Health">Improve Health</option>
+                </select>
+                <select required>
+                    <option value="">Dietary Preference</option>
+                    <option value="veg">Anything</option>
+                    <option value="veg">Mediterranean</option>
+
+                    <option value="veg">Vegetarian</option>
+                    <option value="vegan">Full Plant Based</option>
+                </select>
+            </div>
+            <p class="note">Make sure you’ve filled all the fields correctly before you apply.<br>
+                Once applied and payment done check your registered mail ID.</p>
+            <div class="btn">
+                <button>APPLY NOW</button>
+        </form>
+    </div>
+
+    </div>
+</body>
+
+</html>

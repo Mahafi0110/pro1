@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Analytic</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: poppins;
+            height: 100%;
+            background-color: black;
+            color: white;
+            line-height: 10px;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 90vw;
+
+
+        }
+
+        .left {
+            width: 75%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .right {
+            width: 25%;
+
+        }
+
+        .box {
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .box1 {
+            width: 100%;
+            padding: 8px;
+        }
+
+        .box-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .box2 {
+            border: 2px solid #EF5C0B;
+            width: 70%;
+            height: 300px;
+            box-shadow: 0 2px 15px grey;
+        }
+
+        .box2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .box3 {
+            width: 30%;
+        }
+
+        .box4 {
+            width: 40%;
+            height: 300px;
+        }
+
+        .box5 {
+            width: 60%;
+            height: 300px;
+        }
+
+        .box5 .item {
+            display: flex;
+            width: 100px;
+
+        }
+
+        .box5 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 8px;
+            gap: 30px;
+            width: 200px;
+            height: 300px;
+            border: none;
+        }
+
+        .box3 .item {
+            display: block;
+            padding: 10px;
+            background-color: #EF5C0B;
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .box4 .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+
+
+
+        table {
+            width: 100%;
+            max-width: 400px;
+
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .profilebox {
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .profilebox .items {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(white 10deg 70deg,
+                    grey 70deg 120deg,
+                    #EF5C0B 90deg 360deg);
+            border: 2px solid white;
+        }
+
+        .cir {
+            width: 450px;
+            height: 200px;
+            position: relative;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 0;
+        }
+
+        .dot-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .dot.white {
+            background-color: white;
+        }
+
+        .dot.grey {
+            background-color: grey;
+        }
+
+        .dot.orange {
+            background-color: #EF5C0B;
+        }
+
+        @media (max-width: 700px) {
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: poppins;
+                height: 100%;
+                background-color: black;
+                color: white;
+                line-height: 10px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                width: 90vw;
+
+
+            }
+
+            .left {
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .right {
+                width: 100%;
+
+            }
+
+            .box {
+                border: 2px solid white;
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .box1 {
+                width: 400px;
+                padding: 8px;
+            }
+
+            .box-row {
+                display: flex;
+                gap: 10px;
+            }
+
+            .box2 {
+                border: 2px solid #EF5C0B;
+                width: 300px;
+                height: 300px;
+                box-shadow: 0 2px 15px grey;
+            }
+
+            .box2 img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .box3 {
+                width: 50px;
+                border: none;
+            }
+
+            .box4 .item {
+                display: flex;
+                flex-direction: row;
+                font-size: 5px;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+            }
+
+            .box4 img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .box5 {
+                width: 700px;
+                height: 300px;
+                font-size: 7px;
+            }
+
+            .box5 .item {
+                display: flex;
+                flex-direction: row;
+                width: 100px;
+                overflow-x: hidden;
+
+            }
+
+            .box5 img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width:700px)and(max-width:1000px) {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .container {
+                display: flex;
+                height: 100vh;
+                width: 99vw;
+
+
+            }
+
+            .right {
+                width: 40%;
+                overflow-x: hidden;
+
+            }
+
+            .profilebox {
+                border: 2px solid white;
+                padding: 0;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                width: 600px;
+            }
+
+            .profilebox .items {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: start;
+                font-size: 5px;
+
+
+            }
+
+            .info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FIT-OASIS</h1>
+    <div class="container">
+
+        <div class="left">
+            <div class="box box1">
+                <h1>Hello!</h1>
+                <p>Yedidyah Cherub</p>
+
+            </div>
+            <div class="box-row">
+                <div class="box box2">
+                    <img src="../assests/images/shared image(1).jpg">
+                </div>
+                <div class="box box3">
+                    <div class="item">
+                        <h>2.2 L</h>
+                        <h>Water Litres <img src="../assests/images/water icon-analytics.png"></h>
+                    </div>
+                    <div class="item">
+                        <h>2.45 L</h>
+                        <h>Water Litres <img src="../assests/images/calories icon-analytics.png"></h>
+                    </div>
+                    <div class="item">
+                        <h>124 </h>
+                        <h>Beats/min <img src="../assests/images/heart beat icon-analytics.png"></h>
+                    </div>
+                    <div class="item">
+                        <h>13</h>
+                        <h>Hours Slept <img src="../assests/images/hours slept icon-analytics.png"></h>
+                    </div>
+                </div>
+            </div>
+            <div class="box-row">
+                <div class="box box4">
+                    <div class="item">
+                        <h1>Subscription</h1>
+                        <p>ACTIVE PLAN:FIT-OASIS SILVER</p>
+                        <span>Special . 3 Months</span>
+                    </div>
+                    <div class="item">
+
+                        <img src="../assests/images/dashboard subscription image.png">
+                    </div>
+                </div>
+                <div class="box box5">
+
+                    <h1>Most Trending</h1>
+                    <div class="item">
+                        <img src="../assests/images/dashboard trending image 1.png">
+                        <img src="../assests/images/dashboard trending image 2.png">
+                        <img src="../assests/images/dashboard trending image 3.png">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="profilebox">
+                <div class="items">
+                    <div class="item"><img src="../assests/images/review-yedid image.png"></div>
+                    <div class="item">
+                        <h2>Yedidyah Cherub</h2>
+                        <h3>30 years old</h3>
+                    </div>
+
+                </div>
+                <div class="info">
+                    <div class="item">
+                        <p>Height</p>
+                        <strong>5.7 inches</strong>
+                    </div>
+                    <div class="item">
+                        <p>Weight</p>
+                        <strong>58 kgs</strong>
+                    </div>
+                    <div class="item">
+                        <p>Gender</p>
+                        <strong>Male</strong>
+                    </div>
+                </div>
+                <h3 style="color:#EF5C0B">ENROLLED ON:JAN 12,2025</h3>
+                <h3>EXPIRY ON:MAR 24,2025</h3>
+
+                <div class="item">
+                    <h2 style="margin-bottom: 30px;">ATTENDANCE</h2>
+                    <p style="text-align: center;">February 2025</p>
+                    <table>
+                        <tr>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>T</th>
+                            <th>W</th>
+                            <th>T</th>
+                            <th>F</th>
+                            <th>S</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td style="color:#EF5C0B">1</td>
+                            <td style="color:#EF5C0B">2</td>
+                            <td style="color:#EF5C0B">3</td>
+                            <td style="color:#EF5C0B"> 4</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#EF5C0B">5</td>
+                            <td style="color:#EF5C0B">6</td>
+                            <td style="color:#EF5C0B">7</td>
+                            <td style="color:#EF5C0B">8</td>
+                            <td style="color:#EF5C0B"> 9</td>
+                            <td style="color:#EF5C0B">10</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cir">
+                    <div class="circle">
+                    </div>
+
+                    <div class="dot-container">
+                        <div class="dot white">
+                            <p><small>Total remaining days</small></p>
+                        </div>
+                        <div class="dot grey">
+                            <p><small>Present</small></p>
+                        </div>
+                        <div class="dot orange">
+                            <p><small>Absent</small></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: poppins;
+     background-color: black;
+     color: white;
+     margin: 0;
+     padding: 30px;
+
+ }
+
+ header {
+     color: #fff;
+     padding: 20px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+
+ header h1 {
+     font-size: 24px;
+ }
+
+ nav ul {
+     list-style: none;
+     display: flex;
+     gap: 30px;
+ }
+
+ nav a {
+     color: white;
+     text-decoration: none;
+     font-weight: 500;
+ }
+
+ nav a:hover {
+     color: #EF5C0B;
+
+ }
+
+
+ .hero {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 50px;
+
+ }
+
+ .hero1 {
+     background-image: url('/assests/images/hero\ packages\ image.png');
+     height: 60vh;
+ }
+
+ .hero .item a {
+     display: inline-block;
+     background-color: white;
+     color: black;
+     text-decoration: none;
+     padding: 10px;
+     gap: 20px;
+     font-weight: bolder;
+     margin-top: 30px;
+     font-size: 15px;
+
+ }
+
+ #Home {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     text-align: center;
+     align-items: center;
+     margin: 10px 30px;
+     padding: 40px;
+ }
+
+ #Home a {
+     background-color: #EF5C0B;
+     color: white;
+     width: 200px;
+     padding: 10px;
+     border-radius: 8px;
+     border: none;
+     cursor: pointer;
+     text-decoration: none;
+
+ }
+
+ .packages {
+     text-align: center;
+     padding: 40px;
+
+
+ }
+
+ .packages .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 90px;
+
+ }
+
+ .card {
+     width: 300px;
+     height: 200px;
+     perspective: 1000px;
+ }
+
+ .card-inner {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     transform-style: preserve-3d;
+     transition: transform 0.6s;
+ }
+
+ .card:hover .card-inner {
+     transform: rotateY(180deg);
+ }
+
+ .card-back button:hover {
+     border-color: #EF5C0B;
+     color: #EF5C0B
+ }
+
+ .card-front,
+ .card-back {
+     position: absolute;
+     backface-visibility: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+ }
+
+ .card-front img {
+     object-fit: cover;
+     width: 300px;
+     height: 200px;
+     border-radius: 8px;
+ }
+
+ .overlay {
+     position: absolute;
+     top: 40%;
+     left: 25%;
+     color: white;
+     padding: 10px;
+     font-size: 18px;
+ }
+
+ .card-back {
+     display: flex;
+     flex-direction: column;
+     font-size: 15px;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     background-color: #333;
+     transform: rotateY(180deg);
+ }
+
+ .card-back button {
+     border: 1px solid white;
+     padding: 8px;
+     background-color: #333;
+     color: white;
+     font-weight: bold;
+     border-radius: 8px;
+     margin-top: 10px;
+ }
+
+ .offers {
+     text-align: center;
+     padding: 40px;
+
+
+ }
+
+ .offers .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 90px;
+
+ }
+
+ .facilities .container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 30px;
+     text-align: center;
+     padding: 20px;
+
+ }
+
+ .facilities .item {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+ }
+
+ .contact {
+     display: flex;
+     justify-content: space-around;
+     align-items: normal;
+     padding: 20px;
+     margin-top: 30px;
+ }
+
+ .contact a {
+     text-decoration: none;
+     color: white;
+     text-decoration-style: solid;
+     font-weight: bolder;
+ }
+
+ .contact .item {
+     gap: 20px;
+     padding: 20px;
+ }
+
+ footer {
+     padding: 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 20px 20px;
+ }
+
+ @media (max-width:700px) {
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+
+     body {
+         font-family: poppins;
+         font-size: 12px;
+         background-color: white;
+         color: black;
+         margin: 0;
+         padding: 10px;
+     }
+
+     ul {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+     }
+
+     header {
+         color: #fff;
+         padding: 10px;
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+     }
+
+     .hero1 {
+         background-image: url('/assests/images/hero\ packages\ image.png');
+         background-size: cover;
+         background-repeat: no-repeat;
+         height: 60vh;
+         width: 100%;
+     }
+
+     nav ul {
+         list-style: none;
+         display: flex;
+         gap: 10px;
+     }
+
+     .hero {
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         padding: px;
+         font-size: 10px;
+         text-align: center;
+
+
+     }
+
+     .hero .item a {
+         display: inline-block;
+         background-color: white;
+         color: black;
+         text-decoration: none;
+         padding: 10px;
+         gap: 10px;
+         font-weight: bolder;
+         margin-top: 30px;
+         font-size: 10px;
+
+     }
+
+     .packages {
+         text-align: center;
+         padding: 10px;
+     }
+
+     .packages .container {
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         gap: 20px;
+     }
+
+     .offers {
+         text-align: center;
+         padding: 10px;
+         font-size: 12px;
+     }
+
+     .card-front img {
+         object-fit: cover;
+         width: 250px;
+         height: 200px;
+         border-radius: 8px;
+     }
+
+     .card {
+         width: 250px;
+         height: 200px;
+         perspective: 1000px;
+     }
+
+     .offers .container {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         gap: 20px;
+
+     }
+
+     .facilities .container {
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         gap: 20px;
+         text-align: center;
+         padding: 20px;
+         font-size: 8px;
+
+
+     }
+
+     .facilities .item {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         gap: 10px;
+         width: 300px;
+
+     }
+
+     .facilities img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+     }
+
+     .contact {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: normal;
+         padding: 10px;
+         margin-top: 20px;
+         font-size: 10px;
+     }
+
+     footer {
+         padding: 20px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin: 20px 20px;
+     }
+ }
+
+ @media (min-width:700px)and(max-width:1000px) {
+    .packages {
+        text-align: center;
+        padding: 10px;
+   
+   
+    }
+   
+    .packages .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:left;
+        align-items:left;
+        gap: 10px;
+   
+    }
+   
+    .card {
+        width: 100px;
+        height: 200px;
+        perspective: 1000px;
+    }
+    .card-front img {
+        object-fit: cover;
+        width: 100px;
+        height: 200px;
+        border-radius: 8px;
+    }
+   
+    .card-inner {
+        width: 100px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+    }
+    .overlay {
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        color: white;
+        padding: 10px;
+        font-size: 10px;
+    }
+   
+
+ }
