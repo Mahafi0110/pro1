@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = prompt("Enter a positive number:");
+        num = parseInt(num);
+
+        if (!isNaN(num) && num > 0) {
+            let sum = 0;
+
+            while (num > 0) {
+                let digit = num % 10;  
+                sum += digit;           
+                num = Math.floor(num / 10);
+            }
+
+            console.log("Sum of digits:", sum);
+        } else {
+            console.log("Please enter a valid positive number.");
+        }
+    </script>
+
+</body>
+
+</html>
