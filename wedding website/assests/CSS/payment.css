@@ -1,0 +1,624 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Averia Serif Libre;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 30px;
+
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: self-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #F1E7E7;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    font-size: 35px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.inside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: #e698BD;
+
+}
+
+.inside a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    background-color: #f1E7E7;
+    border-radius: 10px;
+
+
+}
+
+.inside a:hover {
+    background-color: #FFFECE;
+}
+
+.hero {
+    padding: 50px;
+    background-color: #e698BD;
+
+}
+
+.hero .container {
+    height: 70vh;
+    position: relative;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 90px;
+    text-decoration-color: #e698BD;
+}
+
+.Payment {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Payment h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.Payment .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e698BD;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 20px;
+    width: 50vw;
+    padding: 50px;
+}
+
+.Payment .container .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    gap: 40px;
+
+}
+
+.Payment .container .item1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    background-color: #F1E7E7;
+    border-radius: 10px;
+
+}
+
+.Payment .container .item2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    background-color: lightpink;
+    border-radius: 10px;
+
+}
+
+.Payment .container .item3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    background-color: lightpink;
+    border-radius: 10px;
+    border: 1px solid white;
+
+}
+
+.card-form {
+    font-size: 30px;
+    padding: 30px;
+    border-radius: 10px;
+
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section hr {
+    margin-bottom: 5px;
+    border: none;
+    border-top: 1px solid black;
+}
+
+.section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+
+.expiry-cvv {
+    display: flex;
+    gap: 10px;
+
+
+}
+
+.expiry-cvv input {
+    flex: 1;
+}
+
+.submit-btn {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.submit-btn a {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 1px solid #555;
+    background: transparent;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    color: black
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30vh;
+    padding: 30px;
+    background-color: lightpink;
+    margin-top: 40px;
+
+}
+
+.footer .foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.foot a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+}
+
+.media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+@media (max-width:700px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Averia Serif Libre;
+        background-color: white;
+        color: black;
+        margin: 0;
+        padding: 10px;
+
+    }
+
+    header {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        background-color: #F1E7E7;
+    }
+
+    header h1 {
+        font-size: 8px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .nav a {
+        font-size: 25px;
+        color: black;
+        text-decoration: none;
+
+    }
+
+    .inside {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        background-color: #e698BD;
+
+    }
+
+    .hero {
+        padding: 10px;
+        background-color: #e698BD;
+
+    }
+
+    .hero .container {
+        height: 70vh;
+        position: relative;
+
+
+    }
+
+    .hero img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+
+    }
+
+    .overlay {
+        position: absolute;
+        top: 55%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 30px;
+        text-decoration-color: #e698BD;
+
+    }
+
+    .Payment h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .Payment .container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #e698BD;
+        padding: 10px;
+        border-radius: 10px;
+        gap: 10px;
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .Payment .container .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 20px;
+        gap: 10px;
+
+    }
+
+    .Payment .container .item1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background-color: #F1E7E7;
+        border-radius: 10px;
+
+    }
+    .Payment .container .item2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background-color: lightpink;
+        border-radius: 10px;
+    
+    }
+    
+    .Payment .container .item3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background-color: lightpink;
+        border-radius: 10px;
+        border: 1px solid white;
+    
+    }
+    .footer {
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items: center;
+        height: 50vh;
+        padding: 20px;
+        background-color: lightpink;
+    
+    }
+    
+    .footer .foot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
+    
+    
+    }
+    
+    .foot a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    }
+    
+    .media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    
+    }
+    .media img {
+        width: 100%;
+        height: 100%;
+        object-fit:contain;
+    
+    }
+}
+@media (min-width:700px) and (max-width:1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Averia Serif Libre;
+        background-color: white;
+        color: black;
+        margin: 0;
+        padding: 20px;
+
+    }
+
+    header {
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: self-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        background-color: #F1E7E7;
+    }
+
+    header h1 {
+        font-size: 17px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav a {
+        font-size: 35px;
+        color: black;
+        text-decoration: none;
+
+    }
+
+    .inside {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        background-color: #e698BD;
+
+    }
+
+    .inside a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        background-color: #f1E7E7;
+        border-radius: 10px;
+    }
+    .Payment h1 {
+        font-size: 20px;
+        margin-bottom: 40px;
+        margin-top: 50px;
+        padding: 20px;
+    }
+    .overlay {
+        position: absolute;
+        top: 25%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 40px;
+        text-decoration-color: #e698BD;
+    }
+    
+    .Payment .container {
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #e698BD;
+        padding: 30px;
+        border-radius: 10px;
+        gap: 20px;
+        width: 80vw;
+    }
+    
+    .Payment .container .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 20px;
+        gap: 20px;
+    
+    }
+    
+    .Payment .container .item1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        background-color: #F1E7E7;
+        border-radius: 10px;
+    
+    }
+    
+    .Payment .container .item2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        background-color: lightpink;
+        border-radius: 10px;
+    
+    }
+    
+    .Payment .container .item3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        background-color: lightpink;
+        border-radius: 10px;
+        border: 1px solid white;
+    
+    }
+    
+    .foot a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    }
+}

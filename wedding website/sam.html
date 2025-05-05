@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Card Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f0e6f7, #fff);
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .card-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section hr {
+            margin-bottom: 5px;
+            border: none;
+            border-top: 1px solid #aaa;
+        }
+
+        .section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .section input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .expiry-cvv {
+            display: flex;
+            gap: 10px;
+        }
+
+        .expiry-cvv input {
+            flex: 1;
+        }
+
+        .submit-btn {
+            text-align: center;
+        }
+
+        .submit-btn button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: 1px solid #555;
+            background: transparent;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-form">
+        <h2>Enter card details</h2>
+
+        <div class="section">
+
+            <label>Card Name</label>
+            <hr>
+
+        </div>
+
+        <div class="section">
+
+            <label>Card Number</label>
+            <hr>
+        </div>
+
+        <div class="section expiry-cvv">
+            <div>
+
+                <label>Expiry Date</label>
+                <hr>
+            </div>
+            <div>
+
+                <label>CVV</label>
+                <hr>
+            </div>
+        </div>
+
+        <div class="submit-btn">
+            <button>Pay Now</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

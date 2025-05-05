@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-scroll-container {
+  overflow-x: auto;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+ 
+.image-scroll-container::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari */
+}
+ 
+.image-strip {
+  display: flex;
+  width: fit-content;
+}
+ 
+.image-strip img {
+  flex: 0 0 33.33vw; /* 3 images per screen */
+  height: 200px;     /* Adjust height as needed */
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+ 
+/* Tablet */
+@media (min-width: 768px) {
+  .image-strip img {
+    flex: 0 0 25vw;
+  }
+}
+ 
+/* Laptop */
+@media (min-width: 1024px) {
+  .image-strip img {
+    flex: 0 0 20vw;
+  }
+}
+ 
+        
+    </style>
+</head>
+<body>
+    <div class="image-scroll-container">
+        <div class="image-strip">
+            <img src="./assests/images/Property 1=Rectangle 7.png" alt="Image 1">
+            <img src="./assests/images/Property 1=Rectangle 8.png" alt="Image 2">
+            <img src="./assests/images/Property 1=Rectangle 9.png" alt="Image 3">
+            <img src="./assests/images/Property 1=Rectangle 7.png" alt="Image 1">
+            <img src="./assests/images/Property 1=Rectangle 8.png" alt="Image 2">
+            <img src="./assests/images/Property 1=Rectangle 9.png" alt="Image 3">
+         
+        </div>
+    </div>
+       
+    
+</body>
+</html>
