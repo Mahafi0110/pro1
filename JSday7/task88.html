@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Book(title, author, price) {
+            this.title = title;
+            this.author = author;
+            this.price = price;
+        }
+
+
+        const books = [
+            new Book("Book A", "Author A", 250),
+            new Book("Book B", "Author B", 450),
+            new Book("Book C", "Author C", 150)
+        ];
+
+
+        const affordableBooks = books.filter(book => book.price < 300);
+        console.log("Affordable Books:", affordableBooks);
+
+    </script>
+
+</body>
+
+</html>

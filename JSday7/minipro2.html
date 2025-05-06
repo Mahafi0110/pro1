@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Catalog with Constructor</title>
+</head>
+
+<body>
+    <h2>Book Catalog</h2>
+
+
+    <input type="text" id="titleInput" placeholder="Title">
+    <input type="text" id="authorInput" placeholder="Author">
+    <input type="number" id="yearInput" placeholder="Year">
+    <button onclick="addBook()">Add Book</button>
+
+    <br><br>
+
+
+    <input type="text" id="searchInput" placeholder="Search by title" oninput="filterBooks()">
+
+
+    <table border="1" id="bookTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        function Book(title, author, year) {
+            this.title = title;
+            this.author = author;
+            this.year = year;
+        }
+
+
+        const books = [];
+
+
+        function addBook() {
+            const title = document.getElementById("titleInput").value;
+            const author = document.getElementById("authorInput").value;
+            const year = document.getElementById("yearInput").value;
+
+            if (title && author && year) {
+                const newBook = new Book(title, author, parseInt(year));
+                books.push(newBook);
+                renderBooks(books);
+                clearInputs();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+
+        function renderBooks(bookList) {
+            const tbody = document.getElementById("bookTable").getElementsByTagName("tbody")[0];
+            tbody.innerHTML = "";
+
+            bookList.forEach(book => {
+                const row = tbody.insertRow();
+                row.insertCell().innerText = book.title;
+                row.insertCell().innerText = book.author;
+                row.insertCell().innerText = book.year;
+            });
+        }
+
+
+        function filterBooks() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const filteredBooks = books.filter(book =>
+                book.title.toLowerCase().includes(query)
+            );
+            renderBooks(filteredBooks);
+        }
+
+
+        function clearInputs() {
+            document.getElementById("titleInput").value = "";
+            document.getElementById("authorInput").value = "";
+            document.getElementById("yearInput").value = "";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Employee(name, salary) {
+            this.name = name;
+            this.salary = salary;
+        }
+
+        function Manager(name, salary, department) {
+            Employee.call(this, name, salary);
+        }
+
+
+        Manager.prototype = Object.create(Employee.prototype);
+        Manager.prototype.constructor = Manager;
+
+
+        const mgr = new Manager("Alice", 50000, "HR");
+        console.log(mgr);
+    </script>
+
+</body>
+
+</html>

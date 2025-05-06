@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Employee(name, position, salary) {
+            this.name = name;
+            this.position = position;
+            this.salary = salary;
+
+            this.increaseSalary = function (amount) {
+                if (typeof amount === 'number' && amount > 0) {
+                    this.salary += amount;
+                } else {
+                    console.log("Invalid amount");
+                }
+            };
+        }
+
+        const employees = [];
+
+        employees.push(new Employee("Alice", "Developer", 50000));
+        employees.push(new Employee("Bob", "Designer", 45000));
+        employees.push(new Employee("Charlie", "Manager", 60000))
+
+
+        employees[0].increaseSalary(5000);
+        console.log(employees);
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

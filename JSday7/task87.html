@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal(name) {
+            this.name = name;
+        }
+
+       
+        Animal.prototype.speak = function () {
+            return `${this.name} makes a sound.`;
+        };
+
+        
+        const dog = new Animal("Buddy");
+        console.log(dog.speak());
+
+    </script>
+
+</body>
+
+</html>

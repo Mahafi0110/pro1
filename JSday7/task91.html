@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Car(model, year) {
+            this.model = model;
+            this.year = year;
+        }
+
+        function createCar(model, year) {
+            return new Car(model, year);
+        }
+
+        
+        const myCar = createCar("Honda", 2020);
+        console.log(myCar);
+
+
+    </script>
+
+</body>
+
+</html>

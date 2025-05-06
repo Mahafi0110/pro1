@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ShoppingCart() {
+            this.products = [];
+
+            this.addProduct = function (product) {
+                this.products.push(product);
+            };
+
+            this.removeProduct = function (productName) {
+                this.products = this.products.filter(p => p.name !== productName);
+            };
+
+            this.getTotal = function () {
+                return this.products.reduce((sum, p) => sum + p.price, 0);
+            };
+        }
+
+
+        const cart = new ShoppingCart();
+        cart.addProduct({ name: "Apple", price: 20 });
+        cart.addProduct({ name: "Banana", price: 10 });
+        cart.removeProduct("Apple");
+        console.log("Total:", cart.getTotal());
+
+    </script>
+
+</body>
+
+</html>

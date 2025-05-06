@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function BankAccount(accountNumber, balance) {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+
+            this.deposit = function (amount) {
+                this.balance += amount;
+                return `Deposited: ${amount}. New balance: ${this.balance}`;
+            };
+
+            this.withdraw = function (amount) {
+                if (amount > this.balance) {
+                    return "Insufficient balance";
+                }
+                this.balance -= amount;
+                return `Withdrew: ${amount}. New balance: ${this.balance}`;
+            };
+        }
+
+       
+        const acc1 = new BankAccount("12345", 1000);
+        console.log(acc1.deposit(500));
+        console.log(acc1.withdraw(300));
+
+
+
+    </script>
+
+</body>
+
+</html>

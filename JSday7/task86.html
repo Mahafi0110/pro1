@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        function Student(name, grades) {
+            this.name = name;
+            this.grades = grades;
+
+            this.getAverage = function () {
+                if (this.grades.length === 0) return 0;
+                const sum = this.grades.reduce((acc, curr) => acc + curr, 0);
+                return sum / this.grades.length;
+            };
+        }
+
+       
+        const s1 = new Student("John", [80, 90, 100]);
+        console.log(`${s1.name}'s average grade:`, s1.getAverage());
+
+
+    </script>
+
+</body>
+
+</html>
