@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Generator</title>
+</head>
+<body>
+    <script>
+        function generateUniqueUsername(){
+       let firstname=prompt("Enter your first name:");
+       let lastname=prompt("Enter your last name:");
+
+       if(!firstname || !lastname || firstname.length<3 || lastname.length<3){
+        console.log("Both first and last name should have atleast 3 characters.");
+    
+       }
+       let part1=firstname.trim().slice(0,3).tolowercase();
+       let part2=lastname.trim().slice(0,3).tolowercase();
+
+       let randomNum=math.floor(math.random()*900)+100;
+
+       let username=part1+part2+randomNum;
+       console.log("Your unique username is:"+username);
+
+    }
+    generateUniqueUsername();
+    </script>
+
+    
+</body>
+</html>

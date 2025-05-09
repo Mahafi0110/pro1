@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkPalindrome() {
+          
+            let input = prompt("Enter a word or sentence:");
+
+           
+            let cleaned = input.replace(/[^a-zA-Z0-9]/g, "");
+
+            cleaned = cleaned.toLowerCase();
+            let reversed = cleaned.split("").reverse().join("");
+
+            if (cleaned === reversed) {
+                alert("Palindrome");
+            } else {
+                alert("Not a Palindrome");
+            }
+        }
+
+        checkPalindrome();
+
+    </script>
+
+</body>
+
+</html>;
