@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="myList">
+        <li>Items</li>
+        <li>Grocery</li>
+        <li>Medicines</li>
+        <li>Baby Products</li>
+    </ul>
+    <button onclick="removeItem()">Remove Item</button>
+
+    <script>
+        function removeItem() {
+            let list = document.getElementById("myList");
+            myList.remove();
+        }
+    </script>
+
+</body>
+
+</html>

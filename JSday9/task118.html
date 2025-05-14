@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="textInput" value="Initial Value">
+<button id="changeValueBtn">Change Value</button>
+
+<script>
+  const textInput = document.getElementById("textInput");
+  const changeValueBtn = document.getElementById("changeValueBtn");
+
+  changeValueBtn.addEventListener("click", function() {
+    textInput.value = "Updated Value";
+  });
+</script>
+    
+</body>
+</html>

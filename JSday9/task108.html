@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Toggle Visibility</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #myBox {
+            padding: 20px;
+            background-color: lightgreen;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myBox">This box can be toggled.</div>
+    <button onclick="toggleBox()">Toggle</button>
+
+    <script>
+        function toggleBox() {
+            var box = document.getElementById("myBox");
+            box.classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+
+</html>

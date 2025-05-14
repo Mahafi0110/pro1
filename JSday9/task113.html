@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Hover Border with JavaScript</title>
+  <style>
+    img {
+      width: 700px; 
+      transition: all 0.3s ease; 
+    }
+  </style>
+</head>
+<body>
+
+  <img src="./240_F_175973930_FOfQM7zFXsVuFLlz1H4PrU4YGZX14oFA.jpg" alt="Placeholder Image" id="myImage">
+
+  <script>
+    const image = document.getElementById("myImage");
+
+    // Add event listener for mouseover (hover)
+    image.addEventListener("mouseover", function() {
+      image.style.border = "5px dashed blue";  
+    });
+
+    // Add event listener for mouseout (when hover ends)
+    image.addEventListener("mouseout", function() {
+      image.style.border = "";  
+    });
+  </script>
+
+</body>
+</html>

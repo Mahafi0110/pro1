@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="toggleBtn">Toggle Box</button>
+<div id="box" style="width: 100px; height: 100px; background: coral; margin-top: 10px;"></div>
+
+<script>
+  const toggleBtn = document.getElementById("toggleBtn");
+  const box = document.getElementById("box");
+
+  toggleBtn.addEventListener("click", function() {
+    if (box.style.display === "none") {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="password" id="passwordField">
+    <button id="toggleBtn">Show/Hide Password</button>
+
+    <script>
+        const passwordField = document.getElementById("passwordField");
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        toggleBtn.addEventListener("click", function () {
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

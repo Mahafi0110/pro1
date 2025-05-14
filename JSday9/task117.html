@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="contentDiv">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+    </div>
+    <button id="clearBtn">Clear Content</button>
+
+    <script>
+        const clearBtn = document.getElementById("clearBtn");
+        const contentDiv = document.getElementById("contentDiv");
+
+        clearBtn.addEventListener("click", function () {
+            contentDiv.innerHTML = ""; // removes all child elements
+        });
+    </script>
+
+</body>
+
+</html>

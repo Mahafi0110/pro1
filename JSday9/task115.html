@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="toggleText">Hello</p>
+<button id="toggleBtn">Toggle Text</button>
+
+<script>
+  const toggleBtn = document.getElementById("toggleBtn");
+  const toggleText = document.getElementById("toggleText");
+
+  toggleBtn.addEventListener("click", function() {
+    if (toggleText.textContent === "Hello") {
+      toggleText.textContent = "Goodbye";
+    } else {
+      toggleText.textContent = "Hello";
+    }
+  });
+</script>
+    
+</body>
+</html>

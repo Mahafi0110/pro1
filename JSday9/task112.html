@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Color of All Paragraphs</title>
+</head>
+<body>
+
+  <p>This is the first paragraph.</p>
+  <p>This is the second paragraph.</p>
+  <p>This is the third paragraph.</p>
+  <button onclick="changeColor()">Change Color</button>
+
+  <script>
+    function changeColor() {
+      
+      const paragraphs = document.querySelectorAll("p");
+      
+     
+      paragraphs.forEach(function(p) {
+        p.style.color = "red";  
+      });
+    }
+  </script>
+
+</body>
+</html>
