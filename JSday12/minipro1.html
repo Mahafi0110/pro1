@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let inventory = [
+            { id: 1, name: "Laptop", category: "Electronics", quantity: 10, price: 800 },
+            { id: 2, name: "Phone", category: "Electronics", quantity: 20, price: 500 },
+            { id: 3, name: "Chair", category: "Furniture", quantity: 15, price: 150 }
+        ];
+        function checkStock(identifier) {
+            const product = inventory.find(
+                item => item.id === identifier || item.name.toLowerCase() === identifier.toLowerCase()
+            );
+
+            if (product) {
+                console.log(`${product.name} is in stock: ${product.quantity} units`);
+            } else {
+                console.log("Product not found.");
+            }
+        }
+        checkStock("Phone");
+        function updateStock(id, changeInQuantity) {
+            const product = inventory.find(item => item.id === id);
+
+            if (product) {
+                product.quantity += changeInQuantity;
+
+                if (product.quantity < 0) {
+                    product.quantity = 0;
+                }
+
+                console.log(`${product.name} updated. New quantity: ${product.quantity}`);
+            } else {
+                console.log("Product not found.");
+            }
+        }
+        updateStock(1, 5);   // Add 5 laptops
+        updateStock(3, -3);// Sell 3 chairs
+        function calculateTotalInventoryValue() {
+            const totalValue = inventory.reduce((sum, item) => {
+                return sum + (item.price * item.quantity);
+            }, 0);
+
+            console.log(`Total Inventory Value: $${totalValue}`);
+        }
+        calculateTotalInventoryValue();
+    </script>
+
+</body>
+
+</html>

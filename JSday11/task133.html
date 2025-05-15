@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+        function toggleTheme() {
+            let theme = localStorage.getItem("theme");
+
+            if (theme === "dark") {
+                document.body.style.backgroundColor = "#fff";
+                document.body.style.color = "#000";
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.style.backgroundColor = "#333";
+                document.body.style.color = "#fff";
+                localStorage.setItem("theme", "dark");
+            }
+        }
+
+
+        window.onload = function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.body.style.backgroundColor = "#333";
+                document.body.style.color = "#fff";
+            }
+        };
+    </script>
+
+
+</body>
+
+</html>

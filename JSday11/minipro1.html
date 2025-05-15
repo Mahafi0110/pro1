@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stopwatch</title>
+    <style>
+        #time {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time">00:00:00</div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <script>
+        let startTime = 0;
+        let interval = null;
+
+        function formatTime(ms) {
+            const totalSeconds = Math.floor(ms / 1000);
+            const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+            const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+            const seconds = String(totalSeconds % 60).padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+
+        function updateDisplay() {
+            const now = Date.now();
+            const storedStart = Number(sessionStorage.getItem("startTime"));
+            const elapsed = Number(sessionStorage.getItem("elapsedTime") || 0);
+            const running = sessionStorage.getItem("isRunning") === "true";
+
+            let time = running ? (now - storedStart + elapsed) : elapsed;
+            document.getElementById("time").innerText = formatTime(time);
+        }
+
+        function startTimer() {
+            if (sessionStorage.getItem("isRunning") === "true") return;
+
+            sessionStorage.setItem("startTime", Date.now());
+            sessionStorage.setItem("isRunning", "true");
+            interval = setInterval(updateDisplay, 1000);
+        }
+
+        function stopTimer() {
+            if (sessionStorage.getItem("isRunning") !== "true") return;
+
+            const now = Date.now();
+            const storedStart = Number(sessionStorage.getItem("startTime"));
+            const prevElapsed = Number(sessionStorage.getItem("elapsedTime") || 0);
+            sessionStorage.setItem("elapsedTime", now - storedStart + prevElapsed);
+            sessionStorage.setItem("isRunning", "false");
+            clearInterval(interval);
+        }
+
+        function resetTimer() {
+            sessionStorage.setItem("elapsedTime", 0);
+            sessionStorage.setItem("isRunning", "false");
+            clearInterval(interval);
+            document.getElementById("time").innerText = "00:00:00";
+        }
+
+        // Restore state on page reload
+        window.onload = () => {
+            const running = sessionStorage.getItem("isRunning") === "true";
+            if (running) {
+                interval = setInterval(updateDisplay, 1000);
+            }
+            updateDisplay();
+        };
+    </script>
+</body>
+
+</html>

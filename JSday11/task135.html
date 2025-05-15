@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+    <button onclick="checkLogin()">Check Status</button>
+
+    <script>
+        function login() {
+            sessionStorage.setItem("isLoggedIn", "true");
+            alert("You are now logged in.");
+        }
+
+        function logout() {
+            sessionStorage.removeItem("isLoggedIn");
+            alert("You are logged out.");
+        }
+
+        function checkLogin() {
+            const status = sessionStorage.getItem("isLoggedIn");
+            if (status === "true") {
+                alert("User is logged in.");
+            } else {
+                alert("User is not logged in.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

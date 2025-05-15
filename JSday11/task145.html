@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>What is 2 + 2?</p>
+    <input type="text" id="answerInput" />
+    <button onclick="saveAnswer()">Submit</button>
+
+    <script>
+        function saveAnswer() {
+            const answer = document.getElementById("answerInput").value;
+            sessionStorage.setItem("quizAnswer", JSON.stringify({ q1: answer }));
+            alert("Answer saved!");
+        }
+
+        window.onload = () => {
+            const saved = sessionStorage.getItem("quizAnswer");
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                document.getElementById("answerInput").value = parsed.q1;
+            }
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const employees = [
+            { name: "Alice", age: 28, position: "Developer" },
+            { name: "Bob", age: 30, Position: "HR" },
+            { name: "John", age: 35, Position: "Recruiter" },
+        ]
+        function searchEmployees(query) {
+            return employees.filter(emp =>
+                emp.name.toLowerCase().includes(query.toLowerCase())
+            );
+        }
+
+        console.log(searchEmployees("ali"));
+    </script>
+
+</body>
+
+</html>

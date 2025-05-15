@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let library = [
+            {
+                id: 1,
+                title: "The Alchemist",
+                author: "Paulo Coelho",
+                genre: "Fiction",
+                isAvailable: true,
+                borrower: null
+            },
+            {
+                id: 2,
+                title: "JavaScript: The Good Parts",
+                author: "Douglas Crockford",
+                genre: "Programming",
+                isAvailable: false,
+                borrower: "Alice"
+            },
+            {
+                id: 3,
+                title: "Clean Code",
+                author: "Robert C. Martin",
+                genre: "Programming",
+                isAvailable: true,
+                borrower: null
+            }
+        ];
+        function searchBooks(query) {
+            const result = library.filter(book =>
+                book.title.toLowerCase().includes(query.toLowerCase()) ||
+                book.author.toLowerCase().includes(query.toLowerCase()) ||
+                book.genre.toLowerCase().includes(query.toLowerCase())
+            );
+
+            console.log("Search Results:");
+            console.log(result);
+        }
+        searchBooks("programming");
+        function issueBook(id, borrowerName) {
+            const book = library.find(book => book.id === id);
+
+            if (book && book.isAvailable) {
+                book.isAvailable = false;
+                book.borrower = borrowerName;
+                console.log(`${book.title} has been issued to ${borrowerName}.`);
+            } else {
+                console.log("Book is not available.");
+            }
+        }
+
+        function returnBook(id) {
+            const book = library.find(book => book.id === id);
+
+            if (book && !book.isAvailable) {
+                book.isAvailable = true;
+                console.log(`${book.title} returned by ${book.borrower}.`);
+                book.borrower = null;
+            } else {
+                console.log("Book is already available.");
+            }
+        }
+        issueBook(3, "Bob");
+        returnBook(2);
+        function listAvailableBooks() {
+            const availableBooks = library.filter(book => book.isAvailable);
+            console.log("Available Books:");
+            console.log(availableBooks);
+        }
+        listAvailableBooks();
+
+    </script>
+
+</body>
+
+</html>
