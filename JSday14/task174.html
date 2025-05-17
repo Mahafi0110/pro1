@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="city" placeholder="Enter city">
+    <button onclick="getWeather()">Get Weather</button>
+    <p id="weatherResult"></p>
+
+    <script>
+        async function getWeather() {
+            const city = document.getElementById('city').value;
+            const apiKey = 'YOUR_API_KEY';
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+            const weather = await res.json();
+            document.getElementById('weatherResult').textContent =
+                `Temp: ${weather.main.temp}°C | ${weather.weather[0].description}`;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="posts"></ul>
+
+    <script>
+        async function fetchPosts() {
+            const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const posts = await res.json();
+            const list = document.getElementById('posts');
+            posts.slice(0, 10).forEach(post => {
+                const li = document.createElement('li');
+                li.textContent = post.title;
+                list.appendChild(li);
+            });
+        }
+        fetchPosts();
+    </script>
+
+</body>
+
+</html>

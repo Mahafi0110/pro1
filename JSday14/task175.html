@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="username" placeholder="GitHub username">
+    <button onclick="getUser()">Search</button>
+    <div id="profile"></div>
+
+    <script>
+        async function getUser() {
+            const username = document.getElementById('username').value;
+            const res = await fetch(`https://api.github.com/users/${username}`);
+            const user = await res.json();
+            document.getElementById('profile').innerHTML = `
+    <img src="${user.avatar_url}" width="100"><br>
+    Name: ${user.name}<br>
+    Public Repos: ${user.public_repos}
+  `;
+        }
+    </script>
+
+</body>
+
+</html>

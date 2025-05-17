@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const users = [
+            { id: 1, name: "Sam" },
+            { id: 2, name: "Lily" }
+        ];
+
+    
+        localStorage.setItem("users", JSON.stringify(users));
+
+        
+        const retrievedUsers = JSON.parse(localStorage.getItem("users"));
+        console.log(retrievedUsers);
+
+    </script>
+
+</body>
+
+</html>

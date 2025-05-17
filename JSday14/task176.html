@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="gallery"></div>
+
+    <script>
+        async function loadImages() {
+            const res = await fetch('https://jsonplaceholder.typicode.com/photos?_limit=10');
+            const images = await res.json();
+            const gallery = document.getElementById('gallery');
+            images.forEach(img => {
+                const image = document.createElement('img');
+                image.src = img.thumbnailUrl;
+                gallery.appendChild(image);
+            });
+        }
+        loadImages();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Speed Tester</title>
+  <style>
+    #sentence { font-size: 1.2em; margin: 20px 0; }
+    #result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h2>Typing Speed Tester</h2>
+  <p id="sentence">Loading...</p>
+
+  <textarea id="inputArea" rows="4" cols="50" placeholder="Start typing here..." disabled></textarea><br><br>
+  <button id="startBtn" onclick="startTest()">Start Test</button>
+
+  <div id="result"></div>
+
+  <script>
+    let startTime, endTime, targetSentence = '';
+
+    async function fetchSentence() {
+      const res = await fetch('https://api.quotable.io/random');
+      const data = await res.json();
+      return data.content;
+    }
+
+    async function startTest() {
+      targetSentence = await fetchSentence();
+      document.getElementById('sentence').textContent = targetSentence;
+      document.getElementById('inputArea').value = '';
+      document.getElementById('inputArea').disabled = false;
+      document.getElementById('inputArea').focus();
+      document.getElementById('result').textContent = '';
+      startTime = new Date().getTime();
+    }
+
+    document.getElementById('inputArea').addEventListener('input', () => {
+      const typedText = document.getElementById('inputArea').value;
+      if (typedText.trim() === targetSentence.trim()) {
+        endTime = new Date().getTime();
+        const totalTime = (endTime - startTime) / 1000; // seconds
+        const wordCount = targetSentence.split(' ').length;
+        const speed = Math.round((wordCount / totalTime) * 60); // WPM
+
+        document.getElementById('result').innerHTML = 
+          `You typed in ${totalTime.toFixed(2)} seconds.<br>Typing Speed: ${speed} WPM`;
+        document.getElementById('inputArea').disabled = true;
+      }
+    });
+  </script>
+
+</body>
+</html>

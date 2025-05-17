@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select id="dropdown"></select>
+
+    <script>
+        fetch("data.json")
+            .then(res => res.json())
+            .then(data => {
+                const dropdown = document.getElementById("dropdown");
+                data.forEach(item => {
+                    const option = document.createElement("option");
+                    option.text = item.name;
+                    option.value = item.id;
+                    dropdown.add(option);
+                });
+            })
+            .catch(error => console.error("Failed to load:", error));
+    </script>
+
+
+</body>
+
+</html>

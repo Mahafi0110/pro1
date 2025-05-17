@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Catalog</title>
+  <style>
+    .product { border: 1px solid #ccc; padding: 10px; margin: 10px; cursor: pointer; }
+    .details { margin-top: 20px; border-top: 1px solid #999; padding-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Product Catalog</h2>
+
+  <label>
+    Filter: Products under $500
+    <input type="checkbox" id="priceFilter">
+  </label>
+
+  <button id="sortBtn">Sort by Price (Low to High)</button>
+
+  <div id="productList"></div>
+
+  <div class="details" id="productDetails"></div>
+
+  <script>
+    let products = [];
+    let filtered = false;
+    let sorted = false;
+
+    async function loadProducts() {
+      const res = await fetch('products.json');
+      products = await res.json();
+      renderProducts(products);
+    }
+
+    function renderProducts(list) {
+      const container = document.getElementById('productList');
+      container.innerHTML = '';
+      list.forEach(product => {
+        const div = document.createElement('div');
+        div.className = 'product';
+        div.innerText = `${product.name} - $${product.price} (${product.category})`;
+        div.onclick = () => showDetails(product);
+        container.appendChild(div);
+      });
+    }
+
+    function showDetails(product) {
+      const details = document.getElementById('productDetails');
+      details.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>Price: $${product.price}</p>
+        <p>Category: ${product.category}</p>
+      `;
+    }
+
+    document.getElementById('priceFilter').addEventListener('change', (e) => {
+      filtered = e.target.checked;
+      let list = filtered ? products.filter(p => p.price < 500) : products;
+      if (sorted) list = list.slice().sort((a, b) => a.price - b.price);
+      renderProducts(list);
+    });
+
+    document.getElementById('sortBtn').addEventListener('click', () => {
+      sorted = true;
+      let list = filtered ? products.filter(p => p.price < 500) : products;
+      list = list.slice().sort((a, b) => a.price - b.price);
+      renderProducts(list);
+    });
+
+    loadProducts();
+  </script>
+
+</body>
+</html>

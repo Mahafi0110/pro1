@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="exchangeRates"></div>
+
+<script>
+async function getRates() {
+  try {
+    const res = await fetch("https://api.exchangerate-api.com/v4/latest/USD");
+    const data = await res.json();
+    document.getElementById("exchangeRates").innerHTML = `
+      <p>1 USD = ${data.rates.EUR} EUR</p>
+      <p>1 USD = ${data.rates.INR} INR</p>
+    `;
+  } catch (error) {
+    document.getElementById("exchangeRates").textContent = "Error loading rates.";
+  }
+}
+getRates();
+</script>
+    
+</body>
+</html>

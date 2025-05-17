@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Get Data</button>
+<p id="errorMsg"></p>
+
+<script>
+async function getData() {
+  try {
+    const res = await fetch("https://invalid-api-url.com/data");
+    if (!res.ok) throw new Error("Failed to fetch data");
+    const data = await res.json();
+    document.getElementById("errorMsg").textContent = "Data loaded successfully!";
+  } catch (err) {
+    document.getElementById("errorMsg").textContent = "Error: " + err.message;
+  }
+}
+</script>
+
+    
+</body>
+</html>
