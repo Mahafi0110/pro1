@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check(num){
+            try{
+                if(typeof num!=='number'){
+                    throw new TypeError("input must be a number.");
+                }
+
+            return num*num;
+        }catch(error){
+            console.log("TypeError:",error.message);
+        }
+    }
+    check("hello");
+    </script>
+    
+</body>
+</html>

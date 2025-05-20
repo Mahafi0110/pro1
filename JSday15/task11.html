@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function performTask() {
+            try {
+                console.log("Trying to perform task...");
+                throw new Error("Something went wrong");
+            } catch (error) {
+                console.error("Caught error:", error.message);
+            } finally {
+                console.log("Cleanup: Task complete or failed, closing resources.");
+            }
+        }
+
+        performTask();
+    </script>
+
+</body>
+
+</html>

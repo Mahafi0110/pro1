@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function fetchData() {
+            try {
+                let response = await fetch("ttps://jsonplaceholder.typicode.com/users");
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                let data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error("API call failed:", error.message);
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

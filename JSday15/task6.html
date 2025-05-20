@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        try {
+            console.log("Outer try block");
+
+            try {
+                let result = 10 / 0;
+                if (result === Infinity) {
+                    throw new Error("Division by zero inside inner block");
+                }
+            } catch (innerError) {
+                console.log("Inner catch:", innerError.message);
+            }
+
+            throw new ReferenceError("Outer block reference error");
+
+        } catch (outerError) {
+            console.log("Outer catch:", outerError.message);
+        }
+
+    </script>
+
+</body>
+
+</html>
