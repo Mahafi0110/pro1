@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>Enquiry Form</title>
+  <style>
+    body {
+      background-color: #222;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+ .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+.form-container {
+      background-color:rgba(232, 232, 130);
+      padding: 30px;
+      width: 800px;
+      height: 500px;
+      line-height: 40px;
+    } .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }.form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }.form-group label {
+      width: 200px;
+      font-weight: bold;
+    }.form-group input,
+    .form-group textarea {
+      flex: 1;
+      padding: 8px;
+      border: 2px solid black;
+      width: 250px;
+    }
+.form-group textarea {
+      height: 80px;
+      resize: vertical;
+    } .submit-btn {
+      margin-top: 40px;
+      width: 40%;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }.submit-btn:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head><body>
+  <div class="form-container">
+    <h2>ENQUIRY</h2>
+    <form class="container">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name"  onclick="fillData('name')">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone"  onclick="fillData('phone')">
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" id="email" onclick="fillData('email')">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message"  onclick="fillData('message')"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+  </div>
+ <script>
+    function fillData(field) {
+      const data = {
+        name: "A.Rajaguru",
+        phone: "9876543210",
+        email: "rajagurucurger@gmail.com",
+        message: "I want Face pack Powder How to Buy."
+      };
+      document.getElementById(field).value = data[field];
+    }
+  </script>
+</body>
+</html>

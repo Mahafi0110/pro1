@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>HairCare</title>
+    <link rel="stylesheet" href="/assests/CSS/billing.css">
+</head>
+<body>
+    <header class="head1">
+        <div class="item1">
+            <a href="#">
+                <h1>GREEN PLANT</h1>
+                <p>Pure herbal products</p>
+            </a>
+        </div>
+        <div class="item2">
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="SEARCH PRODUCTS">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                    <img src="../images/search icon.png">
+                </button>
+            </form></div>
+        <div class="item3">
+            <a href="">SIGN IN</a>
+            <img src="../images/heat icon.png">
+            <a href=""><img src="../images/cart icon.png"></a>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="first">
+            <details>
+                <summary><img src="../images/all categories icon.png">ALL CATEGORIES</summary>
+                <ul>
+                    <li><a href="#">Hair care</a></li>
+                    <li><a href="#">Skin Care</a></li>
+                    <li><a href="#">Baby care</a></li>
+                    <li><a href="#">Herbal Tea</a></li>
+                    <li><a href="#">Edible oil</a></li>
+                    <li><a href="#">Oral care</a></li>
+                </ul>
+            </details>
+        </div>
+        <div class="second">
+            <a href="#">ABOUT US</a><details>
+                <summary>SHOP</summary>
+                <ul>
+                    <li> <a href="#">Hair oil</a></li>
+                    <li><a href="#">Hair mask</a></li>
+                    <li><a href="#">Body Lotion</a></li>
+                    <li><a href="#">Bath Powder</a></li>
+                    <li><a href="#">Baby Diaper</a></li>
+                    <li><a href="#">Avaram boo Tea</a></li>
+                    <li><a href="#">Hibiscus Tea</a></li>
+                </ul>
+            </details>
+<a href="#">ENQUIERY</a>
+        </div>
+    </nav>
+    <section class="billing">
+        <h1>Billing and Shipping</h1>
+            <form class="container">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" onclick="fillData('name')">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" onclick="fillData('email')">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" onclick="fillData('phone')">
+                </div><div class="form-group">
+                    <label for="Address">Address</label>
+                    <input type="text" id="address" onclick="fillData('address')"></div>
+                <div class="form-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" id="pincode" onclick="fillData('pincode')">
+                </div>
+                <div class="form-group">
+                    <label for="phone">ALternative Phone Number</label>
+                    <input type="text" id="alter" onclick="fillData('alter')">
+                </div></form>
+            <div><h1>Your Product</h1></div>
+            <div class="popup">
+                <h2>Shopping Cart</h2><div class="item">
+                    <img src="../images/citrullus oil animation.png" alt="Oil">
+                    <div class="item-details">
+                        <div>Catullus Oil - 100ml</div>
+                        <div>1 × 100</div>
+                    </div>
+                </div>                <div class="line"></div>
+<div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span>₹100</span>
+                </div>
+   <div class="line"></div> <div class="buttons">
+                    <a href="#" class="view-cart">VIEW CART</a>
+                    <a href="./payment.html" class="checkout">CHECK OUT</a>
+                </div>
+            </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="item">
+                <h1>GREEN PLANT</h1>
+                <p style="color: yellow;">Pure herbal products</p>
+                <img src="../images/social media icon.png">
+            </div>
+            <div class="item">
+                <h1>CATEGORIES</h1>
+                <li><a href="#">Hair care Products</a></li>
+                <li><a href="#">Skin Care Products</a></li>
+                <li> <a href="#">Baby care Products</a></li>
+                <li> <a href="#">Herbal Tea</a></li>
+                <li> <a href="#">Edible oils</a></li>
+                <li><a href="#">Oral care</a></li>
+            </div>
+            <div class="item">
+                <h1>INFORMATION</h1>
+                <li><a href="#">About Us</a></li>
+                <li><a href="">Shipping Policy</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li> <a href="">Return & Refund</a></li>
+            </div>
+            <div class="item">
+                <h1>CONTACT US</h1>
+                <img src="../images/export icon.png">+91 345 24 567 76<br>
+                <img src="../images/email icon.png">greenplantherbal@gmail.com<br>
+                <img src="../images/website icon.png">WWW.greenplant.com<br>
+                <img src="../images/location icon.png">no.43,sangar nagar,tirunelveli-627756
+            </div>
+        </div>
+</footer>
+</body>
+</html>
