@@ -121,7 +121,7 @@ input[type="email"] {
 
 
 .hero1 {
-    background-image: url('/assests/images/hero\ home\ image.png');
+    background-image: url("../images/hero\ home\ image.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 60vh;

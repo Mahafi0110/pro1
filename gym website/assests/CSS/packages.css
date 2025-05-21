@@ -54,7 +54,7 @@
  }
 
  .hero1 {
-     background-image: url('/assests/images/hero\ packages\ image.png');
+     background-image: url('../images/hero\ packages\ image.png');
      height: 60vh;
  }
 

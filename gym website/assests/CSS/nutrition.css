@@ -55,7 +55,7 @@ nav a:hover {
 
 .hero {
 
-    background-image: url('/assests/images/hero\ nutrition\ image.png');
+    background-image: url("../images/hero\ nutrition\ image.png");
     height: 60vh;
 }
 
