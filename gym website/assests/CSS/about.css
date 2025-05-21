@@ -53,7 +53,7 @@ nav a:hover {
 }
 
 .hero1 {
-    background-image: url("../images/hero\ about\ image.png");
+    background-image: url('../images/hero\ about\ image.png');
     height: 60vh;
 }
 .hero .btn{
