@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.6-dist/css/bootstrap.min.css">
+    <style>
+    .form-container {
+      padding: 3rem;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 576px) {
+      .form-container {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .form-control, .btn {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 offset-md-3">
+        <div class="form-container">
+          <h2 class="mb-4">Contact Us</h2>
+
+          <form class="needs-validation" novalidate>
+           
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required>
+              <div class="invalid-feedback">
+                Please enter your name.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+           
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+              <div class="invalid-feedback">
+                Please write a message.
+              </div>
+            </div>
+
+         
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</head>
+
+<body>
+   
+    <script src="./bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
