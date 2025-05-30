@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/payroll.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li> <a href="../pages/overview.html"><img src="../images/Overview.png">Overview</a></li>
+                <li><a href="../pages/payroll.html"><img src="../images/Payroll.png">Payroll</a></li>
+                <li> <a href="../pages/payslip.html"><img src="../images/Payroll.png">Payslip</a> </li>
+            </ul>
+        </aside>
+         <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+        <main class="main-content">
+            <header class="header">
+                <h1>Payroll Details</h1>
+                <div class="item">
+                    <button class="month-btn">This Month<span><img src="../images/calendar.png"></span></button>
+                    <button class="download-btn"> Download</button>
+                </div>
+            </header>
+            <div class="container">
+                <form id="payrollForm">
+                    <div class="row">
+                        <div class="column">
+                            <label for="Employee Name">Employee Name</label>
+                            <input type="text" id="name">
+                            <label for="date">Date</label>
+                            <input type="date" id="date">
+                            <label for="No of working days">No of Working Days</label>
+                            <input type="number" id="workingDays">
+                            <label for="addition">Additions</label>
+                            <input type="number" id="additions">
+                        </div>
+                        <div class="column">
+                            <label for="Employee role">Employee Role</label>
+                            <input type="text" id="role" >
+                            <label for="basicsalary">Basic Salary</label>
+                            <input type="number" id="basicSalary">
+                            <label for="present days">Total Present Days</label>
+                            <input type="number" id="presentDays">
+                            <label for="deduction">Deductions</label>
+                            <input type="number" id="deductions">
+                        </div>
+                        <div class="column">
+                            <label for="Employee id">Employee ID</label>
+                            <input type="text" id="empId">
+                            <label for="totalSalary">Total Salary</label>
+                            <input type="number" id="totalSalary">
+                            <label for="totalleave">Total Leave Days</label>
+                            <input type="number" id="leaveDays" placeholder="">
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="submit" onclick="generatePayslip()">Submit Payroll</button>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="../JS/payroll.js"></script>
+    </body>
+    </html>

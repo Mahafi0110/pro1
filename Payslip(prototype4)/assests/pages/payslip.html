@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/payslip.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li> <a href="../pages/overview.html"><img src="../images/Overview.png">Overview</a></li>
+                <li><a href="../pages/payroll.html"><img src="../images/Payroll.png">Payroll</a></li>
+                <li> <a href=""><img src="../images/Payroll.png">Payslip</a> </li>
+            </ul>
+        </aside>
+        <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+        <main class="main-content">
+            <h1>Payslip Details</h1>
+            <div class="pay-container">
+                <div id="payslipContainer"></div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const data = JSON.parse(localStorage.getItem("payrollData"));
+        if (data) {
+            document.getElementById("payslipContainer").innerHTML = `
+     <div class="payslip-summary">
+      <div>
+        <p><strong>Employee Name:</strong> ${data.name}</p>
+        <p><strong>Employee ID:</strong> ${data.empId}</p>
+        <p><strong>Role:</strong> ${data.role}</p>
+        </div>
+        <div>
+        <p><strong>Date:</strong> ${data.date}</p>
+         <p><strong>Month</strong> : ${data.month}</p>
+         </div>
+         </div>
+         <div class="table-responsive">
+        <table border="1">
+          <tr>
+            <thead>
+              <tr>
+                 <th colspan="2">Employee Details</th>
+                  <th colspan="2">Earnings</th>
+                  <th>Additions</th>
+                  <th>Deductions</th>
+              </tr>
+               <tr>
+              <th>Employee ID</th>
+              <th>Employee Name</th>
+              <th>Basic salary</th>
+              <th>Total Salary</th>
+              <th>Bonus</th>
+              <th>Tax/PF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>${data.empId}</td>
+              <td>${data.name}</td>
+              <td>${data.basicSalary}</td>
+              <td>${data.totalSalary}</td>
+              <td>${data.additions}</td>
+              <td>${data.deductions}</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+        <p class=total><strong>Total Earnings: ₹ ${parseInt(data.totalSalary) + parseInt(data.additions) - parseInt(data.deductions)}</strong></p>
+      `;
+        } else {
+            document.getElementById("payslipContainer").innerHTML = "<p>No payroll data found.</p>";
+        }
+    </script>
+    <script>
+        function toggleSidebar() {
+            document.querySelector(".sidebar").classList.toggle("collapsed");
+        }
+    </script>
+</body>
+</html>

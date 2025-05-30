@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.sidebar-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+.sidebar-link.active {
+    background-color: grey;
+    color: #f1c40f;
+    border-radius: 5px;
+}
+body {
+    display: flex;
+    height: 100vh;
+    background: #FFF;
+}
+.container {
+    display: flex;
+    width: 100%;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar li {
+    margin-bottom: 15px;
+    padding: 10px;
+
+}
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #455A64;
+}
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+.main {
+    width: 700px;
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+}
+.top-bar {
+    background: #FEEBA8;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.top-right {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.search-box {
+    position: relative;
+    width: 250px;
+}
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 14px;
+}
+.search-box button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: yellow;
+    font-size: 16px;
+}
+.mid-container {
+    background: #FEEBA8;
+    height: 550px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.calender-meeting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.info-card {
+    background-color: #f1c40f;
+    padding: 20px;
+    border-radius: 8px;
+    width: 260px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 25px;
+}
+.icon-circle {
+    background-color: #455A64;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.icon-circle img {
+    width: 34px;
+    height: 34px;
+    filter: brightness(0) invert(1);
+}
+.calendar-container {
+    font-family: sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+}
+.calendar-box {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.nav-buttons button {
+    background-color: transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    gap: 5px;
+    text-align: center;
+}
+.calendar-days div {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.calendar-days div:nth-child(-n+7) {
+    font-weight: bold;
+}
+.highlight {
+    background-color: #f1c40f;
+    color: red;
+    font-weight: bold;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.meetings-section {
+       padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.view-all {
+    color: orange;
+    cursor: pointer;
+    font-weight: bold;
+}
+.meeting-list {
+    margin-top: 20px;
+}
+.meeting-item {
+    display: flex;
+    justify-content: space-between;
+    background: #ffd59f;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    font-size: 20px;
+    gap: 30px;
+}
+.date {
+    text-align: center;
+    font-size: 18px;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.popup-meeting-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+.toggle-sidebar {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+@media (max-width:700px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #FFF;
+    }.container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }.sidebar.collapsed {
+        display: none;
+    } .sidebar {
+        width: 100%;
+        height: 40vh;
+        background-color: #455A64;
+        text-align: center;
+    }
+        .toggle-sidebar {
+        display: block;
+    }.main {
+        width: 100%;
+        flex: 1;
+        padding: 5px;
+        background: #fff;
+    }.top-bar {
+        background: #FEEBA8;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }.top-right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 20px;
+    } .search-box {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+    }  .mid-container {
+        background: #FEEBA8;
+        height: 230vh;
+        border-radius: 10px;
+        padding: 5px;
+    }   .card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }.info-card {
+        background-color: #f1c40f;
+        padding: 10px;
+        border-radius: 8px;
+        width: 240px;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 20px;
+    }  .calender-meeting {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }  .calendar-container {
+        font-family: sans-serif;
+        border-radius: 10px;
+        width: 250px;
+        padding: 0;
+        font-size: 10px;
+     }
+     .calendar-box {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 0;
+    }
+      .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 35px);
+        gap: 0px;
+        text-align: center;
+    }
+      .calendar-days div {
+        padding: 8px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+}
+@media (min-width:700px) and (max-width:1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+     .calender-meeting {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+     }
+       .card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+     .main {
+        width: 700px;
+        flex: 1;
+        padding: 10px;
+        background: #fff;
+     }
+      .sidebar {
+        width: 300px;
+        height: 150vh;
+        background-color: #455A64;
+    }
+     .mid-container {
+        background: #FEEBA8;
+        height: 150vh;
+        border-radius: 10px;
+        padding: 20px;
+    }
+}
