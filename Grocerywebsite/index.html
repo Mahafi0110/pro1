@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GroceryHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assest/CSS/index.css">
+
+</head>
+
+<body>
+
+    <!-- Top bar -->
+    <div class="top-bar text-center d-flex justify-content-between px-3 align-items-center">
+        <div>
+            <a href="#"><i class="bi bi-telephone-fill"></i> +91 87642 987687</a>
+            <a href="#"><i class="bi bi-whatsapp"></i> +91 87642 987687</a>
+        </div>
+        <div>World Fastest online Shopping Destination</div>
+        <div>
+            <a href="#">Current Location</a> |
+            <a href="#">Account</a> |
+            <a href="#">Login/Logout</a>
+        </div>
+    </div>
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="./assest/images/Ellipse 1.png" alt="Logo" />
+            <span class="ms-2 text-success fs-4 fw-bold">GroceryHub</span>
+        </a>
+        <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-2">
+                    <a class="nav-link active border-bottom border-success" href="">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="./assest/pages/category.html">Categories</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="./assest/pages/deals.html">Deals</a>
+                </li>
+            </ul>
+        </div>
+        <div class="icon-bar d-flex align-items-center">
+            <a href="#" class="me-3"><i class="bi bi-search"></i>Search</a>
+            <a href="/assest/pages/cart.html" class="me-3"><i class="bi bi-cart"></i>Cart
+                <span id="cart-badge"
+                    class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                    0
+                </span>
+            </a>
+            <a href="#" class="me-3"><i class="bi bi-heart"></i>Liked</a>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="main-heading">Fresh Groceries Delivered To Your DoorStep</h1>
+                <p class="sub-heading mt-3">Emphasizing the Store’s Commitment to providing fresh Produce and Product
+                    Daily.</p>
+                <button class="shop-btn mt-4"><a  class="shop-btn mt-4" href="./assest/pages/deals.html">Shop Now</a></button>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="./assest/images/image 1.png" alt="Delivery" class="delivery-img" />
+            </div>
+        </div>
+    </div>
+    <!-- hero banner -->
+    <div class="container-fluid px-0">
+        <img src="./assest/images/Link → welcome-image.png" class="img-fluid w-100" alt="One Stop Shop Banner">
+    </div>
+
+    <div class="container">
+
+        <!-- Grocery & Kitchen -->
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <h2 class="category-title">Grocery & Kitchen</h2>
+            <div class="see-all text-success">See all &rarr;</div>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/atta.png" alt="Atta Rice Dal">
+                    <p>Atta, Rice & Dal</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/oil.png" alt="Cooking Oil">
+                    <p>Cooking Oil</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/spices.png" alt="Masala">
+                    <p>Masala & Spices</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/fish.png" alt="Chicken Fish Meat">
+                    <p>Chicken, Fish & Meat</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/fru.png" alt="Fruits Veg">
+                    <p>Fruits & Vegetables</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/bread.png" alt="Dairy">
+                    <p>Dairy, Bread & Eggs</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/Dry Fruits I.png" alt="Dairy">
+                    <p>Dry Fruits</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/Frame 3 O.png" alt="Dairy">
+                    <p>Organic Food</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Snacks & Drinks -->
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2 class="category-title">Snacks & Drinks</h2>
+            <div class="see-all text-success">See all &rarr;</div>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/bisc.png" alt="Biscuits">
+                    <p>Biscuits & Cookies</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/corn.png" alt="Breakfast Cereal">
+                    <p>Breakfast Cereals</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/noodles.png" alt="Noodles">
+                    <p>Pasta & Noodles</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/sos.png" alt="Sauces">
+                    <p>Jams & Spreads</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/sweets.png" alt="Juices">
+                    <p>Sweets & Chocolates</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/chips.png" alt="Juices">
+                    <p>Chips & Namkeens</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/juice.png" alt="Juices">
+                    <p>Drinks & Juices</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/tea.png" alt="Coffee">
+                    <p>Tea, Coffee & Beverages</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4">
+        <h2 class="section-title">Fish and Meat</h2>
+        <div class="row">
+            <!-- Product Item -->
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Chicken Whole Skinless', 40)">
+                    <img src="./assest/images/Premium Chicken Whole Skinless 1.png" alt="Chicken">
+                    <h6>Premium Chicken Whole Skinless</h6>
+                    <p>250 GM</p>
+                    <p>₹74.75</p>
+                    <button class="btn btn-success btn-sm" onclick="showOptions('Premium Chicken Whole Skinless')">4
+                        Options</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Boneless Chicken', 40)">
+                    <img src="./assest/images/Chicken Boneless Breast Fillet.png" alt="Chicken">
+                    <h6>Chicken Boneless Breast Fillet</h6>
+                    <p>250 GM</p>
+                    <p>₹107.25</p>
+                    <button class="btn btn-success btn-sm">4 Options</button>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Goat Currycut', 40)">
+                    <img src="./assest/images/Goat Currycut.png" alt="Goat Currycut">
+                    <h6>Goat Currycut</h6>
+                    <p>250 GM</p>
+                    <p>₹212.25</p>
+                    <button class="btn btn-success btn-sm">4 Options</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Chicken liver', 40)">
+                    <img src="./assest/images/Chicken Liver Cut Pieces U.png" alt="Chicken liver">
+                    <h6> Chicken Liver Cut Pieces</h6>
+                    <p>250 GM</p>
+                    <p>₹249.75</p>
+                    <button class="btn btn-success btn-sm">4 Options</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Chicken', 40)">
+                    <img src="./assest/images/Premium Chicken Whole Skinless 1.png" alt="Chicken skin">
+                    <h6>Chicken Dressed With Skin Whole</h6>
+                    <p>250 GM</p>
+                    <p>₹69.75</p>
+                    <button class="btn btn-success btn-sm">4 Options</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Chicken Drumstick', 40)">
+                    <img src="./assest/images/Premium Chicken Drumstick Skinless U.png" alt="Chicken drumstick">
+                    <h6>Premium Chicken Drumstick Skinless</h6>
+                    <p>250 GM</p>
+                    <p>₹107.25</p>
+                    <button class="btn btn-success btn-sm">4 Options</button>
+                </div>
+            </div>
+
+            <!-- Copy this col-md-4 col-lg-3 block for each item -->
+        </div>
+
+        <h2 class="section-title">Dairy, Bread & Eggs</h2>
+        <div class="row">
+            <div class="col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Badam Milk', 40)">
+                    <img src="./assest/images/Jersey Badam Flavoured Milk 190ML.png" alt="Milk">
+                    <h6>Jersey Badam Flavoured Milk 190ML</h6>
+                    <p>190 ML</p>
+                    <p>₹40</p>
+                    <button class="btn btn-outline-success btn-sm" onclick="addToCart(this)">+</button>
+                    <p class="quantity" style="display: none;">Quantity: <span>0</span></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Nandhini Goodlife milk', 40)">
+                    <img src="./assest/images/Nandini Goodlife Milk 500GM.png" alt="Milk">
+                    <h6>Nandhini Goodlife Milk 500GM</h6>
+                    <p>500 GM</p>
+                    <p>₹30</p>
+                    <button class="btn btn-outline-success btn-sm">+</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('goodlife milk 180ML', 40)">
+                    <img src="./assest/images/Nandini Goodlife Milk 180ML.png" alt="Milk">
+                    <h6>Nandhini Goodlife Milk 180ML</h6>
+                    <p>180 ML</p>
+                    <p>₹20</p>
+                    <button class="btn btn-outline-success btn-sm">+</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Nandhini slim milk', 40)">
+                    <img src="./assest/images/Nandini Slim Uht Milk 1L.png" alt="Milk">
+                    <h6>Nandini Slim Uht Milk 1L</h6>
+                    <p>1 LTR</p>
+                    <p>₹70</p>
+                    <button class="btn btn-outline-success btn-sm">+</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Milky mist Paneer', 40)">
+                    <img src="./assest/images/Milky Mist Paneer-P.png" alt="Milk">
+                    <h6>Milky Mist Paneer</h6>
+                    <p>200 GM</p>
+                    <p>₹128</p>
+                    <button class="btn btn-outline-success btn-sm">+</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="product-card" onclick="addToCart('Heritage Badam Milk', 40)">
+                    <img src="./assest/images/Heritage Premium Badam Milk With Badam Bits 180ML.png" alt="Milk">
+                    <h6>Heritage Premium Badam Milk 190ML</h6>
+                    <p>190 ML</p>
+                    <p>₹40</p>
+                    <button class="btn btn-outline-success btn-sm">+</button>
+                </div>
+            </div>
+
+            <!-- Add more product items here the same way -->
+        </div>
+    </div>
+    <div class="modal fade" id="optionsModal" tabindex="-1" aria-labelledby="optionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="optionsModalLabel">Product Options</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="optionsList">
+                    <!-- Options will be added by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mt-5">
+        <h3 class="fw-bold text-success px-3 py-2">Buy More, Save More</h3>
+    </div>
+
+    <div class="container-fluid mb-5">
+
+
+        <div class="row px-3">
+            <div class="col-6 col-md-3 col-lg-2">
+                <!-- card 1 -->
+                <div class="card h-100 p-2" style="background-color: #e6f5d7;">
+                    <img src="./assest/images/SPAR Select Urad Dal 500G.png" class="card-img-top"
+                        alt="SPAR Select Urad Dal">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">SPAR Select Urad Dal 500G</h6>
+                        <p class="mb-1 text-muted" style="font-size: 14px;">500 GM</p>
+                        <div class="foot d-flex justify-content-between">
+                            <p class="fw-bold">₹110</p>
+                            <button class="btn btn-light border rounded px-3">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <!-- card 2 -->
+                <div class="card h-100 p-2" style="background-color: #e6f5d7;">
+                    <img src="./assest/images/Bhagyalakshmi Fried Gram-P.png" class="card-img-top"
+                        alt="SPAR Select Urad Dal">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">Bhagyalakshmi Fried Gram</h6>
+                        <p class="mb-1 text-muted" style="font-size: 14px;">250 GM</p>
+                        <div class="foot d-flex justify-content-between">
+                            <p class="fw-bold">₹40</p>
+                            <button class="btn btn-light border rounded px-3">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <!-- card 3 -->
+                <div class="card h-100 p-2" style="background-color: #e6f5d7;">
+                    <img src="./assest/images/Popular Moong Dal 2KG.png" class="card-img-top"
+                        alt="SPAR Select Urad Dal">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">Popular Moong Dal 1kG</h6>
+                        <p class="mb-1 text-muted" style="font-size: 14px;">1 kG</p>
+                        <div class="foot d-flex justify-content-between">
+                            <p class="fw-bold">₹190</p>
+                            <button class="btn btn-light border rounded px-3">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <!-- card 4 -->
+                <div class="card h-100 p-2" style="background-color: #e6f5d7;">
+                    <img src="./assest/images/d" class="card-img-top" alt="SPAR Select Urad Dal">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">SPAR Select Urad Dal 500G</h6>
+                        <p class="mb-1 text-muted" style="font-size: 14px;">500 GM</p>
+                        <div class="foot d-flex justify-content-between">
+                            <p class="fw-bold">₹110</p>
+                            <button class="btn btn-light border rounded px-3">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <!-- card 5 -->
+                <div class="card h-100 p-2" style="background-color: #e6f5d7;">
+                    <img src="./assest/images/Loose Bestprice Fried Gram.png" class="card-img-top"
+                        alt="SPAR Select Urad Dal">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">SPAR Select Urad Dal 500G</h6>
+                        <p class="mb-1 text-muted" style="font-size: 14px;">500 GM</p>
+                        <div class="foot d-flex justify-content-between">
+                            <p class="fw-bold">₹110</p>
+                            <button class="btn btn-light border rounded px-3">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <!-- card 6 -->
+                <div class="card h-100 p-2" style="background-color: #e6f5d7;">
+                    <img src="./assest/images/Popular Moong Dal 2KG.png" class="card-img-top"
+                        alt="SPAR Select Urad Dal">
+                    <div class="card-body p-2">
+                        <h6 class="card-title">SPAR Select Urad Dal 500G</h6>
+                        <p class="mb-1 text-muted" style="font-size: 14px;">500 GM</p>
+                        <div class="foot d-flex justify-content-between">
+                            <p class="fw-bold">₹110</p>
+                            <button class="btn btn-light border rounded px-3">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hero banner -->
+    <div class="container-fluid px-0 mb-3">
+        <img src="./assest/images/home hero.png" class="img-fluid w-100" alt="One Stop Shop Banner">
+    </div>
+    <div class="container">
+
+
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2 class="category-title">Explore Categories</h2>
+            <div class="see-all text-success">See all &rarr;</div>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category">
+                    <img src="./assest/images/Apple Royalgala.png" alt="Biscuits">
+                    <p>Apple Royalgala</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category">
+                    <img src="./assest/images/Apple Shimla.png" alt="Breakfast Cereal">
+                    <p>Apple Shimla</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category">
+                    <img src="./assest/images/Banana Robusta.png" alt="Noodles">
+                    <p>Banana Robusta</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category-box">
+                    <img src="./assest/images/Banana Yelakki.png" alt="Sauces">
+                    <p>Banana Yelakki</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category">
+                    <img src="./assest/images/Orange Nagpur.png" alt="Juices">
+                    <p>Orange Nagpur</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="category">
+                    <img src="./assest/images/Guava Prepack.png" alt="Juices">
+                    <p>Guava Prepack</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <h2 class="text-center mb-5" style="color: #7FB800;">What Our Beloved Customer Say About Us</h2>
+        <div class="row justify-content-center">
+            <!-- Testimonial 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="border rounded shadow-sm p-4" style="border: 2px solid #7FB800; border-radius: 15px;">
+                    <div class="text-center mb-3">
+                        <div style="font-size: 40px; color: #99c3ff;">&#10077;</div>
+                        <div style="color: gold; font-size: 20px;">
+                            ★ ★ ★ ★
+                        </div>
+                    </div>
+                    <p class="text-center text-muted mb-4">
+                        "I've been shopping at this store for years and I'm always impressed with the quality of their
+                        produce and meats. The staff is friendly and helpful too!"
+                    </p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="./assest/images/G.png" class="rounded-circle me-3" alt="Astha Kohli">
+                        <strong>Astha Kohli</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="border rounded shadow-sm p-4" style="border: 2px solid #7FB800; border-radius: 15px;">
+                    <div class="text-center mb-3">
+                        <div style="font-size: 40px; color: #99c3ff;">&#10077;</div>
+                        <div style="color: gold; font-size: 20px;">
+                            ★ ★ ★ ★ ★
+                        </div>
+                    </div>
+                    <p class="text-center text-muted mb-4">
+                        "I love the variety of products they carry, especially the organic and gluten-free options. The
+                        prices are reasonable too!"
+                    </p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img src="./assest/images/Ellipse 2 H.png" class="rounded-circle me-3" alt="Neeraj Singh">
+                        <strong>Neeraj Singh</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <!-- GroceryHub Info -->
+                <div class="col-lg-4 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="./assest/images/Ellipse 1.png" alt="GroceryHub" width="90"
+                            class="rounded-circle me-2">
+                        <h4 class="mb-0">GroceryHub</h4>
+                    </div>
+                    <p>
+                        GroceryHub brings its customers low prices every day. We offer a wide choice covering fresh &
+                        packaged food, grains, pulses, dairy, frozen, plastics, utensils, crockery, travel, stationery,
+                        & more. SPAR has 13,900 stores in 48 countries. In India, SPAR has 23 stores across 8 cities.
+                    </p>
+                    <p><i class="bi bi-envelope-fill me-2"></i>business@groceryhub.com</p>
+                    <p><i class="bi bi-globe2 me-2"></i>www.Grocery.in</p>
+                </div>
+
+                <!-- Our Services -->
+                <div class="col-md-2 mb-4">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Your Account</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">FAQS</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Store List</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help Section -->
+                <div class="col-md-3 mb-4">
+                    <h5>Let Us Help You</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Help & Support</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Share Feedback</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Call Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-3 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Return & Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Media and App Links -->
+            <div class="text-center mt-4">
+                <h5>Connect With Us</h5>
+                <div class="d-flex justify-content-center my-3">
+                    <img src="./assest/images/facebook.png" alt="Facebook" width="30" class="mx-2">
+                    <img src="./assest/images/thread.png" alt="Twitter" width="30" class="mx-2">
+                    <img src="./assest/images/insta.png" alt="Instagram" width="30" class="mx-2">
+                    <img src="./assest/images/linkedin.png" alt="LinkedIn" width="30" class="mx-2">
+                </div>
+                <div class="d-flex justify-content-center gap-3">
+                    <img src="./assest/images/Link → app-store-image.png" alt="App Store" width="150">
+                    <img src="./assest/images/Link → paly-store-image.png" alt="Google Play" width="150">
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="text-center mt-4">
+                <p class="mb-0">GroceryHub India © All rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+     <div class="restart">
+         <button type="restart"><a style="text-decoration: none;color: white;" href="#">↩Restart</a></button>
+    </div>
+
+
+
+
+
+
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle "4 Options" click
+        function showOptions(productName) {
+            const options = ["250 GM - ₹74.75", "500 GM - ₹145", "1 KG - ₹280", "1.5 KG - ₹410"];
+            const list = options.map(opt => `<li>${opt}</li>`).join('');
+            document.getElementById("optionsModalLabel").innerText = productName + " - Options";
+            document.getElementById("optionsList").innerHTML = `<ul>${list}</ul>`;
+            const myModal = new bootstrap.Modal(document.getElementById('optionsModal'));
+            myModal.show();
+        }
+
+        // Handle "+" button click
+        function addToCart(button) {
+            const quantityElem = button.nextElementSibling;
+            const countElem = quantityElem.querySelector('span');
+            let count = parseInt(countElem.innerText);
+            count++;
+            countElem.innerText = count;
+            quantityElem.style.display = "block";
+        }
+    </script>
+    <script src="./assest/JS/cart.js"></script>
+</body>
+
+</html>

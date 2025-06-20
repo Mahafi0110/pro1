@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GroceryHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../CSS/category.css">
+</head>
+
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar text-center d-flex justify-content-between px-3 align-items-center">
+    <div>
+      <a href="#"><i class="bi bi-telephone-fill"></i> +91 87642 987687</a>
+      <a href="#"><i class="bi bi-whatsapp"></i> +91 87642 987687</a>
+    </div>
+    <div>World Fastest online Shopping Destination</div>
+    <div>
+      <a href="#">Current Location</a> |
+      <a href="#">Account</a> |
+      <a href="#">Login/Logout</a>
+    </div>
+  </div>
+  <!-- Toggle button for mobile -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="../images/Ellipse 1.png" alt="Logo" />
+      <span class="ms-2 text-success fs-4 fw-bold">GroceryHub</span>
+    </a>
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item mx-2">
+          <a class="nav-link " href="/index.html">Home</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link " href="/assest/pages/category.html">Categories</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link active border-bottom border-success" href="/assest/pages/deals.html">Deals</a>
+        </li>
+      </ul>
+    </div>
+    <div class="icon-bar d-flex align-items-center">
+      <a href="#" class="me-3"><i class="bi bi-search"></i>Search</a>
+      <a href="#" class="me-3"><i class="bi bi-cart"></i>Cart</a>
+      <a href="#" class="me-3"><i class="bi bi-heart"></i>Liked</a>
+    </div>
+  </nav>
+  <!-- hero banner -->
+  <div class="container-fluid px-0">
+    <img src="../images/deal hero.png" class="img-fluid w-100" alt="One Stop Shop Banner">
+  </div>
+  <!-- section1 -->
+  <div class="container py-4">
+    <h2 class="section-title">Top Selling 25% OFF</h2>
+    <div class="row">
+      <!-- Product Item -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Premium Chicken Whole Skinless 1.png" alt="Chicken">
+          <h6>Premium Chicken Whole Skinless</h6>
+          <p>250 GM</p>
+          <p>₹74.75</p>
+          <button class="btn btn-success btn-sm" onclick="showOptions('Premium Chicken Whole Skinless')">4
+            Options</button>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Chicken Boneless Breast Fillet.png" alt="Chicken">
+          <h6>Chicken Boneless Breast Fillet</h6>
+          <p>250 GM</p>
+          <p>₹107.25</p>
+          <button class="btn btn-success btn-sm">4 Options</button>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Goat Currycut.png" alt="Goat Currycut">
+          <h6>Goat Currycut</h6>
+          <p>250 GM</p>
+          <p>₹212.25</p>
+          <button class="btn btn-success btn-sm">4 Options</button>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Chicken Liver Cut Pieces U.png" alt="Chicken liver">
+          <h6> Chicken Liver Cut Pieces</h6>
+          <p>250 GM</p>
+          <p>₹249.75</p>
+          <button class="btn btn-success btn-sm">4 Options</button>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Premium Chicken Whole Skinless 1.png" alt="Chicken skin">
+          <h6>Chicken Dressed With Skin Whole</h6>
+          <p>250 GM</p>
+          <p>₹69.75</p>
+          <button class="btn btn-success btn-sm">4 Options</button>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Premium Chicken Drumstick Skinless U.png" alt="Chicken drumstick">
+          <h6>Premium Chicken Drumstick Skinless</h6>
+          <p>250 GM</p>
+          <p>₹107.25</p>
+          <button class="btn btn-success btn-sm">4 Options</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- section2 -->
+  <div class="container">
+    <h2 class="section-title">Best Deals Up to 20% OFF</h2>
+    <div class="row">
+      <div class="col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Jersey Badam Flavoured Milk 190ML.png" alt="Milk">
+          <h6>Jersey Badam Flavoured Milk 190ML</h6>
+          <p>190 ML</p>
+          <p>₹40</p>
+          <button class="btn btn-outline-success btn-sm" onclick="addToCart(this)">+</button>
+          <p class="quantity" style="display: none;">Quantity: <span>0</span></p>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Nandini Goodlife Milk 500GM.png" alt="Milk">
+          <h6>Nandhini Goodlife Milk 500GM</h6>
+          <p>500 GM</p>
+          <p>₹30</p>
+          <button class="btn btn-outline-success btn-sm">+</button>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Nandini Goodlife Milk 180ML.png" alt="Milk">
+          <h6>Nandhini Goodlife Milk 180ML</h6>
+          <p>180 ML</p>
+          <p>₹20</p>
+          <button class="btn btn-outline-success btn-sm">+</button>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Nandini Slim Uht Milk 1L.png" alt="Milk">
+          <h6>Nandini Slim Uht Milk 1L</h6>
+          <p>1 LTR</p>
+          <p>₹70</p>
+          <button class="btn btn-outline-success btn-sm">+</button>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Milky Mist Paneer-P.png" alt="Milk">
+          <h6>Milky Mist Paneer</h6>
+          <p>200 GM</p>
+          <p>₹128</p>
+          <button class="btn btn-outline-success btn-sm">+</button>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="product-card">
+          <img src="../images/Heritage Premium Badam Milk With Badam Bits 180ML.png" alt="Milk">
+          <h6>Heritage Premium Badam Milk 190ML</h6>
+          <p>190 ML</p>
+          <p>₹40</p>
+          <button class="btn btn-outline-success btn-sm">+</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+
+        <!-- GroceryHub Info -->
+        <div class="col-lg-4 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="../images/Ellipse 1.png" alt="GroceryHub" width="90" class="rounded-circle me-2">
+            <h4 class="mb-0">GroceryHub</h4>
+          </div>
+          <p>
+            GroceryHub brings its customers low prices every day. We offer a wide choice covering fresh & packaged
+            food, grains, pulses, dairy, frozen, plastics, utensils, crockery, travel, stationery, & more. SPAR has
+            13,900 stores in 48 countries. In India, SPAR has 23 stores across 8 cities.
+          </p>
+          <p><i class="bi bi-envelope-fill me-2"></i>business@groceryhub.com</p>
+          <p><i class="bi bi-globe2 me-2"></i>www.Grocery.in</p>
+        </div>
+
+        <!-- Our Services -->
+        <div class="col-md-2 mb-4">
+          <h5>Our Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Your Account</a></li>
+            <li><a href="#" class="text-white text-decoration-none">FAQS</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Store List</a></li>
+          </ul>
+        </div>
+
+        <!-- Help Section -->
+        <div class="col-md-3 mb-4">
+          <h5>Let Us Help You</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Help & Support</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Share Feedback</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Call Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Terms</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Return & Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Media and App Links -->
+      <div class="text-center mt-4">
+        <h5>Connect With Us</h5>
+        <div class="d-flex justify-content-center my-3">
+          <img src="../images/facebook.png" alt="Facebook" width="30" class="mx-2">
+          <img src="../images/thread.png" alt="Twitter" width="30" class="mx-2">
+          <img src="../images/insta.png" alt="Instagram" width="30" class="mx-2">
+          <img src="../images/linkedin.png" alt="LinkedIn" width="30" class="mx-2">
+        </div>
+        <div class="d-flex justify-content-center gap-3">
+          <img src="../images/Link → app-store-image.png" alt="App Store" width="150">
+          <img src="../images/Link → paly-store-image.png" alt="Google Play" width="150">
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="text-center mt-4">
+        <p class="mb-0">GroceryHub India © All rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

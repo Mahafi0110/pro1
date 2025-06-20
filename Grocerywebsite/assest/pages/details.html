@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details - Robusta Bananas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2em;
+      background: #fff;
+      color: #000;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .left, .right {
+      flex: 1 1 45%;
+    }
+    .left h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    .left p, .left ul {
+      font-size: 1em;
+      margin: 0.5em 0;
+    }
+    .left strong {
+      display: block;
+      margin-top: 1em;
+    }
+    ul {
+      padding-left: 1em;
+    }
+    .right img {
+      width: 400px;
+      height: 400px;
+      display: block;
+      margin: auto;
+      object-fit: cover;
+    }
+    .right .price-section {
+      margin-top: 1em;
+      text-align: center;
+      font-size: 1.1em;
+    }
+    .right .price-section span {
+      display: block;
+      margin: 0.3em 0;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 2em;
+    }
+    .buttons button {
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .add-to-cart {
+      background-color: #d7f5be;
+      color: #000;
+    }
+    .buy-now {
+      background-color: #a7f396;
+      color: #000;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .right img {
+        margin-bottom: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Robusta Bananas</h1>
+      <p><strong>Product Description</strong>
+      Enjoy the delicious taste and numerous health benefits of our Robusta Bananas, carefully hand-picked from select plantations to ensure maximum freshness and quality.</p>
+
+      <p><strong>Key Features</strong></p>
+      <ul>
+        <li>Sweet and creamy taste</li>
+        <li>High in potassium, vitamins, and minerals</li>
+        <li>Carefully hand-picked from select plantations</li>
+        <li>Perfect snack for any time of day</li>
+      </ul>
+
+      <p><strong>Product Details</strong></p>
+      <ul>
+        <li>Weight: 500gm, 1kg, 2kg, 5kg</li>
+        <li>Packaging: Food-grade packaging to ensure freshness</li>
+        <li>Shelf Life: 3–5 days from delivery date</li>
+        <li>Storage Instructions: Store at room temperature or in refrigerator</li>
+      </ul>
+    </div>
+
+    <div class="right">
+      <img src="../images/Banana Robusta.png" alt="Robusta Bananas">
+      <div class="price-section">
+        <span><strong>Banana Robusta</strong> &nbsp;&nbsp; 500 GM</span>
+        <span>₹27.5</span>
+        <span>Quality No : 1 &nbsp;&nbsp;&nbsp; ❤️ In Stock : 13</span>
+      </div>
+      <div class="buttons">
+        <button class="add-to-cart" onclick="addToCart('banana Robusta', 40)">Add to cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+ let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  function addToCart(name, price) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+    saveCart();
+    updateBadge();
+    alert(`${name} added to cart`);
+  }
+
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  function updateBadge() {
+    document.getElementById('cart-badge').innerText = cart.reduce((a, b) => a + b.quantity, 0);
+  }
+
+  updateBadge(); // update on load
+</script>
+
+</html>
