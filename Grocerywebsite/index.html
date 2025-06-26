@@ -27,12 +27,12 @@
         </div>
     </div>
     <!-- Toggle button for mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
         <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
 
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="./assest/images/Ellipse 1.png" alt="Logo" />
             <span class="ms-2 text-success fs-4 fw-bold">GroceryHub</span>
@@ -49,12 +49,39 @@
                     <a class="nav-link" href="./assest/pages/deals.html">Deals</a>
                 </li>
             </ul>
+        </div> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm  px-4">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="./assest/images/Ellipse 1.png" alt="Logo" width="40" height="40">
+            <span class="ms-2 text-success fs-4 fw-bold">GroceryHub</span>
+        </a>
+
+        <!-- Mobile toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links section -->
+        <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-2">
+                    <a class="nav-link active border-bottom border-success" href="">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="./assest/pages/category.html">Categories</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="./assest/pages/deals.html">Deals</a>
+                </li>
+            </ul>
         </div>
+
         <div class="icon-bar d-flex align-items-center">
             <a href="#" class="me-3"><i class="bi bi-search"></i>Search</a>
-            <a href="./assest/pages/cart.html" class="me-3"><i class="bi bi-cart"></i>Cart
+            <a href="./assest/pages/cart.html" class="me-3 position-relative"><i class="bi bi-cart"></i>Cart
                 <span id="cart-badge"
-                    class="position-absolute top-0 start-90 translate-middle badge rounded-pill bg-danger">
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     0
                 </span>
             </a>
@@ -69,7 +96,8 @@
                 <h1 class="main-heading">Fresh Groceries Delivered To Your DoorStep</h1>
                 <p class="sub-heading mt-3">Emphasizing the Store’s Commitment to providing fresh Produce and Product
                     Daily.</p>
-                <button class="shop-btn mt-4"><a  class="shop-btn mt-4" href="./assest/pages/deals.html">Shop Now</a></button>
+                <button class="shop-btn mt-4"><a class="shop-btn mt-4" href="./assest/pages/deals.html">Shop
+                        Now</a></button>
             </div>
             <div class="col-md-6 text-center">
                 <img src="./assest/images/image 1.png" alt="Delivery" class="delivery-img" />
@@ -599,8 +627,8 @@
             </div>
         </div>
     </footer>
-     <div class="restart">
-         <button type="restart"><a style="text-decoration: none;color: white;" href="#">↩Restart</a></button>
+    <div class="restart">
+        <button type="restart"><a style="text-decoration: none;color: white;" href="#">↩Restart</a></button>
     </div>
 
 
@@ -611,27 +639,12 @@
 
     <!--Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Handle "4 Options" click
-        function showOptions(productName) {
-            const options = ["250 GM - ₹74.75", "500 GM - ₹145", "1 KG - ₹280", "1.5 KG - ₹410"];
-            const list = options.map(opt => `<li>${opt}</li>`).join('');
-            document.getElementById("optionsModalLabel").innerText = productName + " - Options";
-            document.getElementById("optionsList").innerHTML = `<ul>${list}</ul>`;
-            const myModal = new bootstrap.Modal(document.getElementById('optionsModal'));
-            myModal.show();
-        }
+    <!-- jQuery first, then Popper, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        // Handle "+" button click
-        function addToCart(button) {
-            const quantityElem = button.nextElementSibling;
-            const countElem = quantityElem.querySelector('span');
-            let count = parseInt(countElem.innerText);
-            count++;
-            countElem.innerText = count;
-            quantityElem.style.display = "block";
-        }
-    </script>
+
     <script src="./assest/JS/cart.js"></script>
 </body>
 

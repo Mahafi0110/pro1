@@ -170,3 +170,18 @@
      background-color: gray;
      border-radius: 20px;
  }
+
+ .navbar {
+     margin-top: 20px;
+ }
+
+ @media (max-width: 768px) {
+     .navbar-nav {
+         align-items: center;
+         text-align: center;
+     }
+
+     .navbar-nav .nav-item {
+         margin-bottom: 10px;
+     }
+ }

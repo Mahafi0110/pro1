@@ -22,6 +22,7 @@
   }
 
   updateBadge(); // update on load
+  
 
 
   
