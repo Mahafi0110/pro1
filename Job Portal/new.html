@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal - Hero Banner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fa;
+        }
+
+        /* Hero Banner */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(120deg, #0077ff, #00c3ff);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .typing {
+            border-right: 3px solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .search-bar {
+            margin-top: 20px;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 5px 10px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 50px;
+        }
+
+        .search-bar button {
+            background: #0077ff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Counters */
+        .counters {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .counter-box {
+            font-size: 1.2rem;
+        }
+
+        /* Apply Now Button */
+        .apply-btn {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .apply-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Popup Form */
+        .popup {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            animation: popupScale 0.3s ease;
+        }
+
+        @keyframes popupScale {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+        }
+
+        .popup-content input, .popup-content button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .popup-content button {
+            background: #0077ff;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .close-popup {
+            float: right;
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1 class="typing" id="typing"></h1>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for jobs...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="counters">
+            <div class="counter-box"><span id="jobsCount">0</span>+ Jobs Available</div>
+            <div class="counter-box"><span id="companiesCount">0</span>+ Companies Hiring</div>
+        </div>
+
+        <button class="apply-btn" id="applyBtn">Apply Now</button>
+    </section>
+
+    <!-- Popup Form -->
+    <!-- <div class="popup" id="popupForm">
+        <div class="popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <h2>Quick Apply</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+            <input type="file">
+            <button>Submit Application</button>
+        </div>
+    </div> -->
+
+    <script>
+        // Typing Effect
+        const text = "Find Your Dream Job Today";
+        let index = 0;
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            }
+        }
+        typeText();
+
+        // Counters
+        function animateCounter(id, target) {
+            let count = 0;
+            const speed = 50;
+            const interval = setInterval(() => {
+                if (count < target) {
+                    count++;
+                    document.getElementById(id).textContent = count;
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        }
+        animateCounter("jobsCount", 500);
+        animateCounter("companiesCount", 120);
+
+        // Popup Logic
+        const popup = document.getElementById("popupForm");
+        document.getElementById("applyBtn").addEventListener("click", () => popup.style.display = "flex");
+        document.getElementById("closePopup").addEventListener("click", () => popup.style.display = "none");
+        window.addEventListener("click", e => { if (e.target === popup) popup.style.display = "none"; });
+
+        // Search Logic (Example)
+        document.getElementById("search").addEventListener("input", (e) => {
+            console.log("Searching for:", e.target.value);
+        });
+    </script>
+
+</body>
+</html>

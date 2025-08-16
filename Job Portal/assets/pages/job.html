@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Details - JobFinder</title>
+
+    <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Optional: FontAwesome CDN for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .main-content {
+      flex: 1 1 650px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .sidebar {
+      flex: 1 1 280px;
+      background: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .company-name {
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 4px;
+    }
+    p, ul {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #4b5563;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .apply-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .apply-btn:hover {
+      background: #2563eb;
+    }
+    .sidebar h3 {
+      margin-bottom: 15px;
+      color: #1f2937;
+    }
+    .sidebar p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: #6b7280;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .main-content,
+      .sidebar {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <main class="main-content">
+      <h1>Frontend Developer</h1>
+      <div class="company-name">TechVision</div>
+
+      <section>
+        <h2 class="section-title">Job Description</h2>
+        <p>We are looking for a talented Frontend Developer to join our team. You will be responsible for building responsive, performant web applications with modern technologies.</p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Requirements</h2>
+        <ul>
+          <li>Strong knowledge of HTML, CSS, and JavaScript</li>
+          <li>Experience with React or Angular frameworks</li>
+          <li>Familiarity with REST APIs and version control</li>
+          <li>Good problem-solving and communication skills</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section-title">Benefits</h2>
+        <ul>
+          <li>Competitive salary and bonuses</li>
+          <li>Flexible working hours and remote options</li>
+          <li>Health insurance and paid leave</li>
+          <li>Career growth opportunities</li>
+        </ul>
+      </section>
+
+      <a href="form.html" class="apply-btn">Apply Now</a>
+    </main>
+
+    <aside class="sidebar">
+      <h3>Company Overview</h3>
+      <p><strong>TechVision</strong> is a leading software development company committed to innovation and quality.</p>
+      <p><strong>Location:</strong> Remote / San Francisco, CA</p>
+      <p><strong>Contact:</strong> hr@techvision.com</p>
+      <p><strong>Phone:</strong> +1 555 123 4567</p>
+    </aside>
+  </div>
+
+</body>
+</html>

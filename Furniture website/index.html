@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wooden Dreams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./assests/css/index.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./assests/images/icon.png" alt="Logo">
+      <span>Wooden Dreams</span>
+    </div>
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav class="nav-links" id="navMenu">
+      <a href="./index.html">Home</a>
+      <a href="./assests/pages/about.html">About Us</a>
+      <a href="./assests/pages/categories.html">Categories</a>
+      <a href="./assests/pages/shop.html">Shop</a>
+      <a href="./assests/pages/Blog.html">Blog</a>
+      <a href="./assests/pages/contact.html">Contact</a>
+
+      <div class="icons">
+        <a href=""><i class="fas fa-magnifying-glass"></i>Search</a>
+        <a href=""><i class="fas fa-shopping-cart"></i>Cart</a>
+        <a href=""><i class="fas fa-heart"></i>Liked</a>
+        <button class="signin-btn">Sign Up / Sign In</button>
+      </div>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="./assests/images/hero page.png" alt="Hero Background" class="hero-bg">
+    <div class="hero-content">
+      <p class="arrival"><b>New Arrival</b></p>
+      <h1>Discover Our <br> <span>New Collection</span></h1>
+      <p class="subtext">Experience the art of wooden craftsmanship in our latest collection</p>
+      <button class="buy-now">BUY NOW</button>
+    </div>
+  </section>
+  <!-- Popular Categories Section -->
+  <section class="categories-section">
+    <h2>Popular Categories</h2>
+    <p class="subtitle">Organize your space, elevate your style</p>
+
+    <div class="category-grid">
+      <!-- Row 1 -->
+      <div class="category-card">
+        <img src="./assests/images/recliner.png" alt="Recliner">
+        <p>Recliner</p>
+      </div>
+      <div class="category-card">
+        <img src="./assests/images/dining set.png" alt="Dining Set">
+        <p>Dining Set</p>
+      </div>
+      <div class="category-card">
+        <img src="./assests/images/decor.png" alt="Decor">
+        <p>Decor</p>
+      </div>
+      <div class="category-card">
+        <img src="./assests/images/study tables.png" alt="Study Tables">
+        <p>Study Tables</p>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="category-card">
+        <img src="./assests/images/matress.png" alt="Mattress">
+        <p>Mattress</p>
+      </div>
+      <div class="category-card">
+        <img src="./assests/images/beds.png" alt="Beds">
+        <p>Beds</p>
+      </div>
+      <div class="category-card">
+        <img src="./assests/images/wardrobe.png" alt="Wardrobes">
+        <p>Wardrobes</p>
+      </div>
+      <div class="category-card">
+        <img src="./assests/images/sofa.png" alt="Sofa">
+        <p>Sofa</p>
+      </div>
+    </div>
+  </section>
+  <!-- 2 section -->
+  <section class="best-sellers">
+    <div class="container">
+      <h2>Best Sellars</h2>
+      <p class="subtitle">Our Most Loved Pieces</p>
+      <div class="explore-link">
+        <a href="#">EXPLORE ALL</a>
+      </div>
+
+      <div class="card-grid">
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/syltherine.png" alt="Syltherine">
+            <span class="discount-badge">-30%</span>
+          </div>
+          <div class="product-info">
+            <h4>Syltherine</h4>
+            <p>Stylish cafe chair</p>
+            <div class="price">
+              <span class="new">Rp 2.500.000</span>
+              <span class="old">Rp 3.500.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/lolito.png" alt="Lolito">
+            <span class="discount-badge">-50%</span>
+          </div>
+          <div class="product-info">
+            <h4>Lolito</h4>
+            <p>Luxury big sofa</p>
+            <div class="price">
+              <span class="new">Rp 7.000.000</span>
+              <span class="old">Rp 14.000.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/pingky.png" alt="Pingky">
+            <span class="discount-badge">-50%</span>
+          </div>
+          <div class="product-info">
+            <h4>Pingky</h4>
+            <p>Cute bed set</p>
+            <div class="price">
+              <span class="new">Rp 7.000.000</span>
+              <span class="old">Rp 14.000.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/patio.png" alt="Syltherine">
+            <span class="discount-badge">-30%</span>
+          </div>
+          <div class="product-info">
+            <h4>Patio</h4>
+            <p>Cute bed set</p>
+            <div class="price">
+              <span class="new">Rp 7.000.000</span>
+              <span class="old">Rp 14.000.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/grifo.png" alt="Syltherine">
+            <span class="discount-badge">-30%</span>
+          </div>
+          <div class="product-info">
+            <h4>Grifo</h4>
+            <p>Night lamp</p>
+            <div class="price">
+              <span class="new">Rp 1.500.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/leviosa.png" alt="Syltherine">
+            <span class="discount-badge">-30%</span>
+          </div>
+          <div class="product-info">
+            <h4>Leviosa</h4>
+            <p>Stylish cafe chair</p>
+            <div class="price">
+              <span class="new">Rp 2.500.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 3 section -->
+  <section class="best-sellers">
+    <div class="container">
+      <h2>New Arrivals</h2>
+      <p class="subtitle">Discover What's New</p>
+      <div class="explore-link">
+        <a href="#">EXPLORE ALL</a>
+      </div>
+
+      <div class="card-grid">
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/respira.png" alt="Syltherine">
+            <span class="New-badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>Respira</h4>
+            <p>Outdoor bar table and stool</p>
+            <div class="price">
+              <span class="new">Rp 2.500.000</span>
+              <span class="old">Rp 3.500.000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/mugga.png" alt="Syltherine">
+            <span class="New-badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>MUggo</h4>
+            <p>Stylish cafe chair</p>
+            <div class="price">
+              <span class="new">Rp 2.500.000</span>
+              <span class="old">Rp 3.500.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/potty.png" alt="Syltherine">
+            <span class="New-badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>Potty</h4>
+            <p>Minimalist flower pot</p>
+            <div class="price">
+              <span class="new">Rp 2.500.000</span>
+              <span class="old">Rp 3.500.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/ass sofa.png" alt="Syltherine">
+            <span class="New-badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>Assgard Sofa</h4>
+            <p>Outdoor bar table and stool</p>
+            <div class="price">
+              <span class="new">Rp 2.500.000</span>
+              <span class="old">Rp 3.500.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/patio2.png" alt="Syltherine">
+            <span class="New-badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>Patio</h4>
+            <p>Cute bed set</p>
+            <div class="price">
+              <span class="new">Rp 7.000.000</span>
+              <span class="old">Rp 14.000.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="img-container">
+            <img src="./assests/images/patio3.png" alt="Syltherine">
+            <span class="New-badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>Patio</h4>
+            <p>Cute bed set</p>
+            <div class="price">
+              <span class="new">Rp 7.500.000</span>
+              <span class="old">Rp 14.000.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials">
+    <h2>What Customers Say About Wooden Dreams</h2>
+
+    <div class="testimonial-grid">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <img src="./assests/images/test1.png" alt="Office Desk" class="testimonial-img" />
+        <p class="review-text">
+          "I'm absolutely thrilled with my new office desk! The quality is top-notch, and it looks fantastic in my home
+          office. “
+        </p>
+        <div class="stars">
+          ⭐ ⭐ ⭐ ⭐
+        </div>
+        <div class="review-footer">
+          <div class="user-info">
+            <strong>Megna</strong><br />
+            India
+          </div>
+          <div class="views">13.5k View</div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <img src="./assests/images/test2.png" alt="Bedroom Set" class="testimonial-img" />
+        <p class="review-text">
+          "Sleeping on this bed is like resting on a cloud. The mattress is heavenly, and the luxurious materials make
+          me feel pampered every night."
+        </p>
+        <div class="stars">
+          ⭐ ⭐ ⭐ ⭐ ⭐
+        </div>
+        <div class="review-footer">
+          <div class="user-info">
+            <strong>Shasha</strong><br />
+            USA
+          </div>
+          <div class="views">20.5k View</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="see-all">
+      <a href="#">SEE All</a>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left: Logo & Description -->
+      <div class="footer-brand">
+        <img src="./assests/images/icon.png" alt="Wooden Dreams" class="footer-logo" />
+        <p class="footer-description">
+          "At Wooden Dreams, we craft furniture that brings warmth and comfort to your home.Our Wooden Creation are
+          designed ti inspire sweet dreams and peaceful nights.Every piece is carefully crafted to provide a haven of
+          relaxation and tranquility.Sleep tight, dream big with Wooden Dreams."
+        </p>
+        <ul class="footer-contact">
+          <li><i class="fas fa-location-arrow"></i> Head Office 13/5, Post office oppsite, Chennai.876543</li>
+          <li><i class="fas fa-globe"></i> www.woodendreams.in</li>
+          <li><i class="fas fa-envelope"></i> woodendreams@gamil.com</li>
+        </ul>
+      </div>
+
+      <!-- Center: Links -->
+      <div class="footer-links">
+        <div>
+          <h4>LINKS</h4>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Categories</li>
+            <li>Shop</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div>
+          <h4>HELP</h4>
+          <ul>
+            <li>Payment Options</li>
+            <li>Returns</li>
+            <li>Privacy Policies</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Subscribe -->
+      <div class="footer-subscribe">
+        <h4>Subscribe</h4>
+        <div class="subscribe-box">
+          <input type="email" placeholder="Enter your email" />
+          <button>SIGN UP</button>
+        </div>
+        <div class="footer-social">
+          <p>Follow Us</p>
+          <div class="social-icons">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <p class="copyright">2025 Wooden Dreams. All rights reserved</p>
+  </footer>
+
+
+
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('show');
+    }
+  </script>
+</body>
+
+</html>

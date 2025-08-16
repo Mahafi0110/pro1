@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JobFinder - Companies</title>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Optional: FontAwesome CDN for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+  <style>
+     body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    margin: 0;
+    color: #1f2937;
+  } 
+       /* Navbar Wrapper */
+  .navbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+       color: white;
+  }
+
+  nav {
+      background: linear-gradient(90deg, #4f46e5, #3b82f6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      height: 80px;
+      position: relative;
+      z-index: 10;
+  }
+
+  .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+  }
+
+  nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 15;
+  }
+
+  nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+  }
+
+  /* Hover underline animation */
+  nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #ffeb3b;
+      transition: width 0.3s ease;
+  }
+
+  nav ul li a:hover::after {
+      width: 100%;
+  }
+
+  nav ul li a:hover {
+      color: #ffeb3b;
+  }
+
+  /* Wave */
+  .wave-container {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  }
+
+  .wave-container svg {
+      display: block;
+      width: 100%;
+      height: 50px;
+      animation: waveMove 6s linear infinite;
+  }
+
+  @keyframes waveMove {
+      0% {
+          transform: translateX(0);
+      }
+
+      100% {
+          transform: translateX(-50px);
+      }
+  }
+
+  /* Responsive */
+  .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+  }
+    /* Wave motion synced to gradient shift */
+  @keyframes waveMove {
+      0% {
+          transform: translateX(0);
+      }
+
+      50% {
+          transform: translateX(-25px);
+      }
+
+      100% {
+          transform: translateX(0);
+      }
+  }
+
+  .wave-container svg {
+      display: block;
+      width: 100%;
+      height: 50px;
+      animation: waveMove 12s ease-in-out infinite;
+  }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70vh;
+      padding: 0 10%;
+      background: linear-gradient(135deg, #004aad, #00b4d8);
+      /* 🎨 Change this for different colors */
+      color: white;
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .hero-animation {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      /* color: #1e40af; */
+      color:black;
+    }
+
+    /* Grid for company cards */
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .company-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .company-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .company-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      background-color: #f3f4f6;
+      padding: 15px;
+    }
+
+    .company-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #2563eb;
+    }
+
+    .company-desc {
+      font-size: 0.95rem;
+      color: #475569;
+      user-select: text;
+    }
+
+    .site-footer {
+      background-color: #1f2937;
+      /* dark slate */
+      color: #cbd5e1;
+      /* light slate */
+      padding: 40px 20px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto 20px;
+      gap: 40px;
+      justify-content: space-between;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+      flex: 1 1 220px;
+      min-width: 220px;
+  }
+
+  .footer-about h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #f3f4f6;
+  }
+
+  .footer-about p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #94a3b8;
+  }
+
+  .footer-links h4,
+  .footer-contact h4,
+  .footer-social h4 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #f3f4f6;
+  }
+
+  .footer-links ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .footer-links ul li {
+      margin-bottom: 8px;
+  }
+
+  .footer-links ul li a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+  }
+
+  .footer-links ul li a:hover {
+      color: #3b82f6;
+      /* blue highlight */
+  }
+
+  .footer-contact p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #94a3b8;
+  }
+
+  .footer-social .social-icons {
+      display: flex;
+      gap: 15px;
+  }
+
+  .social-link {
+      font-size: 1.5rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .social-link:hover {
+      color: #3b82f6;
+  }
+
+  .footer-bottom {
+      border-top: 1px solid #334155;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+  }
+  .companies-grid-tilt {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+  }
+  .company-card-tilt {
+    /* background: #1e40af; */
+    color:black;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 0 20px rgba(30,64,175,0.5);
+    text-align: center;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    animation: bounceIn 0.8s ease forwards;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    perspective: 800px;
+  }
+  .company-card-tilt img {
+    max-width: 120px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
+  }
+  .company-card-tilt h3 {
+    margin: 0 0 15px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    font-size: 1.3rem;
+  }
+  .company-card-tilt p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333;
+  }
+  .company-card-tilt:hover {
+    box-shadow:
+      0 0 20px 5px #60a5fa,
+      0 0 40px 10px #3b82f6,
+      0 0 60px 15px #2563eb;
+    transform: rotateX(10deg) rotateY(15deg) scale(1.05);
+  }
+  @keyframes bounceIn {
+    0% { opacity: 0; transform: translateY(40px) scale(0.8); }
+    60% { opacity: 1; transform: translateY(-10px) scale(1.05); }
+    80% { transform: translateY(5px) scale(0.95); }
+    100% { transform: translateY(0) scale(1); }
+  }
+
+    @media (max-width: 480px) {
+      .company-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 12px;
+      }
+
+      .company-name {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar-wrapper">
+    <nav>
+      <div class="logo">JobPortal</div>
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+      <ul id="menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="./jobs.html">Jobs</a></li>
+        <li><a href="./company.html">Companies</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="wave-container">
+      <svg viewBox="0 0 1440 320">
+        <path fill="#0f172a" fill-opacity="1" d="M0,64L80,74.7C160,85,320,107,480,117.3C640,128,800,128,960,122.7C1120,117,1280,107,1360,101.3L1440,96L1440,320
+                L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+        </path>
+      </svg>
+    </div>
+  </div>
+
+  <section class="hero">
+    <!-- Left side text -->
+    <div class="hero-text">
+     <h1>Find Your Next Career Move</h1>
+        <p>Discover thousands of job opportunities that match your skills, passions, and goals. Let your dream job find you today.</p>
+    </div>
+
+    <!-- Right side Lottie animation -->
+    <div class="hero-animation">
+      <dotlottie-wc src="https://lottie.host/6c93451a-bb97-4c2e-a019-359f4db75134/fMgM6fDqlG.lottie"
+        style="width: 450px; height: 450px" speed="1" autoplay loop></dotlottie-wc>
+    </div>
+  </section>
+
+
+  <!-- <div class="container" style="margin-top: 90px;">
+    <h1>Top Hiring Companies</h1>
+    <div class="company-grid">
+
+      <div class="company-card" tabindex="0" role="button" aria-pressed="false">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo"
+          class="company-logo" />
+        <div class="company-name">Microsoft</div>
+        <div class="company-desc">Global technology leader delivering software, services, devices, and solutions to help
+          people and businesses.</div>
+      </div>
+
+      <div class="company-card" tabindex="0" role="button" aria-pressed="false">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Google_logo.png" alt="Google Logo"
+          class="company-logo" />
+        <div class="company-name">Google</div>
+        <div class="company-desc">Innovative technology company focused on search, advertising, operating systems, and
+          AI research.</div>
+      </div>
+
+      <div class="company-card" tabindex="0" role="button" aria-pressed="false">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo"
+          class="company-logo" />
+        <div class="company-name">Netflix</div>
+        <div class="company-desc">Leading streaming entertainment service offering movies, TV series, and original
+          content worldwide.</div>
+      </div>
+
+      <div class="company-card" tabindex="0" role="button" aria-pressed="false">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Apple_logo_black.svg" alt="Apple Logo"
+          class="company-logo" />
+        <div class="company-name">Apple</div>
+        <div class="company-desc">Innovator in consumer electronics, software, and services, known for iPhone, Mac, and
+          more.</div>
+      </div>
+
+      <div class="company-card" tabindex="0" role="button" aria-pressed="false">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/IBM_logo.svg" alt="IBM Logo"
+          class="company-logo" />
+        <div class="company-name">IBM</div>
+        <div class="company-desc">Provider of integrated technology and consulting services with a long history in
+          computing.</div>
+      </div>
+
+    </div>
+  </div> -->
+<section style="max-width:1100px; margin:50px auto; padding:0 20px;">
+  <h2 style="text-align:center; color:#2563eb; font-weight:700; margin-bottom:30px;">
+    Top Hiring Companies
+  </h2>
+  <div class="companies-grid-tilt">
+    <div class="company-card-tilt">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" />
+      <h3>Microsoft</h3>
+      <p>Global technology leader delivering software, services, devices, and solutions.</p>
+    </div>
+    <div class="company-card-tilt">
+      <img src="../images/google.png" alt="Google" />
+      <h3>Google</h3>
+      <p>Innovative tech company focused on search, AI, and advertising products.</p>
+    </div>
+    <div class="company-card-tilt">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
+      <h3>Netflix</h3>
+      <p>Leading streaming platform with original and licensed entertainment content.</p>
+    </div>
+    <div class="company-card-tilt">
+      <img src="../images/28.jpg" alt="Apple" />
+      <h3>Apple</h3>
+      <p>Innovator in consumer electronics and software like iPhone, Mac, and more.</p>
+    </div>
+  </div>
+</section>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>JobFinder</h3>
+        <p>Your trusted platform for finding the best jobs and talent across industries.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Companies</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: support@jobfinder.com</p>
+        <p>Phone: +1 234 567 8901</p>
+        <p>Address: 123 Career St, Job City, USA</p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+          <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+          <a href="#" aria-label="Instagram" class="social-link">📸</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 JobFinder. All rights reserved.</p>
+    </div>
+  </footer>
+ 
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // Scroll animation for hero
+    const hero = document.querySelector('.hero');
+    function checkHeroVisible() {
+      const rect = hero.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        hero.classList.add('visible');
+      }
+    }
+    window.addEventListener('scroll', checkHeroVisible);
+    window.addEventListener('load', checkHeroVisible);
+  </script>
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottieHero'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      // Example free job animation (replace with chosen JSON URL)
+      path: 'https://assets9.lottiefiles.com/private_files/lf30_jobsearch.json'
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Dreams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/shop.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="../images/icon.png" alt="Logo">
+            <span>Wooden Dreams</span>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="nav-links" id="navMenu">
+            <a href="/index.html">Home</a>
+            <a href="./about.html">About Us</a>
+            <a href="./categories.html">Categories</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./Blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+
+            <div class="icons">
+                <a href=""><i class="fas fa-magnifying-glass"></i>Search</a>
+                <a href="./cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i>Cart</a>
+                <a href=""><i class="fas fa-heart"></i>Liked</a>
+                <button class="signin-btn">Sign Up / Sign In</button>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <div class="breadcrumb">
+                Home <span>></span> Shop <span>></span><span>|</span> <b>Asgaard sofa</b>
+            </div>
+
+            <div class="product-detail">
+                <!-- <div class="thumbnails">
+                    <img src="https://i.ibb.co/gvQDnmt/1.jpg" alt="">
+                    <img src="https://i.ibb.co/sbZmBQw/2.jpg" alt="">
+                    <img src="https://i.ibb.co/Zfgbpbz/3.jpg" alt="">
+                    <img src="https://i.ibb.co/ZcfDgqx/4.jpg" alt="">
+                </div> -->
+
+                <div class="main-image">
+                    <img src="../images/shop pic.png" alt="Asgaard Sofa">
+                </div>
+
+                <div class="product-info">
+                    <h2>Asgaard sofa</h2>
+                    <div class="price">Rs. 250,000.00</div>
+
+                    <div class="stars">★★★★★½ <span style="color:#aaa;">| 5 Customer Review</span></div>
+
+                    <div class="desc">
+                        Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact,
+                        stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs
+                        for a sound.
+                    </div>
+
+                    <div class="label">Size</div>
+                    <div class="sizes">
+                        <button>L</button>
+                        <button>XL</button>
+                        <button>XS</button>
+                    </div>
+
+                    <div class="label">Color</div>
+                    <div class="colors">
+                        <div class="purple"></div>
+                        <div class="black"></div>
+                        <div class="gold"></div>
+                    </div>
+
+                    <div class="quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+
+                    <div class="cart-actions">
+                        <button class="add-cart">Add To Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                    </div>
+
+                    <div class="meta-info">
+                        <p><strong>SKU</strong> : SS001</p>
+                        <p><strong>Category</strong> : Sofas</p>
+                        <p><strong>Tags</strong> : Sofa, Chair, Home, Shop</p>
+                        <p><strong>Share</strong> :
+                            <a href="#"><img src="https://img.icons8.com/ios-filled/20/000000/facebook-new.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/ios-filled/20/000000/linkedin.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/ios-filled/20/000000/twitter.png" /></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Details Lower Section -->
+            <div class="details-section">
+                <div class="tab-section">
+                    <div class="tab-buttons">
+                        <button class="active">Description</button>
+                        <button>Additional Information</button>
+                        <button>Reviews [5]</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <p>
+                            Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled
+                            engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a
+                            compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and
+                            extended highs for a sound that is both articulate and pronounced. The analogue knobs allow
+                            you to fine tune the controls to your personal preferences while the guitar-influenced
+                            leather strap enables easy and stylish travel.
+                        </p>
+                        <img src="../images/Asgaard sofa 4.png" alt="Asgaard Sofa" class="tab-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left: Logo & Description -->
+            <div class="footer-brand">
+                <img src="../images/icon.png" alt="Wooden Dreams" class="footer-logo" />
+                <p class="footer-description">
+                    "At Wooden Dreams, we craft furniture that brings warmth and comfort to your home.Our Wooden
+                    Creation are
+                    designed ti inspire sweet dreams and peaceful nights.Every piece is carefully crafted to provide a
+                    haven of
+                    relaxation and tranquility.Sleep tight, dream big with Wooden Dreams."
+                </p>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-location-arrow"></i> Head Office 13/5, Post office oppsite, Chennai.876543</li>
+                    <li><i class="fas fa-globe"></i> www.woodendreams.in</li>
+                    <li><i class="fas fa-envelope"></i> woodendreams@gamil.com</li>
+                </ul>
+            </div>
+
+            <!-- Center: Links -->
+            <div class="footer-links">
+                <div>
+                    <h4>LINKS</h4>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Categories</li>
+                        <li>Shop</li>
+                        <li>Blog</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>HELP</h4>
+                    <ul>
+                        <li>Payment Options</li>
+                        <li>Returns</li>
+                        <li>Privacy Policies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right: Subscribe -->
+            <div class="footer-subscribe">
+                <h4>Subscribe</h4>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Enter your email" />
+                    <button>SIGN UP</button>
+                </div>
+                <div class="footer-social">
+                    <p>Follow Us</p>
+                    <div class="social-icons">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-google"></i>
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <p class="copyright">2025 Wooden Dreams. All rights reserved</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('show');
+        }
+
+    </script>
+    <script>
+        // Ensure page loads DOM first
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartBtn = document.querySelector(".add-cart");
+            const qtySpan = document.querySelector(".quantity span");
+            const sizeButtons = document.querySelectorAll(".sizes button");
+            const colorButtons = document.querySelectorAll(".colors div");
+
+            // Default values
+            let selectedSize = "L";
+            let selectedColor = "Default";
+
+            // Handle size selection
+            sizeButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    sizeButtons.forEach(b => b.classList.remove("selected"));
+                    btn.classList.add("selected");
+                    selectedSize = btn.innerText;
+                });
+            });
+
+            // Handle color selection
+            colorButtons.forEach(div => {
+                div.addEventListener("click", () => {
+                    colorButtons.forEach(d => d.classList.remove("selected"));
+                    div.classList.add("selected");
+                    selectedColor = window.getComputedStyle(div).backgroundColor;
+                });
+            });
+
+            // Add to Cart
+            addToCartBtn.addEventListener("click", () => {
+                const quantity = parseInt(qtySpan.textContent);
+
+                const product = {
+                    id: "SS001",
+                    name: "Asgaard Sofa",
+                    price: 250000,
+                    size: selectedSize,
+                    color: selectedColor,
+                    quantity: quantity
+                };
+
+                // Get existing cart or initialize
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                // Add to cart
+                cart.push(product);
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                alert("Product added to cart!");
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buyNowBtn = document.querySelector(".buy-now");
+            const qtySpan = document.querySelector(".quantity span");
+            const sizeButtons = document.querySelectorAll(".sizes button");
+            const colorDivs = document.querySelectorAll(".colors div");
+
+            let selectedSize = "L";
+            let selectedColor = "Default";
+
+            // Size selection logic
+            sizeButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    sizeButtons.forEach(b => b.classList.remove("selected"));
+                    btn.classList.add("selected");
+                    selectedSize = btn.innerText;
+                });
+            });
+
+            // Color selection logic
+            colorDivs.forEach(div => {
+                div.addEventListener("click", () => {
+                    colorDivs.forEach(d => d.classList.remove("selected"));
+                    div.classList.add("selected");
+                    selectedColor = window.getComputedStyle(div).backgroundColor;
+                });
+            });
+
+            // BUY NOW button logic
+            buyNowBtn.addEventListener("click", () => {
+                const quantity = parseInt(qtySpan.textContent);
+
+                const product = {
+                    id: "SS001",
+                    name: "Asgaard Sofa",
+                    price: 250000,
+                    size: selectedSize,
+                    color: selectedColor,
+                    quantity: quantity,
+                    image: "https://th.bing.com/th/id/OPAC.SuWWZzdoar8iAQ474C474?o=5&pid=21.1&w=184&h=184&c=7&dpr=1.3&o=7&rm=3" // ← PLACE YOUR IMAGE LINK HERE
+                };
+
+                // Save product to localStorage temporarily
+                localStorage.setItem("buyNowItem", JSON.stringify(product));
+
+                // Redirect to checkout page
+                window.location.href = "checkout.html";
+            });
+        });
+    </script>
+    <script src="../JS/main.js"></script>
+
+
+</body>
+
+</html>

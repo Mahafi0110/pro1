@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Portal Chat System</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .chat-container {
+        width: 550px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .chat-header {
+        background: #4a90e2;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .chat-box {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .message {
+        padding: 8px 12px;
+        border-radius: 15px;
+        max-width: 80%;
+        font-size: 14px;
+    }
+    .user {
+        background: #4a90e2;
+        color: white;
+        align-self: flex-end;
+    }
+    .bot {
+        background: #e5e5ea;
+        align-self: flex-start;
+    }
+    .chat-input {
+        display: flex;
+        border-top: 1px solid #ccc;
+    }
+    .chat-input input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+    .chat-input button {
+        background: #4a90e2;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">Employer - Applicant Chat</div>
+    <div class="chat-box" id="chat-box">
+        <div class="message bot">Hello! How can I help you today?</div>
+         <div class="message user">Hi! I’m interested in the Web Developer position.</div>
+        <div class="message bot">Great! Could you share your experience level?</div>
+        <div class="message user">I have 2 years of experience in frontend development.</div>
+        <div class="message bot">Perfect! Please share your resume for review.</div>
+        <div class="message user">Sure, I’ll send it right away.</div>
+        <div class="message bot">Thank you! We’ll get back to you shortly.</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("user-input");
+    let message = input.value.trim();
+    if (message === "") return;
+
+    let chatBox = document.getElementById("chat-box");
+
+    // User message
+    let userMsg = document.createElement("div");
+    userMsg.classList.add("message", "user");
+    userMsg.textContent = message;
+    chatBox.appendChild(userMsg);
+
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Simulated bot reply
+    setTimeout(() => {
+        let botMsg = document.createElement("div");
+        botMsg.classList.add("message", "bot");
+        botMsg.textContent = "Thanks for your message! We will get back to you soon.";
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

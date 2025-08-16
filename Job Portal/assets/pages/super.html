@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Job Portal — Hero (Enhanced)</title>
+
+  <!-- AOS (scroll reveals) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg1:#0f1724; --bg2:#04263a; --accent:#06b6d4; --accent2:#8b5cf6;
+      --glass: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.06);
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,#071422 0%, #081a2a 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-inner{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:32px;
+      align-items:center;
+      z-index:5;
+    }
+
+    /* Left column (content) */
+    .hero-left{
+      padding:28px;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      box-shadow:0 6px 18px rgba(11,22,33,0.4);
+    }
+
+    h1{
+      font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+      margin:16px 0 8px;
+      line-height:1.05;
+      letter-spacing:-0.5px;
+    }
+    .typing{display:inline-block; border-right:2px solid rgba(230,238,246,0.6); padding-right:6px; white-space:nowrap; overflow:hidden;}
+
+    p.lead{
+      color:rgba(230,238,246,0.85);
+      margin:14px 0 22px;
+      font-size:1rem;
+      max-width:50ch;
+    }
+
+    /* Search + chips */
+    .controls{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .search {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,0.06);
+      padding:8px;
+      border-radius:999px;
+      width:100%;
+      max-width:540px;
+      box-shadow: 0 6px 30px rgba(4,10,18,0.5);
+      backdrop-filter: blur(6px);
+    }
+    .search input{
+      flex:1;
+      border:0;
+      outline:0;
+      padding:10px 8px;
+      color:inherit;
+      background:transparent;
+      font-size:15px;
+    }
+    .search button{
+      border:0;
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      padding:10px 14px;
+      border-radius:999px;
+      color:#042027;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(11,22,33,0.35);
+      position:relative;
+      overflow:hidden;
+    }
+    /* ripple */
+    .search button:active::after{
+      content:"";
+      position:absolute; width:120%; height:120%; left:-10%; top:-10%;
+      background:rgba(255,255,255,0.08); border-radius:50%; transform:scale(0);
+      animation:ripple .45s ease-out;
+    }
+    @keyframes ripple{to{transform:scale(1); opacity:0}}
+
+    .chips{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .chip{
+      padding:8px 12px;
+      background:rgba(255,255,255,0.04);
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+      transition:all .25s ease;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .chip.active{
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      color:#021018;
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:0 12px 30px rgba(6,182,212,0.12);
+    }
+
+    /* Right column (mini job preview) */
+    .hero-right{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:14px;
+      padding:18px;
+      min-height:260px;
+      box-shadow: 0 10px 40px rgba(2,6,10,0.6);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:stretch;
+    }
+
+    .mini-list{display:flex; flex-direction:column; gap:10px; overflow:auto; padding-right:6px;}
+    .job-card{
+      display:flex; gap:12px; align-items:center;
+      padding:10px; border-radius:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+      transition:transform .22s ease, box-shadow .22s ease;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .job-card:hover{ transform:translateX(6px); box-shadow:0 14px 36px rgba(1,6,10,0.6) }
+    .job-logo{ width:52px; height:52px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; color:#022; }
+    .job-info{flex:1}
+    .job-title{font-weight:700; font-size:15px}
+    .job-meta{font-size:13px; color:rgba(230,238,246,0.7)}
+
+    /* Counters row */
+    .counters{
+      display:flex; gap:16px; margin-top:14px; flex-wrap:wrap;
+    }
+    .counter{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:10px 12px; border-radius:10px; font-weight:700;
+      display:flex; gap:10px; align-items:center; min-width:140px; justify-content:space-between;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .num{font-size:20px; color:var(--accent)}
+
+    /* Apply btn (prominent) */
+    .action-row{ display:flex; gap:12px; margin-top:18px; align-items:center; flex-wrap:wrap; }
+    .btn{
+      padding:10px 16px; border-radius:10px; cursor:pointer; border:0;
+      background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#021218; font-weight:700;
+      box-shadow:0 12px 30px rgba(6,182,212,0.12);
+    }
+    .btn.secondary{ background:transparent; color: #d7eefc; border:1px solid rgba(255,255,255,0.06) }
+
+    /* canvas overlay for particles / shapes */
+    #particle-canvas{ position:absolute; inset:0; z-index:1; pointer-events:none; }
+
+    /* decorative floating blobs (parallax) */
+    .blob{
+      position:absolute; filter:blur(36px); opacity:0.18; z-index:2;
+      width:340px; height:340px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.9), rgba(6,182,212,0.6));
+      mix-blend-mode:screen;
+    }
+    .blob.b1{ right:-120px; top:-80px }
+    .blob.b2{ left:-120px; bottom:-120px; width:420px; height:420px; opacity:0.12 }
+
+    /* modal */
+    .modal-wrap{
+      position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:9999;
+      background:linear-gradient(180deg, rgba(2,6,10,0.6), rgba(2,6,10,0.85));
+    }
+    .modal{
+      width:100%; max-width:520px; background:#021826; padding:20px; border-radius:12px; box-shadow:0 20px 60px rgba(2,6,10,0.7);
+      transform:translateY(20px); opacity:0; transition:all .28s ease;
+    }
+    .modal.show{ transform:translateY(0); opacity:1 }
+    .modal h3{ margin:0 0 8px }
+    .modal .row{ display:flex; gap:8px }
+    .modal input[type="text"], .modal input[type="email"], .modal input[type="file"], .modal textarea{
+      width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit;
+    }
+    .modal .actions{ display:flex; gap:8px; margin-top:12px; justify-content:flex-end }
+
+    /* small screens */
+    @media (max-width:940px){
+      .hero-inner{ grid-template-columns: 1fr; padding-bottom:24px }
+      .hero-right{ order:2; width:100% }
+      .hero-left{ order:1 }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero" aria-label="Hero banner">
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- decorative blobs (parallax) -->
+    <div class="blob b1" data-parallax="0.04"></div>
+    <div class="blob b2" data-parallax="-0.02"></div>
+
+    <div class="hero-inner">
+      <div class="hero-left" data-aos="fade-up" data-aos-delay="50">
+        <span class="kicker"><i class="fa-solid fa-briefcase"></i>&nbsp;Remote & Hybrid Roles</span>
+
+        <h1>
+          <span class="typing" id="typing"></span>
+          <div style="display:inline-block; color:var(--accent); margin-left:8px; font-weight:700;">for ambitious builders</div>
+        </h1>
+
+        <p class="lead">Discover handpicked roles, apply fast with one click, and get noticed by top companies. Beautifully designed UX with powerful search tools.</p>
+
+        <div class="controls">
+          <div class="search" role="search" aria-label="Job search">
+            <input id="searchInput" type="search" placeholder="Search jobs, skills, or companies..." aria-label="Search jobs">
+            <button id="searchBtn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+
+          <div style="flex:0 0 auto" class="action-row">
+            <button class="btn" id="applyBtn"><i class="fa-solid fa-paper-plane"></i>&nbsp; Quick Apply</button>
+            <button class="btn secondary" id="exploreBtn"><i class="fa-solid fa-list"></i>&nbsp; Explore Jobs</button>
+          </div>
+        </div>
+
+        <div class="chips" id="chips" data-aos="fade-up" data-aos-delay="120">
+          <!-- chips injected by JS -->
+        </div>
+
+        <div class="counters" data-aos="fade-up" data-aos-delay="160">
+          <div class="counter"><div>Jobs</div><div class="num" id="jobsNum">0</div></div>
+          <div class="counter"><div>Companies</div><div class="num" id="companiesNum">0</div></div>
+          <div class="counter"><div>Applications</div><div class="num" id="appsNum">0</div></div>
+        </div>
+      </div>
+
+      <aside class="hero-right" data-aos="zoom-in" data-aos-delay="200" aria-hidden="false">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong>Featured Jobs</strong>
+          <small style="opacity:0.7" id="live-filter">All</small>
+        </div>
+
+        <div class="mini-list" id="miniList" role="list">
+          <!-- job cards injected by JS -->
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top:10px; align-items:center;">
+          <small style="color:rgba(230,238,246,0.6)">Last updated: <span id="lastUpdate">—</span></small>
+          <button class="btn secondary" id="viewAll">View All</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Quick Apply Modal -->
+  <div class="modal-wrap" id="modalWrap" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="applyTitle" >
+      <h3 id="applyTitle">Quick Apply</h3>
+      <p style="margin:6px 0 12px; color:rgba(230,238,246,0.7)">Apply to any featured job quickly — upload resume and send.</p>
+
+      <div class="row">
+        <input type="text" id="appName" placeholder="Full name" aria-label="Full name">
+        <input type="email" id="appEmail" placeholder="Email address" aria-label="Email">
+      </div>
+      <div style="margin-top:8px">
+        <input type="file" id="appFile" aria-label="Upload resume">
+      </div>
+
+      <div class="actions">
+        <button class="btn secondary" id="closeModal">Cancel</button>
+        <button class="btn" id="submitApply">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Templates (hidden) -->
+  <template id="jobTpl">
+    <div class="job-card" role="listitem">
+      <div class="job-logo" aria-hidden="true"></div>
+      <div class="job-info">
+        <div class="job-title"></div>
+        <div class="job-meta"></div>
+      </div>
+      <div class="job-actions">
+        <button class="btn secondary small apply-now">Apply</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- AOS + script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({ duration:700, once:true, easing: 'ease-out-cubic' });
+
+    /* ---------------------------
+       Demo job dataset (expandable)
+       ----------------------------*/
+    const jobs = [
+      { id:1, title:"Frontend Engineer", company:"BlueWave", location:"Remote", type:"Engineering", tag:"Frontend", logoColor:"#8b5cf6" },
+      { id:2, title:"Product Designer", company:"Mint Labs", location:"Mumbai", type:"Design", tag:"Design", logoColor:"#06b6d4" },
+      { id:3, title:"Backend Developer", company:"DataLoop", location:"Bengaluru", type:"Engineering", tag:"Backend", logoColor:"#f97316" },
+      { id:4, title:"Marketing Specialist", company:"GrowthPro", location:"Remote", type:"Marketing", tag:"Marketing", logoColor:"#ef4444" },
+      { id:5, title:"Fullstack Developer", company:"ShiftX", location:"Hyderabad", type:"Engineering", tag:"Fullstack", logoColor:"#10b981" },
+      { id:6, title:"HR Manager", company:"PeopleFirst", location:"Chennai", type:"Operations", tag:"HR", logoColor:"#6366f1" },
+    ];
+
+    // unique tags
+    const tags = ["All", ...new Set(jobs.map(j => j.tag))];
+
+    /* ---------------------------
+       Render chips and initial list
+       ----------------------------*/
+    const chipsWrap = document.getElementById('chips');
+    const miniList = document.getElementById('miniList');
+    const jobTpl = document.getElementById('jobTpl');
+
+    let activeTag = "All";
+
+    function renderChips(){
+      chipsWrap.innerHTML = "";
+      tags.forEach(tag => {
+        const el = document.createElement('button');
+        el.className = 'chip' + (tag === activeTag ? ' active' : '');
+        el.textContent = tag;
+        el.onclick = () => { activeTag = tag; updateFilterUI(); renderJobs(); }
+        chipsWrap.appendChild(el);
+      });
+    }
+
+    function renderJobs(filterText = ""){
+      miniList.innerHTML = "";
+      const filtered = jobs.filter(j => (activeTag === 'All' || j.tag === activeTag)
+        && (j.title.toLowerCase().includes(filterText) || j.company.toLowerCase().includes(filterText)));
+
+      document.getElementById('live-filter').textContent = activeTag;
+
+      filtered.forEach(j => {
+        const node = jobTpl.content.cloneNode(true);
+        const card = node.querySelector('.job-card');
+        card.querySelector('.job-logo').style.background = j.logoColor;
+        card.querySelector('.job-logo').textContent = j.company[0];
+        card.querySelector('.job-title').textContent = j.title;
+        card.querySelector('.job-meta').textContent = j.company + " • " + j.location;
+        const applyBtn = node.querySelector('.apply-now');
+        applyBtn.onclick = () => openModalWithJob(j);
+        miniList.appendChild(node);
+      });
+
+      // counters
+      document.getElementById('jobsNum').textContent = filtered.length;
+      document.getElementById('companiesNum').textContent = new Set(jobs.map(j=>j.company)).size;
+      document.getElementById('appsNum').textContent = Math.floor(Math.random()*200)+20;
+
+      // update last updated
+      document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+    }
+
+    function updateFilterUI(){
+      renderChips();
+      // small visual feedback
+      document.querySelectorAll('.chip').forEach(c=>{
+        if(c.textContent === activeTag) c.classList.add('active'); else c.classList.remove('active');
+      });
+      // AOS refresh so animations re-trigger nicely
+      AOS.refresh();
+    }
+
+    renderChips();
+    renderJobs();
+
+    /* ---------------------------
+       Search logic (live)
+       ----------------------------*/
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+
+    let searchTimeout = null;
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(()=> renderJobs(q), 180);
+    });
+
+    searchBtn.addEventListener('click', () => renderJobs(searchInput.value.trim().toLowerCase()));
+
+    /* ---------------------------
+       Typing effect (multiple phrases)
+       ----------------------------*/
+    const typingEl = document.getElementById('typing');
+    const phrases = ["Find Your Dream Job", "One-Click Applications", "Join a Team You Love"];
+    let phraseIdx = 0, charIdx = 0, reverse = false;
+
+    function typingLoop() {
+      const current = phrases[phraseIdx];
+      if(!reverse){
+        typingEl.textContent = current.slice(0, charIdx++);
+        if(charIdx > current.length){ reverse = true; setTimeout(typingLoop, 900); return; }
+      } else {
+        typingEl.textContent = current.slice(0, charIdx--);
+        if(charIdx < 0){ reverse = false; phraseIdx = (phraseIdx+1)%phrases.length; setTimeout(typingLoop, 250); return; }
+      }
+      setTimeout(typingLoop, reverse ? 35 : 65);
+    }
+    typingLoop();
+
+    /* ---------------------------
+       Modal logic (Quick Apply)
+       ----------------------------*/
+    const modalWrap = document.getElementById('modalWrap');
+    const closeModal = document.getElementById('closeModal');
+    const applyBtn = document.getElementById('applyBtn');
+    const submitApply = document.getElementById('submitApply');
+
+    function openModalWithJob(job){
+      modalWrap.style.display = 'flex';
+      modalWrap.setAttribute('aria-hidden', 'false');
+      setTimeout(()=> document.querySelector('.modal').classList.add('show'), 40);
+      // optionally prefill placeholder
+      document.getElementById('appName').placeholder = "Full name";
+      document.getElementById('appEmail').placeholder = "Email";
+    }
+
+    applyBtn.addEventListener('click', ()=> openModalWithJob(null));
+    closeModal.addEventListener('click', closeModalWrap);
+    modalWrap.addEventListener('click', (e)=> { if(e.target === modalWrap) closeModalWrap() });
+
+    function closeModalWrap(){
+      document.querySelector('.modal').classList.remove('show');
+      setTimeout(()=> { modalWrap.style.display = 'none'; modalWrap.setAttribute('aria-hidden','true'); }, 250);
+    }
+
+    submitApply.addEventListener('click', ()=>{
+      const name = document.getElementById('appName').value.trim();
+      const email = document.getElementById('appEmail').value.trim();
+      const file = document.getElementById('appFile').files[0];
+
+      // small validation
+      if(!name || !email){ alert('Please enter name and email'); return; }
+      // pretend submit (frontend-only)
+      submitApply.disabled = true;
+      submitApply.textContent = 'Submitting...';
+      setTimeout(()=>{
+        submitApply.disabled = false;
+        submitApply.textContent = 'Submit';
+        alert('Application submitted (demo). Thank you — we will contact you.');
+        closeModalWrap();
+      }, 900);
+    });
+
+    /* ---------------------------
+       Particles (lightweight canvas)
+       ----------------------------*/
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let W = canvas.width = innerWidth;
+    let H = canvas.height = innerHeight;
+    let particles = [];
+
+    function rand(min,max){ return Math.random()*(max-min)+min; }
+
+    function createParticles(){
+      particles = [];
+      const N = Math.max(18, Math.floor((W*H)/90000));
+      for(let i=0;i<N;i++){
+        particles.push({
+          x: rand(0, W), y: rand(0,H),
+          r: rand(0.8,3.2),
+          vx: rand(-0.2,0.4),
+          vy: rand(-0.15,0.15),
+          alpha: rand(0.08,0.28)
+        });
+      }
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(const p of particles){
+        p.x += p.vx;
+        p.y += p.vy;
+        if(p.x< -20) p.x = W+20;
+        if(p.x> W+20) p.x = -20;
+        if(p.y< -20) p.y = H+20;
+        if(p.y> H+20) p.y = -20;
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(186,230,255,${p.alpha})`;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    function resizeCanvas(){
+      W = canvas.width = innerWidth;
+      H = canvas.height = innerHeight;
+      createParticles();
+    }
+    addEventListener('resize', resizeCanvas);
+    createParticles();
+    draw();
+
+    /* ---------------------------
+       Parallax blobs (mouse move)
+       ----------------------------*/
+    const blobs = document.querySelectorAll('.blob[data-parallax]');
+    window.addEventListener('mousemove', (e) => {
+      const cx = innerWidth/2, cy = innerHeight/2;
+      const dx = (e.clientX - cx) / cx;
+      const dy = (e.clientY - cy) / cy;
+      blobs.forEach(b=>{
+        const factor = parseFloat(b.dataset.parallax) || 0.03;
+        b.style.transform = `translate3d(${dx * factor * 40}px, ${dy * factor * 40}px, 0)`;
+      });
+    });
+
+    /* ---------------------------
+       Counters animate when visible
+       ----------------------------*/
+    const counterEls = document.querySelectorAll('.num');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target;
+          const target = parseInt(el.textContent) || 0;
+          // simple count up effect (start from 0 or previous)
+          let start = 0;
+          const dur = 700;
+          const stepTime = Math.max(12, Math.floor(dur/Math.max(1,target)));
+          const timer = setInterval(()=>{
+            start += Math.ceil(target/ (dur/stepTime));
+            if(start >= target){ el.textContent = target; clearInterval(timer); }
+            else el.textContent = start;
+          }, stepTime);
+          obs.unobserve(el);
+        }
+      });
+    }, {threshold:0.5});
+
+    document.querySelectorAll('.num').forEach(n=>obs.observe(n));
+
+    /* ---------------------------
+       Tiny: "Explore Jobs" button scroll
+       ----------------------------*/
+    document.getElementById('exploreBtn').addEventListener('click', ()=> {
+      // pretend scroll to jobs section (you can link to actual section)
+      window.scrollTo({ top: document.body.clientHeight * 0.6, behavior: 'smooth' });
+    });
+
+    /* ---------------------------
+       Small accessibility nicety: keyboard open modal (Enter on quick apply)
+       ----------------------------*/
+    document.getElementById('applyBtn').addEventListener('keyup', (e)=> { if(e.key === 'Enter') openModalWithJob(null) });
+
+    // initial update
+    updateFilterUI();
+
+  </script>
+</body>
+</html>

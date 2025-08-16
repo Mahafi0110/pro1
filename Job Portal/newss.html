@@ -1,0 +1,210 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+        display: flex;
+        height: 100vh;
+    }
+
+    /* Left side - blank or image if you want later */
+    .left {
+        flex: 1;
+        background: #6900ff;
+    }
+
+    /* Right side - Website name + progress bar */
+    .right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #6900ff;
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .progress-container {
+        width: 80%;
+        height: 20px;
+        background: #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .progress-bar {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #ffd700, #ffcc00);
+        border-radius: 10px;
+        transition: width 0.2s ease;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            flex-direction: column;
+        }
+        .left {
+            flex: none;
+            height: 150px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="left"></div>
+
+<div class="right">
+    <h1>Your Job Portal Name</h1>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+</div>
+
+<script>
+    let progress = 0;
+    let bar = document.getElementById("progressBar");
+
+    let loading = setInterval(() => {
+        progress += 2; // speed of loading
+        bar.style.width = progress + "%";
+
+        if(progress >= 100) {
+            clearInterval(loading);
+            window.location.href = "index.html"; // Redirect to main page
+        }
+    }, 80); // speed (80ms per step)
+</script>
+
+</body>
+</html> -->
+
+<div class="chat-container">
+    <div class="chat-header">Employer - Applicant Chat</div>
+    <div class="chat-box" id="chat-box">
+        <div class="message bot">Hello! How can I help you today?</div>
+        <div class="message user">Hi! I’m interested in the Web Developer position.</div>
+        <div class="message bot">Great! Could you share your experience level?</div>
+        <div class="message user">I have 2 years of experience in frontend development.</div>
+        <div class="message bot">Perfect! Please share your resume for review.</div>
+        <div class="message user">Sure, I’ll send it right away.</div>
+        <div class="message bot">Thank you! We’ll get back to you shortly.</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<style>
+.chat-container {
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chat-box {
+    padding: 10px;
+    background: #f9f9f9;
+    flex: 1;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 15px;
+    max-width: 80%;
+    display: inline-block;
+}
+
+.bot {
+    background: #e0e0e0;
+    align-self: flex-start;
+}
+
+.user {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #0056b3;
+}
+</style>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("user-input");
+    let message = input.value.trim();
+    if (message === "") return;
+
+    let chatBox = document.getElementById("chat-box");
+
+    // Add user message
+    let userMsg = document.createElement("div");
+    userMsg.className = "message user";
+    userMsg.innerText = message;
+    chatBox.appendChild(userMsg);
+
+    // Auto-reply (simple simulation)
+    setTimeout(() => {
+        let botMsg = document.createElement("div");
+        botMsg.className = "message bot";
+        botMsg.innerText = "Got it! We’ll review and get back to you.";
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 1000);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+    input.value = "";
+}
+</script>

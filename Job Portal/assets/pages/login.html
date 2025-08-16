@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left Login Section */
+        .login-section {
+            flex: 1;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .login-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-section input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+        .login-section button {
+            width: 85%;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-section button:hover {
+            background: #0056b3;
+        }
+
+        /* Right Progress Section */
+        .progress-section {
+            flex: 1;
+             background: linear-gradient(135deg, #007BFF, #00BFFF);
+               /* background: #6900ff; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 40px;
+        }
+        .progress-section h1 {
+            margin-bottom: 30px;
+        }
+        .progress-bar {
+            width: 80%;
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 25px;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            /* background: #00FFAA; */
+                    background: linear-gradient(90deg, #ffd700, #ffcc00);
+            text-align: center;
+            line-height: 25px;
+            font-size: 14px;
+            transition: width 0.3s ease;
+        }
+        @media (max-width: 768px) {
+        body {
+            flex-direction: column;
+        }
+        .left {
+            flex: none;
+            height: 150px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Left Login Section -->
+    <div class="login-section">
+        <h2>Login to Job Portal</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="startProgress()">Login</button>
+    </div>
+
+    <!-- Right Progress Section -->
+    <div class="progress-section">
+        <h1>Loading............</h1>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill">0%</div>
+        </div>
+    </div>
+
+    <script>
+        function startProgress() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please enter username and password");
+                return;
+            }
+
+            let progress = 0;
+            let progressFill = document.getElementById("progressFill");
+
+            let interval = setInterval(() => {
+                progress += 5;
+                progressFill.style.width = progress + "%";
+                progressFill.textContent = progress + "%";
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    window.location.href = "/index.html"; // redirect after loading
+                }
+            }, 100); // speed of progress
+        }
+    </script>
+
+</body>
+</html>

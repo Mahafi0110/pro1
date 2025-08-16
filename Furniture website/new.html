@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./assests/css/index.css">
+    <style>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b88e2f;
+  padding: 15px 30px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.navbar-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.navbar-center {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar-center a,
+.navbar-right .signin-btn {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-right .signin-btn {
+  background-color: white;
+  color: #b88e2f;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar-center {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    background-color: #b88e2f;
+    padding: 20px;
+  }
+
+  .navbar-center.show {
+    display: flex;
+  }
+
+  .navbar-left {
+    width: 50%;
+  }
+
+  .navbar-right {
+    width: 50%;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    color: white;
+  }
+}
+
+    </style>
+</head>
+<body>
+<header class="navbar">
+  <div class="navbar-left">
+    <div class="logo">
+      <img src="./assests/images/icon.png" alt="Logo">
+      <span>Wooden Dreams</span>
+    </div>
+  </div>
+
+  <div class="navbar-center" id="navMenu">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Categories</a>
+    <a href="#">Shop</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="navbar-right">
+    <div class="icons">
+      <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#"><i class="fas fa-heart"></i></a>
+      <button class="signin-btn">Sign Up / Sign In</button>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</header>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
+    
+</body>
+</html>

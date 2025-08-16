@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JobFinder - Apply Now</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    margin: 0;
+    padding: 40px 20px;
+    color: #1f2937;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #3b82f6;
+    margin-bottom: 30px;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1e40af;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  input[type="file"] {
+    padding: 10px 14px;
+    border: 1.5px solid #3b82f6;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline-offset: 2px;
+    outline-color: transparent;
+    transition: outline-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus,
+  input[type="file"]:focus {
+    outline-color: #2563eb;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  button {
+    background: #3b82f6;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #2563eb;
+  }
+  .error {
+    color: #ef4444;
+    font-size: 0.9rem;
+    margin-top: -16px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    .container {
+      padding: 25px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Apply for Job</h1>
+  <div class="job-title" id="jobTitle">Loading...</div>
+
+  <form id="applyForm" novalidate>
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" />
+
+    <label for="resume">Upload Resume *</label>
+    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+    <label for="coverLetter">Cover Letter</label>
+    <textarea id="coverLetter" name="coverLetter" placeholder="Write a brief cover letter (optional)"></textarea>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<script>
+  // Get job title from URL query param ?job=...
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || 'Unknown Job';
+  }
+
+  document.getElementById('jobTitle').textContent = getQueryParam('job');
+
+  const form = document.getElementById('applyForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Clear previous errors
+    const errorElems = form.querySelectorAll('.error');
+    errorElems.forEach(el => el.remove());
+
+    let isValid = true;
+
+    // Validate required fields
+    const fullName = form.fullName.value.trim();
+    const email = form.email.value.trim();
+    const resume = form.resume.files.length;
+
+    if (!fullName) {
+      showError(form.fullName, 'Full Name is required');
+      isValid = false;
+    }
+
+    if (!email) {
+      showError(form.email, 'Email is required');
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      showError(form.email, 'Please enter a valid email');
+      isValid = false;
+    }
+
+    if (!resume) {
+      showError(form.resume, 'Please upload your resume');
+      isValid = false;
+    }
+
+    if (!isValid) return;
+
+    // For demo, just alert success message
+    alert(`Thank you, ${fullName}! Your application for "${getQueryParam('job')}" has been submitted.`);
+
+    // Reset form
+    // form.reset();
+    window.location.href="jobs.html"
+  });
+
+  function showError(inputElem, message) {
+    const error = document.createElement('div');
+    error.className = 'error';
+    error.textContent = message;
+    inputElem.insertAdjacentElement('afterend', error);
+    inputElem.focus();
+  }
+
+  function validateEmail(email) {
+    // Simple regex for email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email.toLowerCase());
+  }
+</script>
+
+</body>
+</html>

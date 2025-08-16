@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bb9636;
+    padding: 15px 40px;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+/* .nav-links a:hover,
+.nav-links a:first-child {
+    text-decoration: underline;
+} */
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.icons img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.icons i {
+    font-size: 23px;
+    color: white;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    color: #333;
+}
+
+.icons a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.signin-btn {
+    padding: 6px 12px;
+    background-color: white;
+    color: #bb9636;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Hamburger icon hidden by default */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+
+}
+/* footer */
+.footer {
+    background-color: #b88e2f;
+    color: white;
+    padding: 50px 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.footer-contact li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-links h4,
+.footer-subscribe h4 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul li {
+    list-style: none;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.footer-subscribe input {
+    padding: 10px;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    width: 70%;
+}
+
+.footer-subscribe button {
+    padding: 10px 20px;
+    border-radius: 0 8px 8px 0;
+    border: none;
+    background: white;
+    color: #b88e2f;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.footer-social {
+    margin-top: 30px;
+}
+
+.footer-social p {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.social-icons i {
+    background: #fff;
+    color: #b88e2f;
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+hr {
+    margin: 40px 0 15px;
+    border: none;
+    border-top: 1px solid #fff;
+}
+
+.copyright {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+/* section 1 */
+.categories-section {
+    padding: 50px 40px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.categories-section h2 {
+    font-size: 28px;
+    color: #bb9636;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.category-card {
+    background-color: #fff5e8;
+    padding: 14px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    max-width: 280px;
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.category-card p {
+    font-weight: bold;
+    color: #bb9636;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* Hover effect */
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+
+
+
+/* Responsive - Media Queries */
+@media (max-width: 700px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .icons {
+        margin-top: 10px;
+        gap: 2px;
+    }
+
+    /* Show hamburger in mobile */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #bb9636;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        text-align: left;
+        border-top: 1px solid #ffffff55;
+    }
+
+    .icons {
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+   
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-subscribe input {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .footer-subscribe button {
+        width: 100%;
+        border-radius: 8px;
+    }
+       /* 500px  */
+    .product-card {
+        flex: 0 0 85%;
+    }
+
+    .category-grid {
+        display: grid;
+        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+        grid-template-columns: 1fr;
+        /* default: mobile (1 column) */
+        gap: 30px;
+        justify-items: center;
+    }
+
+}
+
+@media (min-width:700px) and (max-width: 1000px) {
+    .navbar {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-wrap: nowrap;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo span {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
