@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="logo">Library Manager</h1>
+      <div class="top-actions">
+        <input id="globalSearch" type="search" placeholder="Search by title or author..." />
+        <button id="clearStorage" title="Clear all stored books">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <!-- Add Book Form -->
+    <section class="card add-card">
+      <h2>Add New Book</h2>
+      <form id="addBookForm" autocomplete="off">
+        <label>
+          Title
+          <input id="titleInput" type="text" placeholder="e.g. Java Basics" required />
+        </label>
+
+        <label>
+          Author
+          <input id="authorInput" type="text" placeholder="e.g. James" required />
+        </label>
+
+        <div class="form-row">
+          <button type="submit" class="btn primary">Add Book</button>
+          <button id="seedDemo" type="button" class="btn ghost">Add Demo Books</button>
+        </div>
+
+        <p class="hint">Duplicate titles not allowed (case-insensitive).</p>
+      </form>
+    </section>
+
+    <!-- Books Lists -->
+    <section class="card list-card">
+      <h2>Available Books <span id="availableCount" class="count">0</span></h2>
+      <div id="availableList" class="list"></div>
+    </section>
+
+    <section class="card list-card">
+      <h2>Borrowed Books <span id="borrowedCount" class="count">0</span></h2>
+      <div id="borrowedList" class="list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>Library Manager • Frontend Demo • Data stored in your browser</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

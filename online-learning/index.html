@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning - Home</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">VetriLearn</div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+             <a href="./instructor-dashboard.html">Dashboard</a>
+            <a href="login.html" class="btn">Login</a>
+        </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- HERO SECTION -->
+     <section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Learn Anything, Anytime, Anywhere</h1>
+            <p>Explore thousands of courses taught by expert instructors.</p>
+            <a href="courses.html" class="hero-btn">Browse Courses</a>
+        </div>
+
+        <div class="hero-animation">
+            <lottie-player
+                src="https://assets7.lottiefiles.com/packages/lf20_jcikwtux.json"
+                background="transparent"
+                speed="1"
+                style="width: 400px; height: 400px;"
+                loop
+                autoplay>
+            </lottie-player>
+        </div>
+    </div>
+</section>
+
+    <!-- <section class="hero">
+        <div class="hero-content">
+            <h1>Learn Anything, Anytime, Anywhere</h1>
+            <p>Explore thousands of courses taught by expert instructors.</p>
+            <a href="courses.html" class="hero-btn">Browse Courses</a>
+        </div>
+    </section> -->
+
+    <!-- FEATURE SECTION -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>Expert Instructors</h3>
+            <p>Learn from industry professionals worldwide.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Flexible Learning</h3>
+            <p>Study from any device at your own pace.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Certification</h3>
+            <p>Receive certificates after course completion.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 VetriLearn — Online Learning Platform</p>
+    </footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

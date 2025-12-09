@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Template Resume Generator</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .resume-preview {
+            flex: 1.2;
+            min-width: 300px;
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 9px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #94a3b8;
+            outline: none;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        /* ---------- TEMPLATES ---------- */
+
+        /* Template 1 - Modern Blue */
+        .template1 h1 { color:#1d4ed8; }
+        .template1 h3 { color: #1e293b; }
+
+        /* Template 2 - Minimal Black */
+        .template2 h1 { color:#111; font-weight:bold; }
+        .template2 h3 { color:#444; border-bottom:1px solid #ddd; padding-bottom:4px; }
+
+        /* Template 3 - Sidebar Left */
+        .template3 {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 32%;
+            background: #1d4ed8;
+            color:white;
+            padding: 15px;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .content {
+            width: 68%;
+            padding: 20px;
+        }
+
+        /* PRINT */
+        @media print {
+            body * { visibility:hidden; }
+            #resumeOutput, #resumeOutput * { visibility:visible; }
+            #resumeOutput {
+                position:absolute;
+                left:0; top:0;
+                width:100%;
+            }
+        }
+        /* -------------------- RESPONSIVE DESIGN -------------------- */
+
+/* Tablet (max-width: 900px) */
+@media (min-width:768px) and (max-width: 1023px) {
+    .container {
+        flex-direction:row;
+        padding: 15px;
+    }
+
+    .form-section, 
+    .resume-preview {
+        width: 100%;
+    }
+
+    .template3 {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        text-align: center;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width:600px) {
+    body {
+        padding: 0px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h2, h1 {
+        font-size: 20px;
+    }
+
+    input, textarea, select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .resume-preview {
+        padding: 15px;
+    }
+
+    /* Template 3 adjustments */
+    .sidebar {
+        padding: 12px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- FORM AREA -->
+    <div class="form-section">
+        <h2>Resume Generator</h2>
+
+        <label>Choose Template</label>
+        <select id="template">
+            <option value="template1">Modern Blue</option>
+            <option value="template2">Minimal Black</option>
+            <option value="template3">Left Sidebar</option>
+        </select>
+
+        <label>Name</label>
+        <input type="text" id="name">
+
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Phone</label>
+        <input type="text" id="phone">
+
+        <label>Skills</label>
+        <textarea id="skills"></textarea>
+
+        <label>Experience</label>
+        <textarea id="experience"></textarea>
+
+        <label>Education</label>
+        <textarea id="education"></textarea>
+
+        <label>Projects</label>
+        <textarea id="projects"></textarea>
+
+        <button onclick="generateResume()">Generate Resume</button>
+        <button onclick="window.print()">Download PDF</button>
+    </div>
+
+    <!-- OUTPUT AREA -->
+    <div class="resume-preview" id="resumeOutput">
+        <h2>Your Resume Preview</h2>
+        <p>Fill details and click Generate</p>
+    </div>
+
+</div>
+
+<script>
+    function generateResume() {
+        let template = document.getElementById("template").value;
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let skills = document.getElementById("skills").value.replace(/\n/g, "<br>");
+        let exp = document.getElementById("experience").value.replace(/\n/g, "<br>");
+        let edu = document.getElementById("education").value.replace(/\n/g, "<br>");
+        let projects = document.getElementById("projects").value.replace(/\n/g, "<br>");
+
+        let output = document.getElementById("resumeOutput");
+        output.className = "resume-preview " + template;
+
+        // TEMPLATE 1 - Modern Blue
+        if (template === "template1") {
+            output.innerHTML = `
+                <h1>${name}</h1>
+                <p>Email: ${email} | Phone: ${phone}</p>
+
+                <h3>Skills</h3><p>${skills}</p>
+                <h3>Experience</h3><p>${exp}</p>
+                <h3>Education</h3><p>${edu}</p>
+                <h3>Projects</h3><p>${projects}</p>
+            `;
+        }
+
+        // TEMPLATE 2 - Minimal Black
+        else if (template === "template2") {
+            output.innerHTML = `
+                <h1>${name}</h1>
+                <p><b>Email:</b> ${email} | <b>Phone:</b> ${phone}</p>
+
+                <h3>Skills</h3><p>${skills}</p>
+                <h3>Experience</h3><p>${exp}</p>
+                <h3>Education</h3><p>${edu}</p>
+                <h3>Projects</h3><p>${projects}</p>
+            `;
+        }
+
+        // TEMPLATE 3 - Left Sidebar
+        else if (template === "template3") {
+            output.innerHTML = `
+                <div class="template3">
+                    <div class="sidebar">
+                        <h2>${name}</h2>
+                        <p>${email}<br>${phone}</p>
+
+                        <h4>Skills</h4>
+                        <p>${skills}</p>
+                    </div>
+
+                    <div class="content">
+                        <h3>Experience</h3><p>${exp}</p>
+                        <h3>Education</h3><p>${edu}</p>
+                        <h3>Projects</h3><p>${projects}</p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>

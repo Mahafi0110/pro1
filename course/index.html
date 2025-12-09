@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Front-end Online Learning System (SPA)</title>
+    <style>
+        :root {
+            --accent: #2563eb;
+            --muted: #64748b;
+            --bg: #f8fafc;
+            --card: #fff;
+            --success: #16a34a;
+            --danger: #ef4444;
+            --maxW: 1100px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: var(--bg);
+            color: #0f172a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* App container */
+        .app {
+            width: 100%;
+            max-width: var(--maxW);
+        }
+
+        /* Top nav */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        nav a.active,
+        nav a:hover {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent);
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid rgba(37, 99, 235, 0.12);
+        }
+
+        .btn.warn {
+            background: #f97316;
+        }
+
+        /* Layout */
+        main {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sidebar {
+            width: 300px;
+            min-width: 220px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(90deg, #eef2ff, #f0f9ff);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .hero .left {
+            max-width: 60%;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #0f172a;
+        }
+
+        .hero p {
+            margin: 6px 0 0 0;
+            color: var(--muted);
+        }
+
+        /* Course grid & card */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+            overflow: hidden;
+        }
+
+        .thumb {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 12px;
+        }
+
+        .course-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 6px 0;
+            font-size: 15px
+        }
+
+        .course-meta {
+            font-size: 13px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Lists & details */
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .small {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Player */
+        .player {
+            background: var(--card);
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background: black;
+        }
+
+        /* Form */
+        .form {
+            background: var(--card);
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+        }
+
+        .field {
+            margin-bottom: 10px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e6eef9;
+            font-size: 14px;
+        }
+
+        /* Dashboards */
+        .dash-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .metric {
+            padding: 14px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .metric p {
+            margin: 6px 0 0 0;
+            color: var(--muted);
+        }
+
+        /* Syllabus sidebar */
+        .syllabus {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            max-height: 60vh;
+            overflow: auto;
+        }
+
+        .module {
+            margin-bottom: 10px;
+        }
+
+        .lesson {
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 6px;
+            cursor: pointer;
+        }
+
+        .lesson.active {
+            background: rgba(37, 99, 235, 0.08);
+            border-left: 4px solid var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width:1000px) {
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .dash-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sidebar {
+                width: 260px;
+            }
+        }
+
+        @media (max-width:720px) {
+            header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dash-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero .left {
+                max-width: 100%;
+            }
+
+            .sidebar {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* small helpers */
+        .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .pill {
+            background: rgba(2, 6, 23, 0.04);
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .tag {
+            font-size: 12px;
+            color: #0f172a;
+            background: rgba(2, 6, 23, 0.03);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .danger {
+            color: var(--danger);
+            font-weight: 700;
+        }
+
+        .success {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        footer {
+            margin-top: 18px;
+            padding: 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* tiny mobile tweaks */
+        @media (max-width:420px) {
+            .logo {
+                width: 42px;
+                height: 42px;
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <header>
+            <div class="brand">
+                <div class="logo">OL</div>
+                <div>
+                    <div style="font-weight:800">OnlineLearn</div>
+                    <div style="font-size:12px;color:var(--muted)">Frontend Demo</div>
+                </div>
+            </div>
+
+            <nav id="mainNav">
+                <a href="#/" data-route="/" class="nav-link">Home</a>
+                <a href="#/courses" data-route="/courses" class="nav-link">Courses</a>
+                <a href="#/dashboard" data-route="/dashboard" class="nav-link">Dashboard</a>
+                <a href="#/instructor" data-route="/instructor" class="nav-link">Instructor</a>
+                <a href="#/add-course" data-route="/add-course" class="nav-link">Add Course</a>
+            </nav>
+
+            <div class="controls" id="controls">
+                <div id="userInfo" style="display:flex;gap:10px;align-items:center">
+                    <button class="btn ghost" id="btnLogin">Login</button>
+                    <button class="btn" id="btnSignup">Sign up</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="content" id="view"></div>
+            <aside class="sidebar" id="sidebar"></aside>
+        </main>
+
+        <footer>Frontend-only Online Learning UI • Demo data saved in localStorage • Built for learning</footer>
+    </div>
+
+    <script>
+        /* -----------------------
+           Simple SPA + In-browser data
+           ----------------------- */
+
+        const demoVideo = "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
+
+        /* ---------- Utilities ---------- */
+        function el(id) { return document.getElementById(id); }
+        function qs(sel, ctx = document) { return ctx.querySelector(sel); }
+        function qsa(sel, ctx = document) { return Array.from(ctx.querySelectorAll(sel)); }
+
+        function saveStorage(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+        function loadStorage(key, fallback = null) {
+            const v = localStorage.getItem(key);
+            return v ? JSON.parse(v) : fallback;
+        }
+
+        /* ---------- Initial demo data ---------- */
+        const initialData = {
+            users: [
+                { id: 'u1', name: 'Student Demo', email: 'student@demo.com', password: 'student123', role: 'student' },
+                { id: 'u2', name: 'Instructor Demo', email: 'instructor@demo.com', password: 'instructor123', role: 'instructor' }
+            ],
+            courses: [
+                {
+                    id: 'c1',
+                    title: 'HTML & CSS — From Zero to Hero',
+                    category: 'Web Development',
+                    price: 0,
+                    instructorId: 'u2',
+                    short: 'Learn HTML and CSS building blocks with practical projects.',
+                    thumbnail: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6b9d5ed4ab1b9443b5f5a47a9c4dff2b',
+                    syllabus: [
+                        {
+                            id: 'm1', title: 'Getting Started', lessons: [
+                                { id: 'l1', title: 'Intro & Setup', video: demoVideo, duration: 120 },
+                                { id: 'l2', title: 'HTML Basics', video: demoVideo, duration: 300 }
+                            ]
+                        },
+                        {
+                            id: 'm2', title: 'Styling with CSS', lessons: [
+                                { id: 'l3', title: 'Selectors & Box Model', video: demoVideo, duration: 240 },
+                                { id: 'l4', title: 'Flexbox & Grid', video: demoVideo, duration: 360 }
+                            ]
+                        }
+                    ],
+                    description: 'A complete beginner-friendly course to learn modern HTML and CSS.',
+                    rating: 4.6,
+                    reviews: [
+                        { user: 'student@demo.com', rating: 5, comment: 'Great course!' }
+                    ]
+                },
+                {
+                    id: 'c2',
+                    title: 'JavaScript Fundamentals',
+                    category: 'Programming',
+                    price: 9.99,
+                    instructorId: 'u2',
+                    short: 'Understand JavaScript fundamentals and start building interactive web apps.',
+                    thumbnail: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b6e653d7c6c699f39f1d6c8a6b46b91',
+                    syllabus: [
+                        {
+                            id: 'm3', title: 'Basics', lessons: [
+                                { id: 'l5', title: 'Variables & Types', video: demoVideo, duration: 220 },
+                                { id: 'l6', title: 'Functions', video: demoVideo, duration: 260 },
+                            ]
+                        },
+                        {
+                            id: 'm4', title: 'DOM & Events', lessons: [
+                                { id: 'l7', title: 'DOM Manipulation', video: demoVideo, duration: 300 },
+                                { id: 'l8', title: 'Events & Listeners', video: demoVideo, duration: 240 }
+                            ]
+                        }
+                    ],
+                    description: 'Learn the essentials of JavaScript and how to manipulate the DOM.',
+                    rating: 4.4,
+                    reviews: []
+                }
+            ],
+            enrollments: [
+                // { userId:'u1', courseId:'c1', enrolledAt:... }
+            ],
+            progresses: {
+                // userId: { lessonId: seconds }
+            }
+        };
+
+        /* ---------- Load or initialize storage ---------- */
+        if (!loadStorage('ol_users')) saveStorage('ol_users', initialData.users);
+        if (!loadStorage('ol_courses')) saveStorage('ol_courses', initialData.courses);
+        if (!loadStorage('ol_enrollments')) saveStorage('ol_enrollments', initialData.enrollments);
+        if (!loadStorage('ol_progresses')) saveStorage('ol_progresses', initialData.progresses);
+
+        /* ---------- App State ---------- */
+        let state = {
+            currentUser: loadStorage('ol_currentUser', null),
+            route: '/',
+        };
+
+        /* ---------- Helpers ---------- */
+        function getUsers() { return loadStorage('ol_users', []); }
+        function setUsers(arr) { saveStorage('ol_users', arr); }
+        function getCourses() { return loadStorage('ol_courses', []); }
+        function setCourses(arr) { saveStorage('ol_courses', arr); }
+        function getEnrollments() { return loadStorage('ol_enrollments', []); }
+        function setEnrollments(arr) { saveStorage('ol_enrollments', arr); }
+        function getProgresses() { return loadStorage('ol_progresses', {}); }
+        function setProgresses(obj) { saveStorage('ol_progresses', obj); }
+
+        function currentUser() { return loadStorage('ol_currentUser'); }
+        function setCurrentUser(u) { if (u) saveStorage('ol_currentUser', u); else localStorage.removeItem('ol_currentUser'); state.currentUser = u; renderHeader(); renderRoute(); }
+
+        /* ---------- Render header (login state) ---------- */
+        function renderHeader() {
+            const user = currentUser();
+            const controls = el('controls');
+            const userInfo = el('userInfo');
+
+            if (user) {
+                userInfo.innerHTML = `
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="text-align:right">
+          <div style="font-weight:700">${user.name}</div>
+          <div style="font-size:12px;color:var(--muted)">${user.role}</div>
+        </div>
+        <button class="btn ghost" id="btnProfile">Profile</button>
+        <button class="btn" id="btnLogout">Logout</button>
+      </div>
+    `;
+                qsa('.nav-link').forEach(a => a.classList.remove('active'));
+                // show/hide links per role
+            } else {
+                userInfo.innerHTML = `
+      <button class="btn ghost" id="btnLogin">Login</button>
+      <button class="btn" id="btnSignup">Sign up</button>
+    `;
+            }
+
+            // attach events
+            const bLogin = qs('#btnLogin'); if (bLogin) bLogin.onclick = () => navigateTo('/login');
+            const bSignup = qs('#btnSignup'); if (bSignup) bSignup.onclick = () => navigateTo('/signup');
+            const bLogout = qs('#btnLogout'); if (bLogout) bLogout.onclick = () => { setCurrentUser(null); alert('Logged out'); navigateTo('/'); };
+            const bProfile = qs('#btnProfile'); if (bProfile) bProfile.onclick = () => { alert('Profile page not implemented in demo'); };
+
+            // mark active nav
+            const route = state.route;
+            qsa('.nav-link').forEach(a => {
+                const r = a.getAttribute('data-route');
+                if (r === route || (r === '/' && route === '/')) a.classList.add('active'); else a.classList.remove('active');
+            });
+        }
+
+        /* ---------- Navigation / Router ---------- */
+        function navigateTo(path) {
+            location.hash = path;
+        }
+        function parseHash() {
+            const h = location.hash || '#/';
+            const path = h.slice(1);
+            return path;
+        }
+        window.addEventListener('hashchange', () => { renderRoute(); });
+
+        /* ---------- Render route ---------- */
+        function renderRoute() {
+            const path = parseHash();
+            state.route = path;
+            renderHeader();
+
+            // simple routing
+            if (path === '/' || path === '') renderHome();
+            else if (path.startsWith('/courses')) {
+                const segments = path.split('/');
+                if (segments.length > 2 && segments[2]) renderCourseDetail(segments[2]);
+                else renderCourses();
+            }
+            else if (path === '/login') renderLogin();
+            else if (path === '/signup') renderSignup();
+            else if (path === '/dashboard') renderDashboard();
+            else if (path === '/instructor') renderInstructor();
+            else if (path === '/add-course') renderAddCourse();
+            else if (path.startsWith('/play')) {
+                const seg = path.split('/');
+                renderPlayer(seg[2], seg[3]); // courseId, lessonId
+            }
+            else {
+                renderNotFound();
+            }
+        }
+
+        /* ---------- Views ---------- */
+        function renderHome() {
+            const view = el('view'); const sidebar = el('sidebar');
+            const courses = getCourses();
+            view.innerHTML = `
+    <section class="hero">
+      <div class="left">
+        <h1>Learn new skills online — front-end demo</h1>
+        <p>Explore courses, enroll, and watch lessons — everything stored locally in your browser.</p>
+        <div style="margin-top:12px; display:flex;gap:8px">
+          <button class="btn" onclick="navigateTo('/courses')">Browse Courses</button>
+          <button class="btn ghost" onclick="navigateTo('/add-course')">Create Course</button>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=4e6f2d1b78bfc37c4b6f28c8a5e9a6a1" alt="learn" style="width:220px;border-radius:10px">
+      </div>
+    </section>
+
+    <section style="margin-bottom:16px">
+      <h3 style="margin:0 0 8px 0">Popular Courses</h3>
+      <div class="course-grid" id="popularGrid"></div>
+    </section>
+  `;
+
+            const grid = el('popularGrid');
+            courses.slice(0, 6).forEach(c => {
+                const instr = getUsers().find(u => u.id === c.instructorId) || { name: 'Unknown' };
+                const card = document.createElement('div'); card.className = 'card';
+                card.innerHTML = `
+      <img class="thumb" src="${c.thumbnail}" alt="${c.title}">
+      <div class="card-body">
+        <div class="course-title">${c.title}</div>
+        <div class="course-meta"><span class="small">By ${instr.name}</span><span class="tag">${c.price ? '$' + c.price : 'Free'}</span></div>
+        <p class="muted" style="margin-top:8px">${c.short}</p>
+        <div style="margin-top:10px; display:flex; gap:8px">
+          <button class="btn ghost" onclick="navigateTo('/courses/${c.id}')">View</button>
+          <button class="btn" onclick="enrollCourse('${c.id}')">Enroll</button>
+        </div>
+      </div>
+    `;
+                grid.appendChild(card);
+            });
+
+            // Sidebar: quick categories
+            sidebar.innerHTML = `
+    <div class="form">
+      <h4>Search</h4>
+      <div class="field"><input id="qSearch" placeholder="Search courses..." oninput="filterCourses()" /></div>
+      <h4 style="margin-top:10px">Categories</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+        <span class="pill" onclick="filterByCat('Web Development')">Web</span>
+        <span class="pill" onclick="filterByCat('Programming')">Programming</span>
+        <span class="pill" onclick="filterByCat('Design')">Design</span>
+      </div>
+    </div>
+  `;
+        }
+
+        function renderCourses() {
+            const view = el('view'); const sidebar = el('sidebar');
+            const courses = getCourses();
+
+            view.innerHTML = `
+    <h2 style="margin-top:0">All Courses</h2>
+    <div style="margin:10px 0" class="list" id="coursesList"></div>
+  `;
+            const list = el('coursesList');
+            courses.forEach(c => {
+                const instr = getUsers().find(u => u.id === c.instructorId) || { name: 'Unknown' };
+                const it = document.createElement('div'); it.className = 'card';
+                it.innerHTML = `
+      <div style="display:flex;gap:12px">
+        <img src="${c.thumbnail}" style="width:160px;height:110px;object-fit:cover">
+        <div style="flex:1;padding:12px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <div class="course-title">${c.title}</div>
+              <div class="small">By ${instr.name} • ${c.category}</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:800">${c.price ? '$' + c.price : 'Free'}</div>
+              <div class="small" style="margin-top:6px">Rating: ${c.rating || '—'}</div>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:8px">${c.short}</p>
+          <div style="margin-top:10px; display:flex; gap:8px">
+            <button class="btn ghost" onclick="navigateTo('/courses/${c.id}')">View</button>
+            <button class="btn" onclick="enrollCourse('${c.id}')">Enroll</button>
+          </div>
+        </div>
+      </div>
+    `;
+                list.appendChild(it);
+            });
+
+            // Sidebar
+            sidebar.innerHTML = `
+    <div class="form">
+      <h4>Sort / Filter</h4>
+      <div class="field"><select id="sortSelect" onchange="sortCourses()"><option value="">Default</option><option value="price_asc">Price: Low → High</option><option value="price_desc">Price: High → Low</option></select></div>
+      <div style="margin-top:12px"><button class="btn ghost" onclick="navigateTo('/')">Back Home</button></div>
+    </div>
+  `;
+        }
+
+        function renderCourseDetail(courseId) {
+            const view = el('view'); const sidebar = el('sidebar');
+            const course = getCourses().find(c => c.id === courseId);
+            if (!course) { view.innerHTML = `<div class="card"><div class="card-body">Course not found</div></div>`; sidebar.innerHTML = ''; return; }
+            const instr = getUsers().find(u => u.id === course.instructorId) || { name: 'Unknown' };
+
+            view.innerHTML = `
+    <div class="card" style="margin-bottom:12px"><div class="card-body">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <img src="${course.thumbnail}" style="width:260px;height:150px;object-fit:cover;border-radius:8px">
+        <div style="flex:1">
+          <h2 style="margin:0">${course.title}</h2>
+          <div class="small">By ${instr.name} • ${course.category}</div>
+          <p class="muted" style="margin-top:8px">${course.description}</p>
+          <div style="margin-top:12px; display:flex; gap:8px">
+            <button class="btn" onclick="enrollCourse('${course.id}')">Enroll Now</button>
+            <button class="btn ghost" onclick="navigateTo('/play/${course.id}/${course.syllabus[0].lessons[0].id}')">Preview</button>
+            <div style="margin-left:auto" class="tag">${course.price ? '$' + course.price : 'Free'}</div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <div style="flex:1">
+        <div class="card-body form">
+          <h3 style="margin-top:0">Course Syllabus</h3>
+          ${course.syllabus.map(m => `<div class="module"><strong>${m.title}</strong>${m.lessons.map(l => `<div style="margin-top:6px" class="small">• ${l.title} (${Math.ceil(l.duration / 60)} min)</div>`).join('')}</div>`).join('')}
+        </div>
+        <div style="margin-top:12px" class="card-body">
+          <h3>Reviews</h3>
+          ${course.reviews && course.reviews.length ? course.reviews.map(r => `<div style="border-bottom:1px dashed #eee;padding:8px 0"><strong>${r.user}</strong><div class="small">Rating: ${r.rating}</div><p style="margin:6px 0">${r.comment}</p></div>`).join('') : '<p class="muted">No reviews yet</p>'}
+        </div>
+      </div>
+
+      <div style="width:320px; min-width:240px">
+        <div class="form">
+          <h4>Instructor</h4>
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#06b6d4,#4f46e5);color:white;display:flex;align-items:center;justify-content:center;font-weight:800">I</div>
+            <div>
+              <div style="font-weight:700">${instr.name}</div>
+              <div class="small">Instructor • ${instr.email}</div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><button class="btn ghost" onclick="contactInstructor('${instr.email}')">Contact</button></div>
+        </div>
+      </div>
+    </div>
+  `;
+
+            // Sidebar syllabus + play jump
+            sidebar.innerHTML = `
+    <div class="syllabus">
+      <h4 style="margin-top:0">Syllabus</h4>
+      ${course.syllabus.map(m => `<div class="module"><div style="font-weight:700">${m.title}</div>${m.lessons.map(l => `<div class="lesson" onclick="navigateTo('/play/${course.id}/${l.id}')">${l.title}</div>`).join('')}</div>`).join('')}
+    </div>
+  `;
+        }
+
+        function renderPlayer(courseId, lessonId) {
+            const view = el('view'); const sidebar = el('sidebar');
+            const course = getCourses().find(c => c.id === courseId);
+            if (!course) { view.innerHTML = '<div class="card"><div class="card-body">Course not found</div></div>'; sidebar.innerHTML = ''; return; }
+
+            // find lesson
+            let lesson = null; let moduleIndex = 0;
+            for (let m of course.syllabus) {
+                for (let l of m.lessons) {
+                    if (l.id === lessonId) { lesson = l; break; }
+                }
+                if (lesson) break;
+                moduleIndex++;
+            }
+            if (!lesson) { view.innerHTML = '<div class="card"><div class="card-body">Lesson not found</div></div>'; sidebar.innerHTML = ''; return; }
+
+            // player view
+            view.innerHTML = `
+    <div class="player">
+      <video id="videoPlayer" controls preload="metadata">
+        <source src="${lesson.video}" type="video/mp4" />
+        Your browser does not support video playback.
+      </video>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <div><strong>${lesson.title}</strong><div class="small">Module: ${course.syllabus[moduleIndex].title}</div></div>
+        <div style="display:flex;gap:8px">
+          <button class="btn ghost" id="prevLesson">Prev</button>
+          <select id="speedSelect"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="1.5">1.5x</option><option value="2">2x</option></select>
+          <button class="btn ghost" id="nextLesson">Next</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body form">
+      <h3 style="margin-top:0">Lesson Notes</h3>
+      <p class="muted">This is a demo lesson. Your watch progress will be saved to localStorage.</p>
+    </div>
+  `;
+
+            // sidebar: modules & lessons highlight current
+            sidebar.innerHTML = `
+    <div class="syllabus">
+      <h4 style="margin-top:0">${course.title} — Syllabus</h4>
+      ${course.syllabus.map(m => `<div class="module"><strong>${m.title}</strong>${m.lessons.map(l => `<div class="lesson ${l.id === lessonId ? 'active' : ''}" id="ls-${l.id}" onclick="navigateTo('/play/${course.id}/${l.id}')">${l.title}</div>`).join('')}</div>`).join('')}
+    </div>
+  `;
+
+            // attach player events
+            const video = el('videoPlayer');
+            const speed = el('speedSelect');
+            const prevBtn = el('prevLesson'); const nextBtn = el('nextLesson');
+
+            // load saved progress
+            const progresses = getProgresses();
+            const user = currentUser();
+            if (user) {
+                const p = (progresses[user.id] && progresses[user.id][lesson.id]) || 0;
+                if (p > 0) video.currentTime = p;
+            }
+
+            // save progress every 5 seconds and on timeupdate
+            let saveTimeout = null;
+            video.addEventListener('timeupdate', () => {
+                if (!user) return;
+                const progresses = getProgresses();
+                if (!progresses[user.id]) progresses[user.id] = {};
+                progresses[user.id][lesson.id] = Math.floor(video.currentTime);
+                setProgresses(progresses);
+            });
+
+            // speed change
+            speed.onchange = () => { video.playbackRate = parseFloat(speed.value); };
+
+            // prev/next logic
+            const flatLessons = course.syllabus.flatMap(m => m.lessons);
+            const idx = flatLessons.findIndex(x => x.id === lesson.id);
+            prevBtn.onclick = () => { if (idx > 0) navigateTo(`/play/${course.id}/${flatLessons[idx - 1].id}`); else alert('No previous'); };
+            nextBtn.onclick = () => { if (idx < flatLessons.length - 1) navigateTo(`/play/${course.id}/${flatLessons[idx + 1].id}`); else alert('No next'); };
+
+            // auto-save on unload
+            window.onbeforeunload = () => {
+                if (user) {
+                    const progresses = getProgresses();
+                    if (!progresses[user.id]) progresses[user.id] = {};
+                    progresses[user.id][lesson.id] = Math.floor(video.currentTime);
+                    setProgresses(progresses);
+                }
+            };
+        }
+
+        function renderLogin() {
+            const view = el('view'); const sidebar = el('sidebar');
+            view.innerHTML = `
+    <div class="form" style="max-width:520px;margin:auto">
+      <h2>Login</h2>
+      <div class="field"><label>Email</label><input id="loginEmail" /></div>
+      <div class="field"><label>Password</label><input id="loginPassword" type="password" /></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="doLogin">Login</button>
+        <button class="btn ghost" id="doDemoStudent">Demo Student</button>
+        <button class="btn ghost" id="doDemoInstructor">Demo Instructor</button>
+      </div>
+      <p class="muted" style="margin-top:10px">Don't have an account? <a href="#/signup">Sign up</a></p>
+    </div>
+  `;
+            sidebar.innerHTML = '';
+
+            el('doLogin').onclick = () => {
+                const email = el('loginEmail').value.trim(), pass = el('loginPassword').value;
+                const user = getUsers().find(u => u.email === email && u.password === pass);
+                if (!user) { alert('Invalid credentials'); return; }
+                setCurrentUser({ id: user.id, name: user.name, email: user.email, role: user.role });
+                alert('Logged in as ' + user.name);
+                navigateTo('/');
+            };
+            el('doDemoStudent').onclick = () => { setCurrentUser({ id: 'u1', name: 'Student Demo', email: 'student@demo.com', role: 'student' }); navigateTo('/dashboard'); };
+            el('doDemoInstructor').onclick = () => { setCurrentUser({ id: 'u2', name: 'Instructor Demo', email: 'instructor@demo.com', role: 'instructor' }); navigateTo('/instructor'); };
+        }
+
+        function renderSignup() {
+            const view = el('view'); const sidebar = el('sidebar');
+            view.innerHTML = `
+    <div class="form" style="max-width:520px;margin:auto">
+      <h2>Sign Up</h2>
+      <div class="field"><label>Name</label><input id="suName" /></div>
+      <div class="field"><label>Email</label><input id="suEmail" /></div>
+      <div class="field"><label>Password</label><input id="suPassword" type="password" /></div>
+      <div class="field"><label>Role</label>
+        <select id="suRole"><option value="student">Student</option><option value="instructor">Instructor</option></select>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="doSignup">Create Account</button>
+      </div>
+      <p class="muted" style="margin-top:10px">Already have an account? <a href="#/login">Login</a></p>
+    </div>
+  `;
+            sidebar.innerHTML = '';
+
+            el('doSignup').onclick = () => {
+                const name = el('suName').value.trim();
+                const email = el('suEmail').value.trim();
+                const pass = el('suPassword').value;
+                const role = el('suRole').value;
+                if (!name || !email || !pass) { alert('Fill all fields'); return; }
+                if (getUsers().some(u => u.email === email)) { alert('Email already used'); return; }
+                const id = 'u' + (Math.random().toString(36).slice(2, 9));
+                const u = { id, name, email, password: pass, role };
+                const arr = getUsers(); arr.push(u); setUsers(arr);
+                setCurrentUser({ id: u.id, name: u.name, email: u.email, role: u.role });
+                alert('Account created. Logged in as ' + u.name);
+                navigateTo('/');
+            };
+        }
+
+        function renderDashboard() {
+            const view = el('view'); const sidebar = el('sidebar');
+            const user = currentUser();
+            if (!user) { view.innerHTML = `<div class="card"><div class="card-body">Please <a href="#/login">login</a> to see dashboard</div></div>`; sidebar.innerHTML = ''; return; }
+            if (user.role !== 'student') { view.innerHTML = `<div class="card"><div class="card-body">Student dashboard — only students can access this page</div></div>`; sidebar.innerHTML = ''; return; }
+
+            // student dashboard
+            const enrolls = getEnrollments().filter(e => e.userId === user.id);
+            const courses = getCourses();
+            const myCourses = enrolls.map(e => courses.find(c => c.id === e.courseId)).filter(Boolean);
+
+            view.innerHTML = `
+    <h2>Student Dashboard</h2>
+    <div class="dash-cards">
+      <div class="metric"><h3>${myCourses.length}</h3><p>Enrolled Courses</p></div>
+      <div class="metric"><h3>${getCourses().length}</h3><p>Available Courses</p></div>
+      <div class="metric"><h3>${0}</h3><p>Notifications</p></div>
+    </div>
+
+    <div style="margin-top:10px">
+      <h3>My Courses</h3>
+      <div class="list">
+        ${myCourses.length ? myCourses.map(c => `<div class="card"><div class="card-body"><div style="display:flex;gap:12px"><img src="${c.thumbnail}" style="width:120px;height:80px;object-fit:cover"><div style="flex:1"><div style="display:flex;justify-content:space-between"><div><strong>${c.title}</strong><div class="small">by Instructor</div></div><div><button class="btn" onclick="navigateTo('/courses/${c.id}')">Open</button></div></div></div></div></div></div>`).join('') : '<p class="muted">You are not enrolled in any course yet.</p>'}
+      </div>
+    </div>
+  `;
+            sidebar.innerHTML = `<div class="form"><h4>Quick Actions</h4><div class="field"><button class="btn" onclick="navigateTo('/courses')">Browse Courses</button></div></div>`;
+        }
+
+        function renderInstructor() {
+            const view = el('view'); const sidebar = el('sidebar');
+            const user = currentUser();
+            if (!user || user.role !== 'instructor') { view.innerHTML = `<div class="card"><div class="card-body">Instructor dashboard — login as instructor</div></div>`; sidebar.innerHTML = ''; return; }
+
+            // instructor courses
+            const myCourses = getCourses().filter(c => c.instructorId === user.id);
+            view.innerHTML = `
+    <h2>Instructor Dashboard</h2>
+    <div class="dash-cards">
+      <div class="metric"><h3>${myCourses.length}</h3><p>Your Courses</p></div>
+      <div class="metric"><h3>0</h3><p>Enrollments</p></div>
+      <div class="metric"><h3>0</h3><p>Earnings</p></div>
+    </div>
+
+    <div style="margin-top:10px">
+      <h3>Your Courses</h3>
+      <div class="list">
+        ${myCourses.length ? myCourses.map(c => `<div class="card"><div class="card-body" style="display:flex;gap:12px"><img src="${c.thumbnail}" style="width:120px;height:80px;object-fit:cover"><div style="flex:1"><div style="display:flex;justify-content:space-between"><div><strong>${c.title}</strong><div class="small">${c.category}</div></div><div><button class="btn ghost" onclick="navigateTo('/courses/${c.id}')">View</button></div></div></div></div></div>`).join('') : '<p class="muted">You have no courses yet.</p>'}
+      </div>
+    </div>
+  `;
+            sidebar.innerHTML = `<div class="form"><h4>Actions</h4><div class="field"><button class="btn" onclick="navigateTo('/add-course')">Add New Course</button></div></div>`;
+        }
+
+        function renderAddCourse() {
+            const view = el('view'); const sidebar = el('sidebar');
+            const user = currentUser();
+            if (!user || user.role !== 'instructor') { view.innerHTML = `<div class="card"><div class="card-body">Only instructors can create courses. <a href="#/login">Login</a></div></div>`; sidebar.innerHTML = ''; return; }
+
+            view.innerHTML = `
+    <div class="form"><h2>Create Course</h2>
+      <div class="field"><label>Course Title</label><input id="cTitle" /></div>
+      <div class="field"><label>Category</label><input id="cCategory" /></div>
+      <div class="field"><label>Price (0 for free)</label><input id="cPrice" type="number" /></div>
+      <div class="field"><label>Short Description</label><input id="cShort" /></div>
+      <div class="field"><label>Thumbnail URL</label><input id="cThumb" /></div>
+      <div class="field"><label>Full Description</label><textarea id="cDesc"></textarea></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn" id="createCourseBtn">Create</button>
+      </div>
+    </div>
+  `;
+            sidebar.innerHTML = '';
+
+            el('createCourseBtn').onclick = () => {
+                const title = el('cTitle').value.trim();
+                const cat = el('cCategory').value.trim() || 'General';
+                const price = parseFloat(el('cPrice').value) || 0;
+                const short = el('cShort').value.trim() || '';
+                const thumb = el('cThumb').value.trim() || 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d8adf4d9b4c6bb6a2d8a8a71204b9d9';
+                const desc = el('cDesc').value.trim() || '';
+                if (!title) { alert('Title required'); return; }
+                const id = 'c' + Math.random().toString(36).slice(2, 9);
+                const course = { id, title, category: cat, price, instructorId: currentUser().id, short, thumbnail: thumb, syllabus: [], description: desc, rating: 0, reviews: [] };
+                const arr = getCourses(); arr.unshift(course); setCourses(arr);
+                alert('Course created (no lessons yet). You can add lessons by editing syllabus in code or reopening this demo.');
+                navigateTo('/instructor');
+            };
+        }
+
+        /* ---------- Actions ---------- */
+        function enrollCourse(courseId) {
+            const user = currentUser();
+            if (!user) { if (confirm('You must login to enroll. Login now?')) navigateTo('/login'); return; }
+            const enrolls = getEnrollments();
+            if (enrolls.some(e => e.userId === user.id && e.courseId === courseId)) { alert('Already enrolled'); navigateTo('/courses/' + courseId); return; }
+            enrolls.push({ userId: user.id, courseId, enrolledAt: new Date().toISOString() });
+            setEnrollments(enrolls);
+            alert('Enrolled successfully');
+            navigateTo('/courses/' + courseId);
+        }
+
+        function contactInstructor(email) { alert('Demo: contact instructor at ' + email); }
+
+        /* ---------- Small search/filter helpers ---------- */
+        function filterCourses() {
+            const q = el('qSearch').value.trim().toLowerCase();
+            const all = getCourses();
+            const grid = el('popularGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            all.filter(c => c.title.toLowerCase().includes(q) || c.short.toLowerCase().includes(q)).slice(0, 9).forEach(c => {
+                const instr = getUsers().find(u => u.id === c.instructorId) || { name: 'Unknown' };
+                const card = document.createElement('div'); card.className = 'card';
+                card.innerHTML = `
+      <img class="thumb" src="${c.thumbnail}" alt="${c.title}">
+      <div class="card-body">
+        <div class="course-title">${c.title}</div>
+        <div class="course-meta"><span class="small">By ${instr.name}</span><span class="tag">${c.price ? '$' + c.price : 'Free'}</span></div>
+        <p class="muted" style="margin-top:8px">${c.short}</p>
+        <div style="margin-top:10px; display:flex; gap:8px">
+          <button class="btn ghost" onclick="navigateTo('/courses/${c.id}')">View</button>
+          <button class="btn" onclick="enrollCourse('${c.id}')">Enroll</button>
+        </div>
+      </div>
+    `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterByCat(cat) { const q = cat.toLowerCase(); const all = getCourses(); const grid = el('popularGrid'); if (!grid) return; grid.innerHTML = ''; all.filter(c => c.category.toLowerCase().includes(q)).slice(0, 9).forEach(c => { const instr = getUsers().find(u => u.id === c.instructorId) || { name: 'Unknown' }; const card = document.createElement('div'); card.className = 'card'; card.innerHTML = `<img class="thumb" src="${c.thumbnail}"><div class="card-body"><div class="course-title">${c.title}</div><div class="course-meta"><span class="small">By ${instr.name}</span><span class="tag">${c.price ? '$' + c.price : 'Free'}</span></div><p class="muted" style="margin-top:8px">${c.short}</p><div style="margin-top:10px; display:flex; gap:8px"><button class="btn ghost" onclick="navigateTo('/courses/${c.id}')">View</button><button class="btn" onclick="enrollCourse('${c.id}')">Enroll</button></div></div>`; grid.appendChild(card); }); }
+
+        /* ---------- Sorting ---------- */
+        function sortCourses() {
+            const v = el('sortSelect').value;
+            let arr = getCourses();
+            if (v === 'price_asc') arr = arr.sort((a, b) => a.price - b.price);
+            else if (v === 'price_desc') arr = arr.sort((a, b) => b.price - a.price);
+            setCourses(arr);
+            renderCourses();
+        }
+
+        /* ---------- Not found ---------- */
+        function renderNotFound() { el('view').innerHTML = `<div class="card"><div class="card-body">Page not found</div></div>`; el('sidebar').innerHTML = ''; }
+
+        /* ---------- Init ---------- */
+        function initApp() {
+            // wire nav to mimic SPA links
+            qsa('.nav-link').forEach(a => {
+                a.onclick = (e) => { e.preventDefault(); const r = a.getAttribute('data-route'); navigateTo(r); };
+            });
+            renderHeader();
+            renderRoute();
+        }
+        initApp();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+/* -------------------- GLOBAL -------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255,255,255,0.3);
+}
+
+.nav-links .btn {
+    background: #fff;
+    color: #1e90ff;
+    font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    /* background: linear-gradient(to right, #20c997, #28a745); */
+    color: #fff;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    padding: 12px 25px;
+    background: #fff;
+     color: #2575fc;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #f1f1f1;
+}
+
+.hero-animation {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* -------------------- FEATURES -------------------- */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+    background: #1e90ff;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* -------------------- COURSE GRID -------------------- */
+.course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    justify-content: center;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.course-card .desc {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.enroll-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.enroll-btn:hover {
+    background: #2575fc;
+}
+
+/* -------------------- COURSE DETAILS -------------------- */
+.course-details-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.course-left {
+    flex: 2;
+}
+
+.course-right {
+    flex: 1;
+}
+
+.course-price-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e6f0ff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.course-price-box .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.enroll-btn-large {
+    padding: 12px 20px;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.enroll-btn-large:hover {
+    background: #2575fc;
+}
+
+.instructor-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.instructor-box .inst-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.module-list, .learn-list, .req-list {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* -------------------- LESSON PLAYER -------------------- */
+.lesson-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.lesson-sidebar {
+    flex: 1;
+    min-width: 200px;
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.lesson-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lesson-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lesson-list li.active,
+.lesson-list li:hover {
+    background: #1e90ff;
+    color: #fff;
+}
+
+.sidebar-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lesson-player {
+    flex: 3;
+}
+
+.lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: #2575fc;
+}
+
+/* -------------------- DASHBOARD -------------------- */
+.dashboard-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.dashboard-left, .dashboard-right {
+    flex: 1;
+    min-width: 250px;
+}
+
+.course-progress-card, .analytics-card, .course-card-instructor {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+    height: 15px;
+}
+
+.progress {
+    background: #1e90ff;
+    height: 100%;
+    width: 0;
+}
+
+/* -------------------- FORMS -------------------- */
+.form-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e90ff;
+}
+
+.error-msg {
+    color: red;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: #1e90ff;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: #2575fc;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-container a {
+    color: #1e90ff;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 1024px) {
+    .course-details-container, .lesson-container, .dashboard-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #1e90ff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 0 10px;
+        padding: 10px 0;
+    }
+    .nav-links a {
+        padding: 10px 20px;
+        color: #fff;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .sidebar-toggle {
+        display: block;
+    }
+}

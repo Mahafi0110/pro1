@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e293b;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #94a3b8;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #calculateBtn {
+            background-color: #2563eb;
+            color: white;
+        }
+        #calculateBtn:hover {
+            background-color: #1d4ed8;
+        }
+
+        #resetBtn {
+            background-color: #64748b;
+            color: white;
+            margin-top: 10px;
+        }
+        #resetBtn:hover {
+            background-color: #475569;
+        }
+
+        #resultBox {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>BMI Calculator</h2>
+
+        <label>Height (cm)</label>
+        <input type="number" id="height" placeholder="Enter height">
+
+        <label>Weight (kg)</label>
+        <input type="number" id="weight" placeholder="Enter weight">
+
+        <button id="calculateBtn" onclick="calculateBMI()">Calculate BMI</button>
+        <button id="resetBtn" onclick="resetForm()">Reset</button>
+
+        <div id="resultBox"></div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            let height = document.getElementById("height").value;
+            let weight = document.getElementById("weight").value;
+            let resultBox = document.getElementById("resultBox");
+
+            if (height === "" || weight === "") {
+                alert("Please enter height and weight");
+                return;
+            }
+
+            // convert cm to meter
+            let heightM = height / 100;
+
+            // BMI formula
+            let bmi = (weight / (heightM * heightM)).toFixed(2);
+
+            let category = "";
+            let color = "";
+
+            if (bmi < 18.5) {
+                category = "Underweight";
+                color = "#facc15"; // yellow
+            } else if (bmi < 24.9) {
+                category = "Normal";
+                color = "#22c55e"; // green
+            } else {
+                category = "Overweight";
+                color = "#ef4444"; // red
+            }
+
+            resultBox.style.display = "block";
+            resultBox.style.background = color;
+            resultBox.innerHTML = `BMI: <strong>${bmi}</strong> <br> Category: <strong>${category}</strong>`;
+        }
+
+        function resetForm() {
+            document.getElementById("height").value = "";
+            document.getElementById("weight").value = "";
+            let resultBox = document.getElementById("resultBox");
+            resultBox.style.display = "none";
+            resultBox.innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
